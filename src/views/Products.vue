@@ -38,7 +38,9 @@
       </tr>
     </tbody>
   </table>
-  <ProductModal ref="productModal" :product="tempProduct" @update-product="updateProduct"></ProductModal>
+  <ProductModal ref="productModal"
+  :product="tempProduct"
+  @update-product="updateProduct"></ProductModal>
 </template>
 
 <script>
@@ -69,18 +71,16 @@ export default {
     openModal () {
       this.tempProduct = {}
       const productComponent = this.$refs.productModal
-      console.log(productComponent)
       productComponent.showModal()
     },
     updateProduct (item) {
       this.tempProduct = item
       const api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/product`
       const productComponent = this.$refs.productModal
-      this.$http.post(api, { data: this.tempProduct }).then(
-        (res) => {
-          productComponent.hideModal()
-          this.getProducts()
-        })
+      this.$http.post(api, { data: this.tempProduct }).then((response) => {
+        productComponent.hideModal()
+        this.getProducts()
+      })
     }
   },
   create () {
