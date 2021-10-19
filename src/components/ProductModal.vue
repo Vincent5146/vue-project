@@ -10,7 +10,7 @@
                   data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-                    <div class="row">
+          <div class="row">
             <div class="col-sm-4">
               <div class="mb-3">
                 <label for="image" class="form-label">輸入圖片網址</label>
@@ -182,7 +182,7 @@
 </template>
 
 <script>
-import Modal from 'bootstrap/js/dist/modal'
+import modalMixin from '@/mixins/modalMixin'
 
 export default {
   props: {
@@ -194,6 +194,9 @@ export default {
   watch: {
     product () {
       this.tempProduct = this.product
+      if (!this.tempProduct.images) {
+        this.tempProduct.images = []
+      }
     }
   },
   data () {
@@ -203,17 +206,19 @@ export default {
     }
   },
   methods: {
-    showModal () {
-      this.modal.show()
-    },
-    hidaModal () {
-      this.modal.hide()
+    uploadFile () {
+      const uploadedFile = this.$refs.fileInput.files[0]
+      const formData = new FormData()
+      formData.append('file-to-upload', uploadedFile)
+      const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/upload`
+      this.$http.post(url, formData).then((response) => {
+        console.log(response.data)
+        if (response.data.success) {
+          this.tempProduct.imageUrl = response.data.imageUrl
+        }
+      })
     }
   },
-  mounted () {
-    this.modal = new Modal(this.$refs.modal, {
-      keyboard: false
-    })
-  }
+  mixins: [modalMixin]
 }
 </script>
