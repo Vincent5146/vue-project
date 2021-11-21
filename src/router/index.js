@@ -10,29 +10,85 @@ const routes = [
   {
     path: '/about',
     name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    component: () => import('../views/user/About.vue')
   },
   {
     path: '/login',
     component: () => import('../views/Login.vue')
   },
   {
-    path: '/dashboard',
-    component: () => import('../views/Dashboard.vue'),
+    path: '/admin',
+    component: () => import('../views/admin/Admin.vue'),
     children: [
       {
         path: 'products',
-        component: () => import('../views/Products.vue')
+        component: () => import('../views/admin/Products.vue')
+      },
+      {
+        path: 'orders',
+        component: () => import('../views/admin/Orders.vue')
+      },
+      {
+        path: 'coupons',
+        component: () => import('../views/admin/Coupons.vue')
       }
     ]
+  },
+  {
+    path: '/user',
+    component: () => import('../views/user/Userboard.vue'),
+    children: [
+      {
+        path: 'products',
+        component: () => import('../views/user/UserProducts.vue')
+      },
+      {
+        path: 'boarding',
+        component: () => import('../views/user/products/Boarding.vue')
+      },
+      {
+        path: 'daycare',
+        component: () => import('../views/user/products/Daycare.vue')
+      },
+      {
+        path: 'spa',
+        component: () => import('../views/user/products/Spa.vue')
+      },
+      {
+        path: 'swimming',
+        component: () => import('../views/user/products/Swimming.vue')
+      }
+    ]
+  },
+  {
+    path: '/checkout',
+    component: () => import('../views/user/Checkout.vue')
+  },
+  {
+    path: '/checkpayment/:productId',
+    component: () => import('../views/user/Checkpayment.vue')
+  },
+  {
+    path: '/product/:productId',
+    component: () => import('../views/user/UserProduct.vue')
+  },
+  {
+    path: '/cart',
+    component: () => import('../views/user/Cart.vue')
+  },
+  {
+    path: '/orders',
+    component: () => import('../views/user/Checkorder.vue')
+  },
+  {
+    path: '/followPage',
+    component: () => import('../views/user/Followpage.vue')
   }
 ]
 
 const router = createRouter({
   history: createWebHashHistory(),
+  linkActiveClass: 'active',
   routes
 })
 
