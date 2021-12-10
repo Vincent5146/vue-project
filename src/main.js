@@ -18,6 +18,9 @@ import emitter from './methods/emitter'
 import { currency, date } from './methods/filters'
 import $httpMessageState from './methods/pushMessageState'
 
+import '@fortawesome/fontawesome-free/css/all.css'
+import '@fortawesome/fontawesome-free/js/all.js'
+
 defineRule('required', required)
 defineRule('email', email)
 defineRule('min', min)

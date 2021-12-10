@@ -1,50 +1,55 @@
 <template>
-  <Loading :active="isLoading"></Loading>
-  <div class="container">
-    <div class="row mt-4">
-      <div class="col-md-7">
-        <table class="table align-middle">
-          <thead>
-          <tr>
-            <th>圖片</th>
-            <th>商品名稱</th>
-            <th>價格</th>
-            <th></th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr v-for="item in products" :key="item.id">
-            <td style="width: 200px">
-              <div style="height: 100px; background-size: cover; background-position: center"
-                   :style="{backgroundImage: `url(${item.imageUrl})`}"></div>
-            </td>
-            <td><a href="#" class="text-dark">{{ item.title }}</a></td>
-            <td>
-              <div class="h5" v-if="!item.price">{{ item.origin_price }} 元</div>
-              <del class="h6" v-if="item.price">原價 {{ item.origin_price }} 元</del>
-              <div class="h5" v-if="item.price">現在只要 {{ item.price }} 元</div>
-            </td>
-            <td>
-              <div class="btn-group btn-group-sm">
-                <button type="button" class="btn btn-outline-secondary"
-                        @click="getProduct(item.id)">
-                  查看更多
-                </button>
-                <button type="button" class="btn btn-outline-danger"
-                        :disabled="this.status.loadingItem === item.id"
-                        @click="addToCart(item.id)">
-                        <div v-if="this.status.loadingItem === item.id" class="spinner-grow spinner-grow-sm text-primary" role="status">
-                          <span class="visually-hidden">Loading...</span>
-                        </div>
-                  加到購物車
-                </button>
+  <div class="allBike mt-3">
+    <Loading v-model:active="isLoading"/>
+    <!-- 商品 -->
+    <div class="container px-0">
+      <div class="row row-cols-1 row-cols-md-5 g-3">
+        <div class="col" v-for="item in products" :key="item.id">
+          <div class="card border-0 box-shadow rounded-0 h-100" @click="getProduct(item.id)">
+            <div style="height: 250px; background-size: cover; background-position: center" :style="{ backgroundImage: `url(${item.imageUrl})` }" class="text-end">
+            </div>
+            <div class="card-body text-center">
+              <h4 class="card-title fw-bold">{{ item.title }}</h4>
+              <div class="d-flex justify-content-around align-items-end">
+                <div class="fs-6 text-muted" v-if="!item.price">
+                  NT$ {{ $filters.currency(item.origin_price) }}
+                </div>
+                <del class="fs-6 text-muted" v-if="item.price">
+                  NT$ {{ $filters.currency(item.origin_price) }}
+                </del>
+                <div class="fs-5 text-black fw-bold" v-if="item.price">
+                  NT$ {{ $filters.currency(item.price) }}
+                </div>
               </div>
-            </td>
-          </tr>
-          </tbody>
-        </table>
+            </div>
+            <div class="card-footer border-0 d-flex justify-content-between align-items-center bg-transparent">
+              <div>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning" v-if="Math.floor(Math.random() * 2) == 1"></i>
+              </div>
+              <small>已售出 {{ Math.floor(Math.random() * 150) }}</small>
+            </div>
+            <button
+              :disabled="loadingStatus.loadingItem === product.id"
+              @click="addToCart(product.id, qty)"
+              type="button"
+              class="btn btn-secondary"
+            >
+              <i
+                class="spinner-border spinner-border-sm"
+                v-if="loadingStatus.loadingItem === product.id"
+              ></i>
+              加入購物車
+            </button>
+          </div>
+        </div>
       </div>
-      <Pagination :pages="pagination" @emit-pages="getProducts"></Pagination>
+    </div>
+    <div class="d-flex justify-content-center mt-4">
+      <Pagination :pages="pagination" @emit-pages="getProducts"/>
     </div>
   </div>
 </template>
@@ -58,11 +63,10 @@ export default {
   },
   data () {
     return {
+      loadingStatus: { loadingItem: '' },
       products: [],
       product: {},
-      status: {
-        loadingItem: ''
-      },
+      isLoading: false,
       pagination: {}
     }
   },
@@ -80,20 +84,17 @@ export default {
       this.$router.push(`/product/${id}`)
     },
     addToCart (id, qty = 1) {
-      const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/cart`
-      const cart = {
-        product_id: id,
-        qty
-      }
-      this.status.loadingItem = id
-      this.$http.post(url, { data: cart }).then((response) => {
+      this.isLoading = true
+      const api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/cart`
+      const cart = { product_id: id, qty }
+      this.$http.post(api, { data: cart }).then((response) => {
         if (response.data.success) {
+          this.isLoading = false
           this.emitter.emit('message:push', { message: response.data.message, status: 'success' })
           this.emitter.emit('resetCart')
-          this.status.loadingItem = ''
         } else {
+          this.sideUl = false
           this.emitter.emit('message:push', { message: response.data.message, status: 'danger' })
-          this.status.loadingItem = ''
         }
       })
     }

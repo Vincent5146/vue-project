@@ -1,33 +1,31 @@
 <template>
-  <div>
-    <div class="g-t1-2 clearfix">
-      <div class="titleBox clearfix">
-        <h2>
-          <em>BOARDING</em>
-          <strong>24H褓母 ‧ 住宿</strong>
-        </h2>
+  <div class="service">
+    <div class="content">
+      <div class="text">
+        <h3>BOARDING</h3>
+        <h3>24H褓母 ‧ 住宿</h3>
+        <div class="sideMenu">
+          <ul class="tab">
+            <li v-for="tab in tempTabs" :key="tab.id" @click="handleTabChange(tab.name)">
+              <input type="radio" :id="tab.id" :value="tab.name" v-model="currentTab" />
+              <label :for="tab.id">{{ tab.name }}</label>
+            </li>
+          </ul>
+        </div>
       </div>
-      <div class="sideMenu">
-        <ul class="tab">
-          <li v-for="tab in tempTabs" :key="tab.id" @click="handleTabChange(tab.name)">
-            <input type="radio" :id="tab.id" :value="tab.name" v-model="currentTab" />
-            <label :for="tab.id">{{ tab.name }}</label>
-
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="g-t1-10 clearfix">
-      <div class="textEditor">
-        <h2>{{ computedTabData.title }}</h2>
+      <div class="text2">
+        <h3>{{ computedTabData.title }}</h3>
         <ul>
           <li v-for="(content, index) in computedTabData.contents" :key="index">{{ content }}</li>
         </ul>
+        <div align="right">
+          <a href="#" class="btn">PRICE 價目表</a>
+        </div>
       </div>
     </div>
-  </div>
-  <div>
-    pics
+    <div class="image">
+      <img src="https://upload.cc/i1/2021/11/22/sBFO9m.jpg" class="card-img-top" alt="住宿">
+    </div>
   </div>
 </template>
 
@@ -36,13 +34,13 @@ export default {
   data () {
     return {
       tempTabs: [
-        { name: 'CAT', id: 1 },
-        { name: 'SMALLDOG', id: 2 },
-        { name: 'MEDIUMDOG', id: 3 },
-        { name: 'LARGEDOG', id: 4 }
+        { name: '貓咪', id: 1 },
+        { name: '小型犬', id: 2 },
+        { name: '中型犬', id: 3 },
+        { name: '大型犬', id: 4 }
       ],
       tabInfo: {
-        CAT: {
+        貓咪: {
           tabName: 'Cat',
           title: '貓咪住宿 CAT BOARDING',
           contents: [
@@ -53,8 +51,8 @@ export default {
             '獨家！每間貓房配有流動水機、貓咪吊床和緊貼大樓玻璃外牆極佳採光和高度視野，讓貓咪享受睥睨馬路動態的樂趣'
           ]
         },
-        SMALLDOG: {
-          tabName: 'Smalldog',
+        小型犬: {
+          tabName: '小型犬',
           title: '小型犬住宿　SMALL BREED DOG BOARDING',
           contents: [
             '小型犬區供 9 公斤以下嬌小的狗狗玩樂',
@@ -64,7 +62,7 @@ export default {
             '室內有多種尿布和草皮，供狗狗暫時解放'
           ]
         },
-        MEDIUMDOG: {
+        中型犬: {
           tabName: 'Doggggg',
           title: '中型犬住宿　MEDIUM BREED DOG BOARDING',
           contents: [
@@ -76,7 +74,7 @@ export default {
             '室內有草皮供中大型犬室內解放'
           ]
         },
-        LARGEDOG: {
+        大型犬: {
           tabName: 'Doggggg',
           title: '大型犬住宿　LARGE BREED DOG BOARDING',
           contents: [
@@ -90,7 +88,7 @@ export default {
           ]
         }
       },
-      currentTab: 'CAT'
+      currentTab: '貓咪'
     }
   },
   computed: {
@@ -105,3 +103,58 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scope>
+.service{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap:1.5rem;
+  .image{
+    flex:1 1 40rem;
+    img{
+      width:100%;
+    }
+  }
+  .content{
+    display: flex;
+    .text{
+      width: 18%;
+      font-size: 2rem;
+      color: #333;
+    }
+    .text2{
+      width: 82%;
+      h2{
+      font-weight: bold;
+      color: #219150;
+      }
+      li{
+        color: black;
+        font-size: 1.2rem;
+        line-height: 1;
+        padding:1rem 0;
+      span{
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-right: 1rem;
+        color: #219150;
+        }
+      }
+    }
+    .btn{
+      margin-top: 0.5rem;
+      border: 0.2rem solid #10221b;
+      color: #10221b;
+      cursor: pointer;
+      background: none;
+      font-size: 1.2rem;
+      padding: 0.5rem 1rem;
+    }
+    .btn:hover {
+      background: #219150;
+      color: #fff;
+    }
+  }
+}
+</style>

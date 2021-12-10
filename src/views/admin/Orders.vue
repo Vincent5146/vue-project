@@ -1,21 +1,23 @@
 <template>
   <Loading :active="isLoading"></Loading>
   <table class="table mt-4">
-    <thead>
-    <tr>
-      <th>購買時間</th>
-      <th>Email</th>
-      <th>購買款項</th>
-      <th>應付金額</th>
-      <th>是否付款</th>
-      <th>編輯</th>
-    </tr>
+    <thead class="table-dark">
+      <tr class="table-nowrap">
+        <th width="150" class="text-center">購買時間</th>
+        <th width="230" class="text-center">訂單編號</th>
+        <th width="200" class="text-center">Email</th>
+        <th class="text-center">購買項目</th>
+        <th width="150" class="text-center">應付金額</th>
+        <th width="150" class="text-center">是否付款</th>
+        <th width="180" class="text-center">編輯</th>
+      </tr>
     </thead>
-    <tbody>
+    <tbody class="text-center">
       <template v-for="(item, key) in orders" :key="key">
         <tr v-if="orders.length"
             :class="{'text-secondary': !item.is_paid}">
           <td>{{ $filters.date(item.create_at) }}</td>
+          <td>{{ item.id }}</td>
           <td><span v-text="item.user.email" v-if="item.user"></span></td>
           <td>
             <ul class="list-unstyled">
@@ -50,10 +52,12 @@
       </template>
     </tbody>
   </table>
+  <div class="d-flex justify-content-center">
+    <Pagination :pages="pagination" @emit-pages="getOrders"></Pagination>
+  </div>
   <OrderModal :order="tempOrder"
               ref="orderModal" @update-paid="updatePaid"></OrderModal>
   <DelModal :item="tempOrder" ref="delModal" @del-item="delOrder"></DelModal>
-  <Pagination :pages="pagination" @emit-pages="getOrders"></Pagination>
 </template>
 
 <script>

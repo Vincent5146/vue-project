@@ -1,21 +1,14 @@
 <template>
-<Loading :active="isLoading"></Loading>
-  <div class="text-end">
-    <button class="btn btn-primary" type="button" @click="openModal(true)">
-      增加一個產品
-    </button>
-  </div>
+  <Loading :active="isLoading"></Loading>
+    <div class="text-end mt-4">
+      <button class="btn btn-dark btn-hover rounded-0" type="button" @click="openModal(true)">
+        增加一個產品
+      </button>
+    </div>
   <table class="table mt-4">
     <thead>
       <tr>
-        <th width="150">
-          <select class="form-select form-select-sm" aria-label=".form-select-lg example">
-            <option selected>產品種類</option>
-            <option value="1">住宿</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-          </select>
-        </th>
+        <th width="150">分類</th>
         <th>產品名稱</th>
         <th width="120">產品圖片</th>
         <th width="120">原價</th>
@@ -49,7 +42,9 @@
       </tr>
     </tbody>
   </table>
-  <Pagination :pages="pagination" @emit-pages="getProducts"></Pagination>
+  <div class="d-flex justify-content-center">
+    <Pagination :pages="pagination" @emit-pages="getProducts"></Pagination>
+  </div>
   <ProductModal ref="productModal"
   :product="tempProduct"
   @update-product="updateProduct"></ProductModal>

@@ -1,86 +1,110 @@
 <template>
   <div class="nav" >
-    <nav
-      class="navbar navbar-expand-lg navbar-light bg-light text-dark fixed-top"
-    >
-      <div class="container-fluid">
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarToggler"
-          aria-controls="navbarToggler"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <router-link to="/" class="nav-link"
-          ><img src="#" alt="i-Bike"
-        /></router-link>
-        <div class="collapse navbar-collapse" id="navbarToggler">
-          <ul class="navbar-nav me-auto my-2 my-lg-0">
-            <li class="nav-item pt-1">
-              <a href="#/user/boarding" class="nav-link text-dark a-hover fw-bold">產品區</a>
-            </li>
-            <li class="nav-item pt-1">
-              <a href="#/orders" class="nav-link text-dark a-hover fw-bold">訂單查詢</a>
-            </li>
-            <li class="nav-item pt-1">
-              <a href="#/followPage" class="nav-link text-dark a-hover fw-bold">我的收藏</a>
-            </li>
-            <li class="nav-item pt-1">
-              <a href="#/about" class="nav-link text-dark a-hover fw-bold">關於綿綿</a>
-            </li>
-            <li class="nav-item pt-1">
-              <a href="#" @click.prevent="logout" class="nav-link">登出</a>
-            </li>
-          </ul>
-        </div>
-        <div class="d-flex d-lg-none d-md-block pt-1 me-2">
-          <a class="navbar-brand text-dark a-hover" href="#/admin/product"></a>
-          <!-- 購物車按鈕 -->
-          <a class="navbar-brand text-dark me-0 a-hover cart" href="#" @click.prevent="" data-bs-toggle="dropdown">
-           <span class="badge text-light bg-danger" v-if="carts.length>0">{{ carts.length }}</span>
-          </a>
-          <div
-            class="dropdown-menu dropdown-menu-end cart-box p-3 me-3"
-          >
-            <h5 class="fw-bold" v-if="carts.length>0">已選購商品</h5>
-            <div class="table-responsive-md">
-              <table class="table table-sm">
-                <thead class="table-dark">
-                  <tr class="table-nowrap text-center">
-                    <th>商品名稱</th>
-                    <th>數量</th>
-                    <th class="text-end">價格</th>
-                    <th></th>
-                  </tr>
-                </thead>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light text-dark fixed-top">
+      <div class="container">
+        <h1 class="d-flex align-items-center mb-1 mt-1">
+          <a href="/"><span class="material-icons logo_icon"><i class="fas fa-cat"></i></span></a>
+        </h1>
+        <div class="icon-box order-lg-2 justify-content-around icon-link-wrap ms-auto">
+          <div class="login">
+            <a
+              class="btn d-flex"
+              href="#/login"
+              role="button"
+              >
+              <span class="material-icons login_icon"><i class="fas fa-user-circle"></i></span>
+            </a>
+          </div>
+          <div class="dropdown cart">
+            <a
+              class="btn d-flex"
+              href="#"
+              role="button"
+              id="dropdownMenuLink"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <span class="material-icons cart_icon"><i class="fas fa-shopping-cart"></i></span>
+              <div class="cart_num" v-if="cart?.carts?.length !== 0">
+                {{ cart?.carts?.length }}
+              </div>
+            </a>
+            <div class="dropdown-menu pe-2 ps-2" aria-labelledby="dropdownMenuLink">
+              <table class="w-100">
                 <tbody>
-                  <tr class="table-nowrap" v-for="item in carts" :key="item.id">
-                    <td>{{ item.product.title }}</td>
-                    <td class="text-center">{{ item.qty }}</td>
-                    <td class="text-end">NT$ {{ $filters.currency(item.total) }}</td>
+                  <tr class="border-bottom border-primary">
+                    <th>品名</th>
+                    <th class="text-center">數量</th>
+                    <th class="text-center">單價</th>
+                  </tr>
+                  <tr v-for="item in cart.carts" :key="item.id">
+                    <td>
+                      <div>
+                        {{ item.product.title }}
+                      </div>
+                    </td>
                     <td class="text-center">
-                      <a href="#" @click.prevent="delCart(item.id)">
-                        <i class="fas fa-trash-alt text-danger"></i>
-                      </a>
+                      {{ item.qty }}
+                    </td>
+                    <td class="text-center">
+                      {{ $filters.currency(item.product.price) }}
+                    </td>
+                  </tr>
+                  <tr class="bg-white text-end">
+                    <td colspan="3">
+                      <span class="text-center w-100 d-block" v-if="cart?.carts?.length === 0">
+                        趕快放入喜歡的商品吧!
+                      </span>
+                      <span class="d-flex justify-content-end align-items-center" v-else>
+                        總計:
+                        <span class="price_dlr material-icons"> attach_money </span>
+                        {{ $filters.currency(cart.total) }}
+                      </span>
                     </td>
                   </tr>
                 </tbody>
               </table>
-            </div>
-            <h5 class="fw-bold text-center mb-3" v-if="carts.length==0">產品尚未加入購物車!</h5>
-            <div class="d-flex justify-content-end">
-              <button type="button" class="btn btn-dark btn-hover rounded-0" @click="goCart" v-if="carts.length>0">
-                <i class="fas fa-shopping-cart"></i> 結帳去
-              </button>
-              <button type="button" class="btn btn-dark btn-hover rounded-0" @click="goProducts" v-else>
-                <i class="fas fa-shopping-basket"></i> 選購去
-              </button>
+              <router-link
+                class="btn btn-secondary w-100"
+                to="/user/products"
+                v-if="cart?.carts?.length === 0"
+              >
+                購物去
+              </router-link>
+              <router-link class="btn btn-secondary w-100" to="/cart" v-else>
+                查看購物車
+              </router-link>
             </div>
           </div>
+        </div>
+        <button
+        class="navbar-toggler navbtn"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+        >
+          <span class="material-icons menu_icon">
+            menu
+          </span>
+        </button>
+        <div class="collapse navbar-collapse order-lg-1 justify-content-end text-start" id="navbarToggler">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a href="#/user/boarding" class="nav-link">產品區</a>
+            </li>
+            <li class="nav-item">
+              <a href="#/orders" class="nav-link">訂單查詢</a>
+            </li>
+            <li class="nav-item">
+              <a href="#/followPage" class="nav-link">我的收藏</a>
+            </li>
+            <li class="nav-item">
+              <a href="#/about" class="nav-link">關於綿綿</a>
+            </li>
+          </ul>
         </div>
       </div>
     </nav>
@@ -93,7 +117,9 @@ export default {
   data () {
     return {
       isLoading: false,
-      carts: []
+      cart: {
+        carts: []
+      }
     }
   },
   methods: {
@@ -111,7 +137,7 @@ export default {
       this.isLoading = true
       this.$http.get(api).then((response) => {
         if (response.data.success) {
-          this.carts = response.data.data.carts
+          this.cart = response.data.data
           this.isLoading = false
         }
       })
@@ -144,29 +170,152 @@ export default {
 }
 </script>
 
-<style scoped>
-/* 購物車按鈕 */
+<style lang="scss" scoped>
+.logo_icon {
+  font-size: 35px;
+  color: #2f3836;
+  transition: all 0.3s;
+    &:hover {
+      color: #a9caaf;
+    }
+}
+.menu_icon {
+  color: #ebe1d4;
+  font-size: 30px;
+  vertical-align: bottom;
+}
+.navbtn {
+  border: 0;
+  &:focus {
+    box-shadow: unset;
+  }
+  & span {
+    width: 26px;
+  }
+}
+.nav-item {
+  margin-right: 5px;
+  @media only screen and (max-width: 992px) {
+    margin: 0;
+  }
+}
+.nav {
+  &-link {
+    padding: 0.5rem 1rem;
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    position: relative;
+    transition: all 0.3s;
+    @media only screen and (max-width: 992px) {
+      padding-left: 0;
+      border-bottom: 1px solid #ebe1d4;
+    }
+    &:hover {
+      color: #6d3215;
+    }
+    &:before {
+      position: absolute;
+      content: '';
+      width: 0;
+      height: 0px;
+      background-color: #a9caaf;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: all 0.3s;
+      @media only screen and (max-width: 992px) {
+        display: none;
+      }
+    }
+    &:hover:before {
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      transform: translate(-50%, -50%) rotate(-3deg);
+    }
+    &.router-link-exact-active:before {
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      transform: translate(-50%, -50%) rotate(-3deg);
+    }
+  }
+}
+.router-link-exact-active {
+  color: #6d3215;
+}
+.price_dlr {
+  font-size: 18px;
+  vertical-align: inherit;
+}
+.icon-box{
+  display: flex;
+}
+.login_icon{
+  font-size: 22px;
+  color: #2f3836;
+  transition: all 0.3s;
+    &:hover {
+      color: #a9caaf;
+    }
+}
 .cart {
-  background-color: transparent;
   position: relative;
-}
-/* 購物車按鈕定位 */
-.cart .badge {
-  position: absolute;
-  top: 4px;
-  right: -13px;
-  border-radius: 50%;
-}
-.cart>span{
-  font-size: 8px;
-  padding: 4px 6px;
-}
-.cart-box{
-  min-width: 450px;
-}
-@media (max-width: 768px) {
-  .cart-box{
-    min-width: 340px;
+  &_total_price {
+    margin: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  &_icon {
+    font-size: 22px;
+    color: #2f3836;
+    transition: all 0.3s;
+    &:hover {
+      color: #a9caaf;
+    }
+  }
+  &_num {
+    position: absolute;
+    top: 0;
+    right: 6px;
+    background: #aaa;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 14px;
+    line-height: 18px;
+    width: 18px;
+  }
+  & .dropdown-menu {
+    left: auto;
+    min-width: 300px;
+    right: 0;
+    @media only screen and (max-width: 992px) {
+      right: -50px;
+    }
+    & table {
+      & tr {
+        border-bottom: 1px solid #dee2e6;
+        &:nth-of-type(even) {
+          background-color: #f4f4f4;
+        }
+      }
+      & th {
+        padding: 0.5rem;
+      }
+      & td {
+        padding: 0.5rem;
+        & div {
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          display: -webkit-box;
+          max-height: 40px;
+          max-width: 155px;
+        }
+      }
+    }
   }
 }
 </style>

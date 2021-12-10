@@ -86,7 +86,7 @@
         </div>
       </div>
       <hr class="my-5">
-      <div>
+      <!-- <div>
         <h3 class="text-center fw-bold mb-5">熱門產品</h3>
         <div class="row row-cols-1 row-cols-md-5 g-3">
           <div class="col" v-for="item in products" :key="item.id">
@@ -120,7 +120,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
   <Footer/>
@@ -151,8 +151,9 @@ export default {
       const api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/product/${id}`
       this.isLoading = true
       if (text === 'hot') {
-        this.$router.push(`/productPage/${id}`)
+        this.$router.push(`/product/${id}`)
         this.getProduct(id)
+        this.isLoading = false
       } else {
         this.$http.get(api).then((response) => {
           if (response.data.success) {
@@ -168,18 +169,19 @@ export default {
       this.isLoading = true
       this.$http.get(api).then((response) => {
         if (response.data.success) {
-          const tempProducts = new Set()
-          while (tempProducts.size < 5) {
-            this.random = this.getRandom(response.data.products.length)
-            tempProducts.add(response.data.products[this.random])
-          }
-          this.products = Array.from(tempProducts)
-          this.isLoading = false
+          console.log(response.data.success)
+          // const tempProducts = new Set()
+          // while (tempProducts.size < 5) {
+          //   this.random = this.getRandom(response.data.products.length)
+          //   tempProducts.add(response.data.products[this.random])
+          // }
+          // this.products = Array.from(tempProducts)
+          // this.isLoading = false
         }
       })
     },
     addtoCart (id, qty) {
-      const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/cart`
+      const api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/cart`
       const cart = {
         product_id: id,
         qty
