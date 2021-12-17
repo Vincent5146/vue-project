@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-dark">
+  <footer class="bg-dark mt-5">
     <div class="container text-md-start py-4 footer">
       <ul class="footer_nav">
         <li class="nav-item pt-1">

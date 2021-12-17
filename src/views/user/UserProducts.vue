@@ -32,18 +32,6 @@
               </div>
               <small>已售出 {{ Math.floor(Math.random() * 150) }}</small>
             </div>
-            <button
-              :disabled="loadingStatus.loadingItem === product.id"
-              @click="addToCart(product.id, qty)"
-              type="button"
-              class="btn btn-secondary"
-            >
-              <i
-                class="spinner-border spinner-border-sm"
-                v-if="loadingStatus.loadingItem === product.id"
-              ></i>
-              加入購物車
-            </button>
           </div>
         </div>
       </div>
@@ -82,21 +70,6 @@ export default {
     },
     getProduct (id) {
       this.$router.push(`/product/${id}`)
-    },
-    addToCart (id, qty = 1) {
-      this.isLoading = true
-      const api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/cart`
-      const cart = { product_id: id, qty }
-      this.$http.post(api, { data: cart }).then((response) => {
-        if (response.data.success) {
-          this.isLoading = false
-          this.emitter.emit('message:push', { message: response.data.message, status: 'success' })
-          this.emitter.emit('resetCart')
-        } else {
-          this.sideUl = false
-          this.emitter.emit('message:push', { message: response.data.message, status: 'danger' })
-        }
-      })
     }
   },
   created () {

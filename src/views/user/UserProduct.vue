@@ -1,15 +1,31 @@
 <template>
-  <Navbar/>
+  <Navbar />
   <div class="productPage">
-    <Loading v-model:active="isLoading"/>
+    <Loading v-model:active="isLoading" />
     <div class="container">
       <!-- 分類 -->
-      <nav class="mb-md-4 d-flex justify-content-center justify-content-md-start" aria-label="breadcrumb">
+      <nav
+        class="mb-md-4 d-flex justify-content-center justify-content-md-start"
+        aria-label="breadcrumb"
+      >
         <ol class="breadcrumb">
-          <li class="me-3"><a href="#" class="text-dark a-hover fw-bold" @click.prevent="goBack"><i class="fas fa-arrow-left"></i></a></li>
-          <li class="breadcrumb-item"><a href="#/products/all" class="text-dark a-hover fw-bold">產品</a></li>
-          <li class="breadcrumb-item"><a href="#" class="text-dark a-hover fw-bold" @click.prevent="changePage">{{ product.category }}</a></li>
-          <li class="breadcrumb-item fw-bold active" aria-current="page">{{ product.title }}</li>
+          <li class="me-3" @click.prevent="goBack">
+            <a class="text-dark a-hover fw-bold"
+              ><i class="fas fa-arrow-left"></i
+            ></a>
+          </li>
+          <li
+            class="breadcrumb-item"
+            @click="$router.push({ name: 'user-products' })"
+          >
+            <a class="text-dark a-hover fw-bold">產品</a>
+          </li>
+          <li class="breadcrumb-item" @click.prevent="changePage">
+            <a class="text-dark a-hover fw-bold">{{ product.category }}</a>
+          </li>
+          <li class="breadcrumb-item fw-bold active" aria-current="page">
+            {{ product.title }}
+          </li>
         </ol>
       </nav>
       <!-- 內容 -->
@@ -17,18 +33,24 @@
         <div class="col-md-6 p-0 d-flex justify-content-center">
           <div class="row">
             <div class="col p-0">
-              <img :src="product.imageUrl" class="img-fluid" alt="商品照片">
+              <img :src="product.imageUrl" class="img-fluid" alt="商品照片" />
             </div>
           </div>
         </div>
-        <div class="col-md-5 d-flex justify-content-center align-items-center mt-5 mt-md-0">
+        <div
+          class="col-md-5 d-flex justify-content-center align-items-center mt-5 mt-md-0"
+        >
           <div class="ps-0 ps-md-5">
             <div class="d-flex justify-content-between">
               <h4 class="fw-bold fs-5">{{ product.category }}</h4>
-              <a href="#" title="加入收藏" @click.prevent="addFollow(product.id)">
-                <i class="far fa-heart text-strong fs-4" v-if="followData.indexOf(product.id) === -1"></i>
-                <i class="fas fa-heart text-strong fs-4" v-else></i>
-              </a>
+              <div @click.prevent="addFollow(product.id)">
+                <span v-if="followList.includes(product.id)">
+                  <i class="fas fa-heart text-strong fs-4"></i>
+                </span>
+                <span v-else>
+                  <i class="far fa-heart text-strong fs-4"></i>
+                </span>
+              </div>
             </div>
             <h2 class="fw-bold">{{ product.title }}</h2>
             <div class="d-flex align-items-center mt-3">
@@ -37,13 +59,15 @@
                 <i class="fas fa-star text-warning"></i>
                 <i class="fas fa-star text-warning"></i>
                 <i class="fas fa-star text-warning"></i>
-                <i class="fas fa-star text-warning" v-if="Math.floor(Math.random() * 2) == 1"></i>
               </div>
-              <small>已售出 {{ Math.floor(Math.random() * 150) }}</small>
+              <small>已售出 {{ soldNums }}</small>
             </div>
-            <hr class="mt-4">
+            <hr class="mt-4" />
             <h4 class="text-strong fw-bold fs-5 mt-4">產品特色</h4>
-            <p>{{ product.description }}</p>
+            <ul >
+              <li>{{ product.description }}</li>
+              <li>{{ product.description2 }}</li>
+            </ul>
             <div class="d-flex align-items-end mt-4">
               <h3 class="text-muted text-decoration-line-through fs-6 me-3">
                 NT$ {{ $filters.currency(product.origin_price) }}
@@ -65,32 +89,33 @@
                 <option value="9">9</option>
                 <option value="10">10</option>
               </select>
-              <button type="button" class="btn btn btn-dark btn-hover rounded-0 ms-4" @click="addtoCart(product.id, quantity)">加入購物車</button>
+              <button
+                type="button"
+                class="btn btn btn-dark btn-hover rounded-0 ms-4"
+                @click="addtoCart(product.id, quantity)"
+              >
+                加入購物車
+              </button>
             </div>
-            <hr class="mt-4">
-            <h4 class="text-strong fw-bold fs-5 mt-4">產品介紹</h4>
-            <ul class="lh-lg">
-              <li>世界頂級的碳纖維車身，降低車身重量</li>
-              <li>車身堅固並降低風阻，騎乘時不會有阻饒</li>
-              <li>低風阻抓地力高輪胎，提升操控自信</li>
-              <li>一體式碟煞系統，安全無疑</li>
-              <li>輕量化，操控得宜</li>
-            </ul>
-            <hr class="mt-4">
+            <hr class="mt-4" />
             <h4 class="text-strong fw-bold fs-5 mt-4">購物須知</h4>
-            <p class="lh-lg">商品下訂後3~7天組裝，組裝完後出貨時間為1~3天，商品運送時間為3~7天，一律採用黑貓寄送。</p>
-            <hr class="mt-4">
+            <p class="lh-lg">
+              商品加入購物車後，請先來電預約時間，並告知寵物體型、個性，再進行付款，謝謝您的配合。
+            </p>
+            <!-- <hr class="mt-4" />
             <h4 class="text-strong fw-bold fs-5 mt-4">退換貨須知</h4>
-            <p class="lh-lg">本產品不適用7天鑑賞期，若商品有瑕疵請聯絡客服，我們將提供專人到府服務。</p>
+            <p class="lh-lg">
+              本產品不適用7天鑑賞期，若商品有瑕疵請聯絡客服，我們將提供專人到府服務。
+            </p> -->
           </div>
         </div>
       </div>
-      <hr class="my-5">
-      <!-- <div>
+      <hr class="my-5" />
+      <div>
         <h3 class="text-center fw-bold mb-5">熱門產品</h3>
         <div class="row row-cols-1 row-cols-md-5 g-3">
           <div class="col" v-for="item in products" :key="item.id">
-            <div class="card border-0 box-shadow rounded-0 h-100" @click="getProduct(item.id,'hot')">
+            <div class="card border-0 box-shadow rounded-0 h-100" @click="$router.push({ path: `/product/${item.id}` })">
               <div style="height: 250px; background-size: cover; background-position: center" :style="{ backgroundImage: `url(${item. imageUrl})` }">
               </div>
               <div class="card-body text-center">
@@ -113,17 +138,17 @@
                   <i class="fas fa-star text-warning"></i>
                   <i class="fas fa-star text-warning"></i>
                   <i class="fas fa-star text-warning"></i>
-                  <i class="fas fa-star text-warning" v-if="Math.floor(Math.random() * 2) == 1"></i>
+                  <i class="fas fa-star text-warning"></i>
                 </div>
                 <small>已售出 {{ Math.floor(Math.random() * 150) }}</small>
               </div>
             </div>
           </div>
         </div>
-      </div> -->
+      </div>
     </div>
   </div>
-  <Footer/>
+  <Footer />
 </template>
 
 <script>
@@ -138,45 +163,57 @@ export default {
   },
   data () {
     return {
-      product: [],
+      product: {
+        category: '',
+        content: '',
+        description: '',
+        id: '',
+        imageUrl: '',
+        imagesUrl: [],
+        is_enabled: 1,
+        origin_price: 0,
+        price: 0,
+        title: '',
+        unit: ''
+      },
       products: [],
       quantity: 1,
       random: 0,
-      followData: JSON.parse(localStorage.getItem('follow')) || [],
-      isLoading: false
+      isLoading: false,
+      followList: JSON.parse(localStorage.getItem('followData')) || []
+    }
+  },
+  computed: {
+    soldNums () {
+      return Math.floor(Math.random() * 150)
     }
   },
   methods: {
     getProduct (id, text) {
       const api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/product/${id}`
       this.isLoading = true
-      if (text === 'hot') {
-        this.$router.push(`/product/${id}`)
-        this.getProduct(id)
-        this.isLoading = false
-      } else {
-        this.$http.get(api).then((response) => {
-          if (response.data.success) {
-            this.product = response.data.product
-            this.isLoading = false
-          }
-        })
-        document.documentElement.scrollTop = 0
-      }
+      this.$http.get(api).then((response) => {
+        if (response.data.success) {
+          this.product = response.data.product
+          console.log(this.product)
+          this.isLoading = false
+        }
+      })
+      document.documentElement.scrollTop = 0
     },
     getProducts () {
       const api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/products/all`
       this.isLoading = true
       this.$http.get(api).then((response) => {
         if (response.data.success) {
-          console.log(response.data.success)
-          // const tempProducts = new Set()
-          // while (tempProducts.size < 5) {
-          //   this.random = this.getRandom(response.data.products.length)
-          //   tempProducts.add(response.data.products[this.random])
-          // }
-          // this.products = Array.from(tempProducts)
-          // this.isLoading = false
+          const tempProducts = []
+          // 寫一個空的陣列，從response.data.success隨機撈取5筆資料推入空陣列來顯示在葉面上
+          while (tempProducts.length < 3) {
+            const idx = Math.floor(Math.random() * response.data.products.length)
+            tempProducts.push(response.data.products[idx])
+          }
+          this.products = Array.from(tempProducts)
+          this.isLoading = false
         }
       })
     },
@@ -188,12 +225,19 @@ export default {
       }
       this.isLoading = true
       this.$http.post(api, { data: cart }).then((response) => {
+        console.log(response.data)
         if (response.data.success) {
-          this.emitter.emit('message:push', { message: response.data.message, status: 'success' })
+          this.emitter.emit('message:push', {
+            message: response.data.message,
+            status: 'success'
+          })
           this.emitter.emit('resetCart')
           this.isLoading = false
         } else {
-          this.emitter.emit('message:push', { message: response.data.message, status: 'danger' })
+          this.emitter.emit('message:push', {
+            message: response.data.message,
+            status: 'danger'
+          })
           this.isLoading = false
         }
       })
@@ -215,33 +259,35 @@ export default {
       return Math.floor(Math.random() * x)
     },
     addFollow (id) {
-      this.isLoading = true
-      const followId = this.followData.indexOf(id)
-      if (followId === -1) {
-        this.followData.push(id)
-        this.emitter.emit('message:push', { message: '已加入收藏', status: 'success' })
+      const followIdx = this.followList.indexOf(id)
+      if (followIdx === -1) {
+        this.followList.push(id)
       } else {
-        this.followData.splice(followId, 1)
-        this.emitter.emit('message:push', { message: '已取消收藏', status: 'danger' })
+        this.followList.splice(followIdx, 1)
       }
-      setTimeout(() => {
-        this.isLoading = false
-      }, 500)
-      localStorage.setItem('follow', JSON.stringify(this.followData))
+      localStorage.setItem('followData', JSON.stringify(this.followList))
     },
     goBack () {
       this.$router.back()
     }
   },
-  created () {
-    this.getProduct(this.$route.params.id)
-    this.getProducts()
+  // 相同頁面下不同參數，強制重新渲染頁面
+  watch: {
+    '$route.params' (newVal, oldVal) {
+      if (oldVal !== newVal) {
+        this.getProduct(newVal.productId)
+      }
+    }
+  },
+  async mounted () {
+    await this.getProduct(this.$route.params.productId)
+    await this.getProducts()
   }
 }
 </script>
 
 <style scoped>
-.productPage{
+.productPage {
   margin-top: 100px;
 }
 </style>

@@ -11,11 +11,11 @@
               <h2 class="about_h2 text-center">關於綿綿</h2>
               <div class="about_text">
                 <p>
-                <span class="fw-bold">心綿</span> 我們希望將心綿幼兒教育精神- 親近自然、尊重、自由與愛，落實在台灣的寵物照護。
+                <span class="fw-bold">綿綿</span> 我們希望將心綿幼兒教育精神- 親近自然、尊重、自由與愛，落實在台灣的寵物照護。
                 讓貓咪狗狗享受歐洲等級的優質環境，讓飼主安心出門無負擔。
                 </p>
                 <p>
-                  <span class="fw-bold">心綿</span> 的寵物們都快樂、幸福、翻肚肚。
+                  <span class="fw-bold">綿綿</span> 的寵物們都快樂、幸福、翻肚肚。
                 </p>
               </div>
             </div>

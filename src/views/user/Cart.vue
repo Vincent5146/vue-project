@@ -20,7 +20,7 @@
             <tr class="table-nowrap" v-for="item in carts" :key="item.id">
               <td>
                 <a href="#" @click.prevent="delCart(item.id)">
-                    垃圾統
+                  <span class="material-icons logo_icon"><i class="fas fa-trash"></i></span>
                 </a>
               </td>
               <td>{{ item.product.title }}</td>
@@ -53,7 +53,7 @@
       <div class="input-group mb-3 input-group-sm" v-if="carts.length !== 0">
         <input type="text" class="form-control" v-model="coupon_code" placeholder="請輸入優惠碼">
         <div class="input-group-append">
-          <button class="btn btn-dark btn-hover rounded-0 border-0" type="button" @click="addCouponCode">
+          <button class="btn btn-dark btn-hover rounded-0 border-0" type="button" @click="addCouponCode()">
             套用優惠碼
           </button>
         </div>
@@ -104,7 +104,6 @@ export default {
       })
     },
     addtoCart (id, qty) {
-      console.log('add')
       if (qty === 0) {
         this.delCart(id)
       } else {
@@ -149,6 +148,7 @@ export default {
       }
       this.isLoading = true
       this.$http.post(api, { data: coupon }).then((response) => {
+        console.log(response)
         if (response.data.success) {
           this.emitter.emit('message:push', { message: response.data.message, status: 'success' })
           this.getCart()
@@ -172,9 +172,17 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .cart{
   margin-top: 100px;
   min-height: calc(100vh - 250px);
+}
+.logo_icon {
+  font-size: 20px;
+  color: #45615b;
+  transition: all 0.3s;
+    &:hover {
+      color: #d3130c;
+    }
 }
 </style>

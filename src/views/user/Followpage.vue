@@ -1,4 +1,5 @@
 <template>
+123
   <Navbar/>
   <Banner/>
   <div class="FollowPage mt-5">
@@ -7,7 +8,7 @@
       <h1 class="fs-2 text-center fw-bold" v-if="followProduct.length !== 0">我的收藏</h1>
       <div class="d-flex flex-column align-items-center" v-if="followProduct.length === 0">
         <p class="fs-2 fw-bold">目前沒有收藏的產品 !</p>
-        <a href="#/products/all" class="btn btn-dark btn-hover rounded-0 mt-5">查看產品 Go</a>
+        <a href="#/user/products" class="btn btn-dark btn-hover rounded-0 mt-5">查看產品 Go</a>
       </div>
       <div class="row row-cols-1 row-cols-md-5 g-3 mt-5" v-if="followProduct.length !== 0">
         <div class="col" v-for="item in followProduct" :key="item.id">
@@ -63,7 +64,7 @@ export default {
       isLoading: false,
       products: [],
       followProduct: [],
-      followData: JSON.parse(localStorage.getItem('follow')) || []
+      followList: JSON.parse(localStorage.getItem('followData')) || []
     }
   },
   methods: {
@@ -80,10 +81,10 @@ export default {
       document.documentElement.scrollTop = 0
     },
     getFollow () {
-      this.followProduct = this.products.filter(item => this.followData.indexOf(item.id) !== -1)
+      this.followProduct = this.products.filter(item => this.followList.indexOf(item.id) !== -1)
     },
     getProduct (id) {
-      this.$router.push(`/productPage/${id}`)
+      this.$router.push(`/product/${id}`)
     }
   },
   created () {

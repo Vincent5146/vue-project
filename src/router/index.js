@@ -40,6 +40,7 @@ const routes = [
     children: [
       {
         path: 'products',
+        name: 'user-products',
         component: () => import('../views/user/UserProducts.vue')
       },
       {
@@ -70,6 +71,7 @@ const routes = [
   },
   {
     path: '/product/:productId',
+    name: 'productDetail',
     component: () => import('../views/user/UserProduct.vue')
   },
   {

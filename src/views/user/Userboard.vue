@@ -5,7 +5,7 @@
       <!-- 優惠碼 -->
       <div class="introduce">
         <div class="text">
-          <h1>12/31前輸入優惠碼 <span>心綿</span></h1>
+          <h1>12/31前輸入優惠碼 <span>綿綿</span></h1>
           <p>可享全館產品、服務9 折優惠!</p>
         </div>
       </div>
@@ -17,7 +17,7 @@
             <div class="service-container">
               <router-link to='products' class="serviceBox">
                 <img src="https://upload.cc/i1/2021/12/10/6d0Gxb.png" alt="">
-                <h3>寵物周邊</h3>
+                <h3>預約按這裡</h3>
               </router-link>
               <router-link to='boarding' class="serviceBox">
                 <img src="https://upload.cc/i1/2021/12/10/CmpNFI.png" alt="">
@@ -63,12 +63,11 @@ export default {
 <style lang="scss" scope>
 .introduce{
   margin-top: 80px;
-  background:url(https://upload.cc/i1/2021/12/10/xGOZpD.jpg) no-repeat;
+  background:url(https://upload.cc/i1/2021/12/16/aqwsYE.jpg) no-repeat;
   background-size: cover;
   background-position: center;
   text-align:center;
-  padding-top: 12rem;
-  padding-bottom: 8rem;
+  padding: 11rem 10rem;
   .text{
     margin-right: 150px;
     margin-top: -40px;

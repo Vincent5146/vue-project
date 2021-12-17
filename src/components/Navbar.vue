@@ -3,17 +3,13 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light text-dark fixed-top">
       <div class="container">
         <h1 class="d-flex align-items-center mb-1 mt-1">
-          <a href="/"><span class="material-icons logo_icon"><i class="fas fa-cat"></i></span></a>
+          <router-link to='/'><span class="material-icons logo_icon"><i class="fas fa-cat"></i></span></router-link>
         </h1>
         <div class="icon-box order-lg-2 justify-content-around icon-link-wrap ms-auto">
           <div class="login">
-            <a
-              class="btn d-flex"
-              href="#/login"
-              role="button"
-              >
+            <router-link to='/login' class="btn d-flex">
               <span class="material-icons login_icon"><i class="fas fa-user-circle"></i></span>
-            </a>
+            </router-link>
           </div>
           <div class="dropdown cart">
             <a
@@ -56,8 +52,8 @@
                         趕快放入喜歡的商品吧!
                       </span>
                       <span class="d-flex justify-content-end align-items-center" v-else>
-                        總計:
-                        <span class="price_dlr material-icons"> attach_money </span>
+                        總計: $
+                        <span class="price_dlr material-icons"> </span>
                         {{ $filters.currency(cart.total) }}
                       </span>
                     </td>
@@ -93,16 +89,16 @@
         <div class="collapse navbar-collapse order-lg-1 justify-content-end text-start" id="navbarToggler">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a href="#/user/boarding" class="nav-link">產品區</a>
+              <router-link to='/user/boarding' class="nav-link">產品區</router-link>
             </li>
             <li class="nav-item">
-              <a href="#/orders" class="nav-link">訂單查詢</a>
+              <router-link to='/orders' class="nav-link">訂單查詢</router-link>
             </li>
             <li class="nav-item">
-              <a href="#/followPage" class="nav-link">我的收藏</a>
+              <router-link to='/followPage' class="nav-link">我的收藏</router-link>
             </li>
             <li class="nav-item">
-              <a href="#/about" class="nav-link">關於綿綿</a>
+              <router-link to='/about' class="nav-link">關於綿綿</router-link>
             </li>
           </ul>
         </div>
@@ -201,7 +197,7 @@ export default {
 }
 .nav {
   &-link {
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 1.2rem;
     display: block;
     text-decoration: none;
     color: #fff;

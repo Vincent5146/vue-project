@@ -47,7 +47,7 @@
             <div class="card mb-3 border-0" style="max-width: 540px;">
               <div class="row g-0">
                 <div class="col-md-4 d-flex justify-content-center">
-                  <img src="https://upload.cc/i1/2021/11/22/nWEmJ4.jpg" width="180" alt="優惠碼">
+                  <img src="https://upload.cc/i1/2021/12/10/SutRyh.jpg" width="180" height="174" alt="優惠碼">
                 </div>
                 <div class="col-md-8 d-flex align-items-center">
                   <div class="card-body">
@@ -67,21 +67,21 @@
                 <div class="col-md-8 d-flex align-items-center">
                   <div class="card-body">
                     <h5 class="card-title fw-bold">新品上市</h5>
-                    <p class="card-text mt-3">快來看看本週新品，絕對讓您愛不釋手!</p>
+                    <p class="card-text mt-3">12/31前結帳時輸入，優惠碼 <span class="text-strong">綿綿</span> 可享 8 折優惠，時間有限要買要快!</p>
                     <div class="d-flex justify-content-end">
                       <a href="#/user/products" class="btn btn-dark btn-hover rounded-0">查看更多</a>
                     </div>
                   </div>
                 </div>
                 <div class="col-md-4 d-flex justify-content-center">
-                  <img src="https://upload.cc/i1/2021/11/22/ioYbWc.jpg" width="180" alt="商品">
+                  <img src="https://upload.cc/i1/2021/12/10/SutRyh.jpg" width="180" height="174" alt="商品">
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <section class="section_2 animated">
+      <section class="section_2 ">
         <div class="container">
           <div class="section_title">
             <h2>
@@ -91,7 +91,7 @@
           <div class="blog">
             <div class="blog_item">
               <div class="blog_pic">
-                <a href="https://pets.ettoday.net/news/2142169">
+                <a target="_blank" href="https://pets.ettoday.net/news/2142169">
                   <img src="https://upload.cc/i1/2021/12/10/No9aH3.jpg" height="250" class="card-img-top" alt="寵物窩">
                 </a>
               </div>
@@ -104,7 +104,7 @@
             </div>
             <div class="blog_item">
               <div class="blog_pic">
-                <a href="https://www.abibpet.com/blog/%E3%80%90%E4%B8%BB%E4%BA%BA%E4%B8%8D%E5%8F%AF%E4%B8%8D%E7%9F%A5%EF%BC%8F%E7%8B%97%E7%8B%97%E8%88%94%E8%88%94%E8%88%94-%E6%83%B3%E8%A6%81%E5%91%8A%E8%A8%B4%E4%BD%A0%E4%BB%80%E9%BA%BC%E4%BA%8B%E5%97%8E%E3%80%91">
+                <a target="_blank" href="https://www.abibpet.com/blog/%E3%80%90%E4%B8%BB%E4%BA%BA%E4%B8%8D%E5%8F%AF%E4%B8%8D%E7%9F%A5%EF%BC%8F%E7%8B%97%E7%8B%97%E8%88%94%E8%88%94%E8%88%94-%E6%83%B3%E8%A6%81%E5%91%8A%E8%A8%B4%E4%BD%A0%E4%BB%80%E9%BA%BC%E4%BA%8B%E5%97%8E%E3%80%91">
                   <img src="https://upload.cc/i1/2021/12/10/2z1dBc.jpg" height="250" class="card-img-top" alt="舔舔舔">
                 </a>
               </div>
@@ -117,7 +117,7 @@
             </div>
             <div class="blog_item">
               <div class="blog_pic">
-                <a href="https://www.businessweekly.com.tw/style/blog/8524">
+                <a target="_blank" href="https://www.businessweekly.com.tw/style/blog/8524">
                   <img src="https://upload.cc/i1/2021/12/10/q5VXxG.jpg" height="250" class="card-img-top" alt="訓練">
                 </a>
               </div>
