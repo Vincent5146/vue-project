@@ -28,9 +28,9 @@
               <td>
                 <div class="d-flex justify-content-center">
                   <div class="input-group" style="width:110px">
-                    <button class="btn btn-dark btn-sm btn-hover rounded-0 border-0" type="button" @click="addtoCart(item.id, item.qty-1)">-</button>
+                    <button class="btn btn-dark btn-sm btn-hover rounded-0 border-0" type="button" @click="updateCart(item.id, item.qty-1)">-</button>
                     <input type="text" class="form-control text-center" disabled v-model.number="item.qty">
-                    <button class="btn btn-dark btn-sm btn-hover rounded-0 border-0" type="button" @click="addtoCart(item.id, item.qty+1)">+</button>
+                    <button class="btn btn-dark btn-sm btn-hover rounded-0 border-0" type="button" @click="updateCart(item.id, item.qty+1)">+</button>
                   </div>
                 </div>
               </td>
@@ -104,15 +104,31 @@ export default {
       })
     },
     addtoCart (id, qty) {
-      if (qty === 0) {
-        this.delCart(id)
-      } else {
-        const api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/cart/${id}`
-        const cart = {
-          product_id: id,
-          qty
+      const api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/cart/${id}`
+      const cart = {
+        product_id: id,
+        qty
+      }
+      this.isLoading = true
+      this.$http.put(api, { data: cart }).then((response) => {
+        if (response.data.success) {
+          this.emitter.emit('message:push', { message: response.data.message, status: 'success' })
+          this.emitter.emit('resetCart')
+          this.getCart()
+          this.isLoading = false
+        } else {
+          this.emitter.emit('message:push', { message: response.data.message, status: 'danger' })
+          this.isLoading = false
         }
-        this.isLoading = true
+      })
+    },
+    updateCart (id, qty) {
+      const api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/cart/${id}`
+      const cart = {
+        product_id: id,
+        qty
+      }
+      if (cart.qty > 0) {
         this.$http.put(api, { data: cart }).then((response) => {
           if (response.data.success) {
             this.emitter.emit('message:push', { message: response.data.message, status: 'success' })

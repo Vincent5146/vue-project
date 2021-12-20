@@ -34,25 +34,25 @@
                 <i class="fas fa-users pe-2"></i>
                 管理員
               </li>
-              <li class="nav-item ps-5 pt-2">
+              <li class="nav ps-5 pt-2">
                 <a class="nav-link text-light fw-bold a-hover" href="#/admin/products">
                   <i class="fas fa-gift pe-2"></i>
                   產品列表
                 </a>
               </li>
-              <li class="nav-item ps-5 pt-2">
+              <li class="nav ps-5 pt-2">
                 <a class="nav-link text-light fw-bold a-hover" href="#/admin/orders">
                   <i class="fas fa-list-alt pe-2"></i>
                   訂單列表
                 </a>
               </li>
-              <li class="nav-item ps-5 pt-2">
+              <li class="nav ps-5 pt-2">
                 <a class="nav-link text-light fw-bold a-hover" href="#/admin/coupons">
                   <i class="fas fa-balance-scale-left pe-2"></i>
                   優惠碼
                 </a>
               </li>
-              <li class="nav-item ps-5 pt-2">
+              <li class="nav ps-5 pt-2">
                 <a class="nav-link text-light fw-bold a-hover" href="#/">
                   <i class="fas fa-home pe-2"></i>
                   回首頁
