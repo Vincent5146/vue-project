@@ -71,7 +71,6 @@ export default {
     DelModal,
     Pagination
   },
-  inject: ['emitter'],
   methods: {
     getProducts (page = 1) {
       const api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/products/?page=${page}`
@@ -107,16 +106,9 @@ export default {
         productComponent.hideModal()
         if (response.data.success) {
           this.getProducts()
-          this.emitter.emit('push-message', {
-            style: 'success',
-            title: '更新成功'
-          })
+          this.emitter.emit('message:push', { message: response.data.message, status: 'success' })
         } else {
-          this.emitter.emit('push-message', {
-            style: 'danger',
-            title: '更新失敗',
-            content: response.data.message.join('、')
-          })
+          this.emitter.emit('message:push', { message: response.data.message, status: 'danger' })
         }
       })
     },
@@ -128,6 +120,7 @@ export default {
     delProduct () {
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/product/${this.tempProduct.id}`
       this.$http.delete(url).then((response) => {
+        this.emitter.emit('message:push', { message: response.data.message, status: 'danger' })
         const delComponent = this.$refs.delModal
         delComponent.hideModal()
         this.getProducts()

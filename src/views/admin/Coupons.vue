@@ -101,16 +101,18 @@ export default {
       if (this.isNew) {
         const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/coupon`
         this.$http.post(url, { data: tempCoupon }).then((response) => {
-          this.$httpMessageState(response, '新增優惠券')
+          this.emitter.emit('message:push', { message: response.data.message, status: 'success' })
           this.getCoupons()
           this.$refs.couponModal.hideModal()
+          this.isLoading = false
         })
       } else {
         const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/coupon/${this.tempCoupon.id}`
         this.$http.put(url, { data: this.tempCoupon }).then((response) => {
-          this.$httpMessageState(response, '新增優惠券')
+          this.emitter.emit('message:push', { message: response.data.message, status: 'success' })
           this.getCoupons()
           this.$refs.couponModal.hideModal()
+          this.isLoading = false
         })
       }
     },
@@ -118,10 +120,11 @@ export default {
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/coupon/${this.tempCoupon.id}`
       this.isLoading = true
       this.$http.delete(url).then((response) => {
-        this.$httpMessageState(response, '刪除優惠券')
+        this.emitter.emit('message:push', { message: response.data.message, status: 'danger' })
         const delComponent = this.$refs.delModal
         delComponent.hideModal()
         this.getCoupons()
+        this.isLoading = false
       })
     }
   },

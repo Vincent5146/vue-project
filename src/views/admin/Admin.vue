@@ -67,7 +67,6 @@
           </div>
         </nav>
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-          <ToastMessages></ToastMessages>
           <RouterView/>
         </main>
       </div>
@@ -76,13 +75,8 @@
 </template>
 
 <script>
-import emitter from '@/methods/emitter'
-import ToastMessages from '@/components/ToastMessages.vue'
 
 export default {
-  components: {
-    ToastMessages
-  },
   data () {
     return {}
   },
@@ -95,11 +89,6 @@ export default {
           this.$router.push('/')
         }
       })
-    }
-  },
-  provide () {
-    return {
-      emitter
     }
   },
   created () {
