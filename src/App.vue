@@ -1,11 +1,20 @@
 <template>
+  <Alert/>
+  <GoTop/>
   <Router-view/>
 </template>
 
 <script>
 
+import Alert from '@/components/AlertToastMessage.vue'
+import GoTop from '@/components/GoTop.vue'
+
 export default {
-  name: 'APP'
+  name: 'APP',
+  components: {
+    Alert,
+    GoTop
+  }
 }
 </script>
 

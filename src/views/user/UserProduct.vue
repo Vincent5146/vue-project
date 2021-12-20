@@ -262,9 +262,14 @@ export default {
       const followIdx = this.followList.indexOf(id)
       if (followIdx === -1) {
         this.followList.push(id)
+        this.emitter.emit('message:push', { message: '已加入收藏', status: 'success' })
       } else {
         this.followList.splice(followIdx, 1)
+        this.emitter.emit('message:push', { message: '已取消收藏', status: 'danger' })
       }
+      setTimeout(() => {
+        this.isLoading = false
+      }, 500)
       localStorage.setItem('followData', JSON.stringify(this.followList))
     },
     goBack () {
