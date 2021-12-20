@@ -207,10 +207,10 @@ export default {
       this.$http.get(api).then((response) => {
         if (response.data.success) {
           const tempProducts = []
-          // 寫一個空的陣列，從response.data.success隨機撈取5筆資料推入空陣列來顯示在葉面上
-          while (tempProducts.length < 3) {
+          while (tempProducts.length < 5) {
             const idx = Math.floor(Math.random() * response.data.products.length)
             tempProducts.push(response.data.products[idx])
+            response.data.products.splice(idx, 1)
           }
           this.products = Array.from(tempProducts)
           this.isLoading = false

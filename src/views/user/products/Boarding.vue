@@ -42,6 +42,7 @@ export default {
         貓咪: {
           tabName: 'Cat',
           title: '貓咪住宿 CAT BOARDING',
+          pic: 'https://upload.cc/i1/2021/11/22/aUT3lb.jpg',
           contents: [
             '貓咪喜歡上上下下，所以我們的貓房挑高 1.8 米，讓貓咪好好居高臨下',
             '貓咪熱愛暖暖的陽光，所以貓房設計在整棟建築採光最好的地方',
@@ -53,6 +54,7 @@ export default {
         小型犬: {
           tabName: '小型犬',
           title: '小型犬住宿　SMALL BREED DOG BOARDING',
+          pic: 'https://upload.cc/i1/2021/11/22/sBFO9m.jpg',
           contents: [
             '小型犬區供 9 公斤以下嬌小的狗狗玩樂',
             '臥房分不同小區域，讓狗狗小組活動，和自己氣味相投的狗狗玩',
@@ -62,8 +64,9 @@ export default {
           ]
         },
         中型犬: {
-          tabName: 'Doggggg',
+          tabName: '中型犬',
           title: '中型犬住宿　MEDIUM BREED DOG BOARDING',
+          pic: 'https://upload.cc/i1/2021/12/20/NUS94w.jpg',
           contents: [
             '中型犬區供 9 - 23 公斤的狗狗活動',
             '有籠子，但不關門，害羞的狗狗可以躲進去，想玩再出來',
@@ -74,8 +77,9 @@ export default {
           ]
         },
         大型犬: {
-          tabName: 'Doggggg',
+          tabName: '大型犬',
           title: '大型犬住宿　LARGE BREED DOG BOARDING',
+          pic: 'https://upload.cc/i1/2021/12/20/N5bvt8.jpg',
           contents: [
             '大型犬區供 23 公斤以上的大塊頭睡覺，超大飛行床讓狗狗自由翻滾',
             '狗狗像在家一樣自由上沙發和床',
@@ -92,6 +96,7 @@ export default {
   },
   computed: {
     computedTabData () {
+      console.log(this.tabInfo)
       return this.tabInfo[this.currentTab]
     }
   },
