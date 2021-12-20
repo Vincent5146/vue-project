@@ -8,38 +8,3 @@
       </div>
   </div>
 </template>
-
-<style scoped>
-.banner{
-  margin-top: 60px;
-}
-
-.img-bg{
-  background-size: cover;
-  background-position: center center;
-  min-height: 500px;
-}
-
-@media (max-width: 768px) {
-  .img-bg{
-    min-height: 300px;
-  }
-}
-
-.content{
-  color: black;
-  position: relative;
-  top: 150px;
-  left: 230px;
-}
-.content p{
-  letter-spacing: 3px;
-}
-@media (max-width: 768px) {
-  .content{
-    top: 90px;
-    left: 40px;
-  }
-}
-
-</style>

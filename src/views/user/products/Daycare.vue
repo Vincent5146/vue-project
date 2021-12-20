@@ -17,70 +17,7 @@
         </div>
       </div>
     </div>
-    <div class="image mt-5">
+    <div class="image mt-5" style='background-image: url(https://upload.cc/i1/2021/11/22/eo5WLR.jpg)'>
     </div>
   </div>
 </template>
-
-<style lang="scss" scope>
-.service{
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap:1.5rem;
-  .image{
-    flex:1 1 40rem;
-    background: #ebe3e3;
-    height: 830px;
-    background-image: url(https://upload.cc/i1/2021/11/22/eo5WLR.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 90%;
-  }
-  .content{
-    display: flex;
-    .text{
-      width: 230px;
-      font-size: 2rem;
-      h3{
-        font-weight: bold;
-        color: #09813b;
-      }
-    }
-    .text2{
-      width: 1066px;
-      border: 5px #F0F0F0 solid;
-      padding: 15px;
-      h2{
-      font-weight: bold;
-      color: #29af61;
-      }
-      li{
-        color: black;
-        font-size: 1.2rem;
-        line-height: 1;
-        padding:1rem 0;
-      span{
-        font-size: 1.2rem;
-        font-weight: bold;
-        margin-right: 1rem;
-        color: #29af61;
-        }
-      }
-    }
-    .btn{
-      margin-top: 0.5rem;
-      border: 0.2rem solid #5eb674;
-      color: #10221b;
-      cursor: pointer;
-      background: none;
-      font-size: 1.2rem;
-      padding: 0.5rem 1rem;
-    }
-    .btn:hover {
-      background: #6cc091;
-      color: #fff;
-    }
-  }
-}
-</style>
