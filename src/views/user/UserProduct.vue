@@ -195,7 +195,6 @@ export default {
       this.$http.get(api).then((response) => {
         if (response.data.success) {
           this.product = response.data.product
-          console.log(this.product)
           this.isLoading = false
         }
       })
@@ -225,7 +224,6 @@ export default {
       }
       this.isLoading = true
       this.$http.post(api, { data: cart }).then((response) => {
-        console.log(response.data)
         if (response.data.success) {
           this.emitter.emit('message:push', {
             message: response.data.message,

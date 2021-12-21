@@ -11,7 +11,7 @@
         <div class="card-group mt-5">
           <div class="card border-0">
             <div class="px-5">
-              <img src="https://upload.cc/i1/2021/11/22/epfbaw.jpg" height="250" class="card-img-top" alt="碳纖維車身">
+              <img src="https://upload.cc/i1/2021/11/22/epfbaw.jpg" height="200" class="card-img-top" alt="教育理念">
             </div>
             <div class="card-body animated">
               <h3 class="card-title text-center fw-bold">教育理念</h3>
@@ -20,7 +20,7 @@
           </div>
           <div class="card border-0">
             <div class="px-5">
-              <img src="https://upload.cc/i1/2021/11/22/hVS83U.jpg" height="250" class="card-img-top" alt="低風阻係數輪胎">
+              <img src="https://upload.cc/i1/2021/11/22/hVS83U.jpg" height="200" class="card-img-top" alt="褓母照顧">
             </div>
             <div class="card-body animated">
               <h3 class="card-title text-center fw-bold">24H 褓母照顧</h3>
@@ -29,7 +29,7 @@
           </div>
           <div class="card border-0">
             <div class="px-5">
-              <img src="https://upload.cc/i1/2021/11/22/75Mchj.jpg" height="250" class="card-img-top" alt="完善的後勤團隊">
+              <img src="https://upload.cc/i1/2021/11/22/75Mchj.jpg" height="200" class="card-img-top" alt="防疫 清潔 消毒">
             </div>
             <div class="card-body animated">
               <h3 class="card-title text-center fw-bold">嚴格防疫 清潔 消毒</h3>
@@ -92,7 +92,7 @@
             <div class="blog_item">
               <div class="blog_pic">
                 <a target="_blank" href="https://pets.ettoday.net/news/2142169">
-                  <img src="https://upload.cc/i1/2021/12/10/No9aH3.jpg" height="250" class="card-img-top" alt="寵物窩">
+                  <img src="https://upload.cc/i1/2021/12/10/No9aH3.jpg" class="card-img-top" alt="寵物窩">
                 </a>
               </div>
               <div class="blog_txt">
@@ -105,7 +105,7 @@
             <div class="blog_item">
               <div class="blog_pic">
                 <a target="_blank" href="https://www.abibpet.com/blog/%E3%80%90%E4%B8%BB%E4%BA%BA%E4%B8%8D%E5%8F%AF%E4%B8%8D%E7%9F%A5%EF%BC%8F%E7%8B%97%E7%8B%97%E8%88%94%E8%88%94%E8%88%94-%E6%83%B3%E8%A6%81%E5%91%8A%E8%A8%B4%E4%BD%A0%E4%BB%80%E9%BA%BC%E4%BA%8B%E5%97%8E%E3%80%91">
-                  <img src="https://upload.cc/i1/2021/12/10/2z1dBc.jpg" height="250" class="card-img-top" alt="舔舔舔">
+                  <img src="https://upload.cc/i1/2021/12/10/2z1dBc.jpg" class="card-img-top" alt="舔舔舔">
                 </a>
               </div>
               <div class="blog_txt">
@@ -118,7 +118,7 @@
             <div class="blog_item">
               <div class="blog_pic">
                 <a target="_blank" href="https://www.businessweekly.com.tw/style/blog/8524">
-                  <img src="https://upload.cc/i1/2021/12/10/q5VXxG.jpg" height="250" class="card-img-top" alt="訓練">
+                  <img src="https://upload.cc/i1/2021/12/10/q5VXxG.jpg" class="card-img-top" alt="訓練">
                 </a>
               </div>
               <div class="blog_txt">

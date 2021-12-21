@@ -86,7 +86,7 @@
             menu
           </span>
         </button>
-        <div class="collapse navbar-collapse order-lg-1 justify-content-end text-start" id="navbarToggler">
+        <div class="collapse navbar-collapse order-lg-1 justify-content-end text-start" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
               <router-link to='/user/boarding' class="nav-link">產品區</router-link>
@@ -116,6 +116,12 @@ export default {
       cart: {
         carts: []
       }
+    }
+  },
+  watch: {
+    // 轉址時nav選單隱藏
+    $route () {
+      document.querySelector('#navbarNav').classList.remove('show')
     }
   },
   methods: {

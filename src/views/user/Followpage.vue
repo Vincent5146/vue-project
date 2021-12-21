@@ -92,3 +92,15 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+  .col {
+    @media only screen and (max-width: 992px) {
+      width: 30%;
+    }
+    @media only screen and (max-width: 600px) {
+      flex: 0 0 auto;
+      width: 100%;
+    }
+  }
+</style>

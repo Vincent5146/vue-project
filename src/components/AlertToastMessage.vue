@@ -40,8 +40,8 @@ export default {
       })
       this.removeMessageWithTiming(timestamp)
     },
-    removeMessage (num) {
-      this.messages.splice(num, 1)
+    removeMessage (i) {
+      this.messages.splice(i, 1)
     },
     removeMessageWithTiming (timestamp) {
       const vm = this
@@ -55,14 +55,11 @@ export default {
     }
   },
   created () {
-    // 自定義名稱 'messsage:push'
-    // message: 傳入參數
-    // status: 樣式，預設值為 warning
     this.emitter.on('message:push', messages => {
       const { message, status = 'warning' } = messages
       this.updateMessage(message, status)
     })
-    // this.emitter.emit('message:push')
+    this.emitter.emit('message:push')
   }
 }
 </script>
