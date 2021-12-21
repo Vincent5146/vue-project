@@ -59,7 +59,6 @@ export default {
       const { message, status = 'warning' } = messages
       this.updateMessage(message, status)
     })
-    this.emitter.emit('message:push')
   }
 }
 </script>

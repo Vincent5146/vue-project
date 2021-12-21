@@ -1,5 +1,6 @@
 .banner{
     margin-top: 60px;
+    position: relative;
     @media (max-width: 1024px) {
         margin-top: 0px;
     }
@@ -12,20 +13,24 @@
               min-height: 300px;
             }
         }
-        // .content{
-        //     color: black;
-        //     position: relative;
-        //     top: 150px;
-        //     left: 230px;
-        //     @media (max-width: 768px) {
-        //         .content{
-        //           top: 90px;
-        //           left: 40px;
-        //         }
-        //     }
-        //     p{
-        //         letter-spacing: 3px;
-        //     }
-        // }
+        .content{
+            color: black;
+            position:relative;
+            top: 100px;
+            left: 30px;
+            letter-spacing: 3px;
+            @media (max-width: 768px) {
+                .content{
+                  display: none;
+                }
+            
+            }
+            @media (max-width: 1024px) {
+                .content{
+                  top: 90px;
+                  left: 40px;
+                }
+            }
+        }
     }
 }
