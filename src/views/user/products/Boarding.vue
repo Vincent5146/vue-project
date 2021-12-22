@@ -26,7 +26,7 @@
         </div>
       </div>
     </div>
-    <div class="image mt-5" style='background-image: url(https://upload.cc/i1/2021/11/22/sBFO9m.jpg)'>
+    <div class="image mt-5" :style="{ backgroundImage: `url(${computedTabData.pic})` }">
     </div>
   </div>
 </template>
@@ -103,7 +103,6 @@ export default {
   },
   computed: {
     computedTabData () {
-      console.log(this.tabInfo)
       return this.tabInfo[this.currentTab]
     }
   },
