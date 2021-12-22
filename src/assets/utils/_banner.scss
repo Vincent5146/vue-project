@@ -1,36 +1,31 @@
-.banner{
-    margin-top: 60px;
-    position: relative;
-    @media (max-width: 1024px) {
-        margin-top: 0px;
+.banner {
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("https://upload.cc/i1/2021/12/22/hypCGa.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-x: hidden;
+    .banner-text {
+      line-height: 1.6;
+      transform: translateX(70%);
+      color: #112b44;
     }
-    .img-bg{
-        background-size: cover;
-        background-position: center center;
-        min-height: 500px;
-        @media (max-width: 768px) {
-            .img-bg{
-              min-height: 300px;
+    @media only screen and (max-width: 968px) {
+        .banner {
+            justify-content: center;
+            .banner-text{
+              transform: translateX(40%);
             }
         }
-        .content{
-            color: black;
-            position:relative;
-            top: 100px;
-            left: 30px;
-            letter-spacing: 3px;
-            @media (max-width: 768px) {
-                .content{
-                  display: none;
-                }
-            
-            }
-            @media (max-width: 1024px) {
-                .content{
-                  top: 90px;
-                  left: 40px;
-                }
-            }
+    }
+    @media only screen and (max-width: 540px) {
+        .banner {
+          .banner-text {
+            display: none;
+          }
         }
     }
 }

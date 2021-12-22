@@ -1,6 +1,8 @@
 .navbar {
     box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
     .logo_icon {
+      display: flex;
+      align-items: center;
       font-size: 35px;
       color: #2f3836;
       transition: all 0.3s;
@@ -10,6 +12,8 @@
     }
     .icon-box{
       display: flex;
+      align-items: center;
+      margin-right: 10px;
       .login_icon{
         font-size: 25px;
         color: #2f3836;
@@ -21,7 +25,7 @@
     }
 }
 .menu_icon {
-  color: #ebe1d4;
+  color: #a9caaf;
   font-size: 30px;
   vertical-align: bottom;
 }

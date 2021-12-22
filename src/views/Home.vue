@@ -4,36 +4,51 @@
   <div class="home mt-5">
     <Loading v-model:active="isLoading"/>
     <div class="container">
-      <section>
+      <section class="mt-5">
         <div class="d-flex justify-content-center">
           <h1 class="fs-3 fw-bold">「綿綿寵物旅館」簡單來說：</h1>
         </div>
         <div class="card-group mt-5">
-          <div class="card border-0">
-            <div class="px-5">
-              <img src="https://upload.cc/i1/2021/11/22/epfbaw.jpg" height="200" class="card-img-top" alt="教育理念">
-            </div>
-            <div class="card-body animated">
-              <h3 class="card-title text-center fw-bold">教育理念</h3>
-              <p class="card-text mt-3">尊重寵物個性，適性發展，狗狗享自由社交空間，貓咪享獨立玩樂空間，以安全為前提，寵物愛玩什麼玩什麼</p>
-            </div>
-          </div>
-          <div class="card border-0">
-            <div class="px-5">
-              <img src="https://upload.cc/i1/2021/11/22/hVS83U.jpg" height="200" class="card-img-top" alt="褓母照顧">
-            </div>
-            <div class="card-body animated">
-              <h3 class="card-title text-center fw-bold">24H 褓母照顧</h3>
-              <p class="card-text mt-3">24 小時專業褓母駐館照顧，褓母個別觀察寵物身心理需求，給予每隻寵物個別化、最適切的空間、照顧和作息安排</p>
+          <div class="col-md-4">
+            <div class="product product1 text-center">
+              <router-link
+                to="/about"
+                class="product1-img img-fluid"
+              ></router-link>
+              <div class="card-body animated">
+                <h3 class="card-title fw-bold">教育理念</h3>
+                <p class="card-text text-left">
+                  尊重寵物個性，適性發展，狗狗享自由社交空間，貓咪享獨立玩樂空間，以安全為前提，寵物愛玩什麼玩什麼。
+                </p>
+              </div>
             </div>
           </div>
-          <div class="card border-0">
-            <div class="px-5">
-              <img src="https://upload.cc/i1/2021/11/22/75Mchj.jpg" height="200" class="card-img-top" alt="防疫 清潔 消毒">
+          <div class="col-md-4">
+            <div class="product product1 text-center">
+              <router-link
+                to="/about"
+                class="product2-img img-fluid"
+              ></router-link>
+              <div class="card-body animated">
+                <h3 class="card-title fw-bold">24H 褓母照顧</h3>
+                <p class="card-text text-left">
+                  24 小時專業褓母駐館照顧，褓母個別觀察寵物身心理需求，給予每隻寵物個別化、最適切的空間、照顧和作息安排。
+                </p>
+              </div>
             </div>
-            <div class="card-body animated">
-              <h3 class="card-title text-center fw-bold">嚴格防疫 清潔 消毒</h3>
-              <p class="card-text mt-3">寵物入館嚴格檢查疫苗紀錄，全館每天醫療級消毒，HRV 全熱交換器維持室內空氣高含氧量</p>
+          </div>
+          <div class="col-md-4">
+            <div class="product product1 text-center">
+              <router-link
+                to="/about"
+                class="product3-img img-fluid"
+              ></router-link>
+              <div class="card-body animated">
+                <h3 class="card-title fw-bold">嚴格防疫 清潔 消毒</h3>
+                <p class="card-text text-left">
+                  寵物入館嚴格檢查疫苗紀錄，全館每天醫療級消毒，HRV 全熱交換器維持室內空氣高含氧量。
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -46,8 +61,7 @@
           <div class="col-6 col-md-6 d-flex justify-content-end animated">
             <div class="card mb-3 border-0" style="max-width: 540px;">
               <div class="row g-0">
-                <div class="col-md-4 d-flex justify-content-center">
-                  <img src="https://upload.cc/i1/2021/12/10/SutRyh.jpg" width="180" height="174" alt="優惠碼">
+                <div class="product4-img img-fluid col-md-4 d-flex justify-content-center">
                 </div>
                 <div class="col-md-8 d-flex align-items-center">
                   <div class="card-body">
@@ -73,8 +87,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-md-4 d-flex justify-content-center">
-                  <img src="https://upload.cc/i1/2021/12/10/SutRyh.jpg" width="180" height="174" alt="商品">
+                <div class="product5-img img-fluid col-md-4 d-flex justify-content-center">
                 </div>
               </div>
             </div>
@@ -171,112 +184,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-/* animated */
-.animated{
-  opacity: 0;
-  transition: all 2s;
-  transform: translateX(-300px);
-}
-.fadeIn{
-  opacity: 1;
-  transform: translateY(0px);
-}
-.section {
-  padding: 90px 20px 140px;
-  @media only screen and (max-width: 600px) {
-    padding: 40px 12px 100px;
-  }
-  &_2 {
-    margin-top:50px;
-  }
-  &_title {
-    margin: 0 auto 40px;
-    text-align: center;
-    @media only screen and (max-width: 600px) {
-      margin: 0 auto 30px;
-    }
-    & h2 {
-      font-size: 2.25rem;
-      font-weight: 600;
-      & span {
-        @media only screen and (max-width: 768px) {
-          display: block;
-          text-align: left;
-        }
-      }
-      @media only screen and (max-width: 576px) {
-        font-size: 26px;
-      }
-    }
-  }
-}
-.blog {
-  display: flex;
-  flex-wrap: wrap;
-  &_item {
-    width: 30%;
-    margin: 0 5% 0 0;
-    &:last-child {
-      margin: 0;
-    }
-    @media only screen and (max-width: 600px) {
-      width: 100%;
-      margin: 0 0 50px 0;
-      &:last-child {
-        margin: 0 0 20px 0;
-      }
-    }
-  }
-  &_pic {
-    position: relative;
-    z-index: 1;
-    margin-bottom: 40px;
-    @media only screen and (max-width: 600px) {
-      margin-bottom: 15px;
-    }
-    & img {
-      border-radius: 2px;
-      transition: all 0.3s;
-    }
-    &:hover img {
-      transform: scale(0.9, 0.9);
-      transition: all 0.5s ease 0s;
-    }
-    &:after {
-      content: '';
-      background-color: #a9caaf;
-      width: 0%;
-      height: 0%;
-      position: absolute;
-      bottom: 50%;
-      right: 50%;
-      z-index: -1;
-      transition: all 0.5s ease 0s;
-      border-radius: 2px;
-    }
-    &:hover:after {
-      bottom: 0px;
-      right: 0px;
-      width: 100%;
-      height: 100%;
-      transition: all 0.5s ease 0s;
-    }
-  }
-  &_txt {
-    &_title {
-      font-size: 2.25rem;
-      font-weight: 600;
-      margin-bottom: 15px;
-      @media only screen and (max-width: 992px) {
-        font-size: 24px;
-      }
-      @media only screen and (max-width: 600px) {
-        font-size: 22px;
-        margin-bottom: 10px;
-      }
-    }
-  }
-}
-</style>

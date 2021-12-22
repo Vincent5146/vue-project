@@ -1,6 +1,9 @@
-body{
-    font-family: 'Noto Serif TC', serif;
-  }
+#app {
+  font-family: 微軟正黑體, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #000;
   a{
     text-decoration:none;
   }
+}

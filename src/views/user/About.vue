@@ -6,7 +6,7 @@
     <div class="container">
       <section class="mt-lg-5">
         <div class="about">
-          <div class="about_box" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+          <div class="about_box animated">
             <div class="about_txt">
               <h2 class="about_h2 text-center">關於綿綿</h2>
               <div class="about_text">
@@ -27,7 +27,7 @@
               />
             </div>
           </div>
-          <div class="about_box" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+          <div class="about_box animated">
             <div class="about_img">
               <img
                 src="https://upload.cc/i1/2021/12/10/R7UYI9.jpg"
@@ -129,3 +129,15 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+  .animated{
+    opacity: 0;
+    transition: all 2s;
+    transform: translateX(-300px);
+  }
+  .fadeIn{
+    opacity: 1;
+    transform: translateY(0px);
+  }
+</style>
