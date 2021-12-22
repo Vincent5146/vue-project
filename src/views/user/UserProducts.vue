@@ -1,4 +1,17 @@
 <template>
+  <Navbar/>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="introduce">
+              <div class="introduce-text">
+                <h1>12/31前輸入優惠碼 <span class="text-strong">綿綿</span></h1>
+                <p>可享全館產品、服務9 折優惠!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
   <div class="allBike mt-3">
     <Loading v-model:active="isLoading"/>
     <!-- 商品 -->
@@ -35,24 +48,7 @@
                 商品資訊
               </button>
               <span class="btn-products2" @click="addtoCart(item.id, 1)"><i class="fas fa-plus"></i></span>
-              <!-- <button
-                type="button"
-                class="btn-products"
-                @click="addtoCart(item.id, 1)"
-              >
-                加入購物車
-              </button> -->
             </div>
-            <!-- <div class="card-footer border-0 d-flex justify-content-between align-items-center bg-transparent">
-              <div>
-                <i class="fas fa-star text-warning"></i>
-                <i class="fas fa-star text-warning"></i>
-                <i class="fas fa-star text-warning"></i>
-                <i class="fas fa-star text-warning"></i>
-                <i class="fas fa-star text-warning" v-if="Math.floor(Math.random() * 2) == 1"></i>
-              </div>
-              <small>已售出 {{ Math.floor(Math.random() * 150) }}</small>
-            </div> -->
           </div>
         </div>
       </div>
@@ -61,13 +57,18 @@
       <Pagination :pages="pagination" @emit-pages="getProducts"/>
     </div>
   </div>
+  <Footer/>
 </template>
 
 <script>
+import Navbar from '@/components/Navbar.vue'
+import Footer from '@/components/Footer.vue'
 import Pagination from '@/components/Pagination.vue'
 
 export default {
   components: {
+    Navbar,
+    Footer,
     Pagination
   },
   data () {

@@ -39,11 +39,6 @@ const routes = [
     component: () => import('../views/user/Userboard.vue'),
     children: [
       {
-        path: 'products',
-        name: 'user-products',
-        component: () => import('../views/user/UserProducts.vue')
-      },
-      {
         path: 'boarding',
         component: () => import('../views/user/products/Boarding.vue')
       },
@@ -60,6 +55,11 @@ const routes = [
         component: () => import('../views/user/products/Swimming.vue')
       }
     ]
+  },
+  {
+    path: '/products',
+    name: 'user-products',
+    component: () => import('../views/user/UserProducts.vue')
   },
   {
     path: '/checkout',

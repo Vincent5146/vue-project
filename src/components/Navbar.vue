@@ -89,7 +89,10 @@
         <div class="collapse navbar-collapse order-lg-1 justify-content-end text-start" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <router-link to='/user/boarding' class="nav-link">產品區</router-link>
+              <router-link to='/products' class="nav-link">寵物周邊</router-link>
+            </li>
+            <li class="nav-item">
+              <router-link to='/user/boarding' class="nav-link">提供服務</router-link>
             </li>
             <li class="nav-item">
               <router-link to='/orders' class="nav-link">訂單查詢</router-link>
