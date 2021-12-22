@@ -13,8 +13,8 @@
           <li>全館採用美國 Double K 專業吹水機，低溫集中風呵護髮質</li>
           <li>獨家大浴缸，不定期推出有機椰子油、甜杏仁油泡澡服務，讓狗狗享受皮膚毛髮極致滋潤</li>
         </ul>
-        <div class="mt-5" align="right">
-          <a href="https://upload.cc/i1/2021/12/16/m9J0YP.jpg" class="btn">PRICE 價目表</a>
+        <div class="mt-5" align="right" @click="$router.push({ path: `/product/-Mr5V3SDxzaQsVlR-KhY` })">
+          <p class="btn">下單請按</p>
         </div>
       </div>
     </div>

@@ -12,8 +12,8 @@
           <li>北歐是著名的狗狗資優班，只收溫和友善、社會化程度較高的狗狗，您家狗狗容易結交品學兼優的好朋友</li>
           <li>北歐也以「嚴格檢查疫苗」聞名，每隻寵物都有疫苗和體內、外驅蟲預防藥的保護，不帶病菌回家</li>
         </ul>
-        <div class="mt-5" align="right">
-          <a href="https://upload.cc/i1/2021/12/16/ZcFRgO.jpg" class="btn">PRICE 價目表</a>
+        <div class="mt-5" align="right" @click="$router.push({ path: `/product/-Mr5Ue2ncB8q19dhsC6t` })">
+          <p class="btn">下單請按</p>
         </div>
       </div>
     </div>

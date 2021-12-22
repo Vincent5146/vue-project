@@ -23,7 +23,7 @@
             <div class="service-container">
               <router-link to='products' class="serviceBox">
                 <img src="https://upload.cc/i1/2021/12/10/6d0Gxb.png" alt="">
-                <h3>預約按這裡</h3>
+                <h3>寵物周邊</h3>
               </router-link>
               <router-link to='boarding' class="serviceBox">
                 <img src="https://upload.cc/i1/2021/12/10/CmpNFI.png" alt="">

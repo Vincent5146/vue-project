@@ -15,8 +15,8 @@
           <li><span>有益情緒健康</span>玩水樂趣無窮，幫助狗狗展現在陸地無法做出的動作，增加自信和好心情</li>
           <li><span>保持勻稱體態</span>每週游泳，溫和低衝擊的運動，幫助狗狗保持勻稱健康的體態</li>
         </ul>
-        <div class="btn-container" align="right">
-          <a href="https://upload.cc/i1/2021/12/16/Aeja1z.jpg" class="btn">PRICE 價目表</a>
+        <div class="mt-5" align="right" @click="$router.push({ path: `/product/-Mr5UvOu3PQ0GjKmK5Ih` })">
+          <p class="btn">下單請按</p>
         </div>
       </div>
     </div>

@@ -21,8 +21,8 @@
         <ul class="mt-3">
           <li v-for="(content, index) in computedTabData.contents" :key="index">{{ content }}</li>
         </ul>
-        <div class="mt-5" align="right">
-          <a href="https://upload.cc/i1/2021/12/10/k195Lc.jpg" class="btn">PRICE 價目表</a>
+        <div class="mt-5" align="right" @click="$router.push({ path: `/user/products` })">
+          <p class="btn">下單請按</p>
         </div>
       </div>
     </div>
