@@ -5,11 +5,14 @@
   gap:1.5rem;
   .image{
     flex:1 1 40rem;
+    height: 600px;
     background: #ebe3e3;
-    height: 830px;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 90%;
+    background-size: 100%;
+    @media (max-width: 991px) {
+      height: 400px;
+    }
   }
   .content{
     display: flex;
@@ -18,9 +21,6 @@
       .text{
         text-align: center;
       }
-    }
-    @media (max-width: 768px) {
-      
     }
     .text{
       font-size: 2rem;
@@ -91,7 +91,7 @@
         }
       }
       @media (max-width: 768px) {
-        min-width: 400px;
+        min-width: 360px;
       }
     }
   }

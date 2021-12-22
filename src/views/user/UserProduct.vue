@@ -279,6 +279,7 @@ export default {
     '$route.params' (newVal, oldVal) {
       if (oldVal !== newVal) {
         this.getProduct(newVal.productId)
+        this.getProducts()
       }
     }
   },
