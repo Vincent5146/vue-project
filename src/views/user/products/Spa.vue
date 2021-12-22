@@ -1,5 +1,5 @@
 <template>
-  <div class="service mt-5">
+  <div class="service">
     <div class="content">
       <div class="text">
         <h3>DAYCARE</h3>

@@ -3,10 +3,16 @@
   <div class="products">
     <div class="container">
       <!-- 優惠碼 -->
-      <div class="introduce">
-        <div class="text">
-          <h1>12/31前輸入優惠碼 <span>綿綿</span></h1>
-          <p>可享全館產品、服務9 折優惠!</p>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="introduce">
+              <div class="introduce-text">
+                <h1>12/31前輸入優惠碼 <span>綿綿</span></h1>
+                <p>可享全館產品、服務9 折優惠!</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="row mt-4">

@@ -1,5 +1,5 @@
 <template>
-  <div class="service mt-5">
+  <div class="service">
     <div class="content">
       <div class="text">
         <h3>BOARDING</h3>
@@ -14,7 +14,10 @@
         </div>
       </div>
       <div class="text2">
-        <h2>{{ computedTabData.title }}</h2>
+        <div>
+          <h2>{{ computedTabData.title }}</h2>
+          <h2>{{ computedTabData.title2 }}</h2>
+        </div>
         <ul class="mt-3">
           <li v-for="(content, index) in computedTabData.contents" :key="index">{{ content }}</li>
         </ul>
@@ -41,7 +44,8 @@ export default {
       tabInfo: {
         貓咪: {
           tabName: 'Cat',
-          title: '貓咪住宿 CAT BOARDING',
+          title: '貓咪住宿',
+          title2: 'CAT BOARDING',
           pic: 'https://upload.cc/i1/2021/11/22/aUT3lb.jpg',
           contents: [
             '貓咪喜歡上上下下，所以我們的貓房挑高 1.8 米，讓貓咪好好居高臨下',
@@ -53,7 +57,8 @@ export default {
         },
         小型犬: {
           tabName: '小型犬',
-          title: '小型犬住宿　SMALL BREED DOG BOARDING',
+          title: '小型犬住宿',
+          title2: 'SMALL BREED DOG BOARDING',
           pic: 'https://upload.cc/i1/2021/11/22/sBFO9m.jpg',
           contents: [
             '小型犬區供 9 公斤以下嬌小的狗狗玩樂',
@@ -65,7 +70,8 @@ export default {
         },
         中型犬: {
           tabName: '中型犬',
-          title: '中型犬住宿　MEDIUM BREED DOG BOARDING',
+          title: '中型犬住宿',
+          title2: 'MEDIUM BREED DOG BOARDING',
           pic: 'https://upload.cc/i1/2021/12/20/NUS94w.jpg',
           contents: [
             '中型犬區供 9 - 23 公斤的狗狗活動',
@@ -78,7 +84,8 @@ export default {
         },
         大型犬: {
           tabName: '大型犬',
-          title: '大型犬住宿　LARGE BREED DOG BOARDING',
+          title: '大型犬住宿',
+          title2: 'LARGE BREED DOG BOARDING',
           pic: 'https://upload.cc/i1/2021/12/20/N5bvt8.jpg',
           contents: [
             '大型犬區供 23 公斤以上的大塊頭睡覺，超大飛行床讓狗狗自由翻滾',

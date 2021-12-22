@@ -1,71 +1,98 @@
 .service{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap:1.5rem;
+  .image{
+    flex:1 1 40rem;
+    background: #ebe3e3;
+    height: 830px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 90%;
+  }
+  .content{
     display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap:1.5rem;
-    .image{
-      flex:1 1 40rem;
-      background: #ebe3e3;
-      height: 830px;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: 90%;
-    }
-    .content{
-      display: flex;
+    @media (max-width: 991px) {
+      flex-direction: column;
       .text{
-        width: 230px;
-        font-size: 2rem;
-        h3{
-          font-weight: bold;
-          color: #09813b;
+        text-align: center;
+      }
+    }
+    @media (max-width: 768px) {
+      
+    }
+    .text{
+      font-size: 2rem;
+      margin-right: 40px;
+      min-width: 186px;
+      h3{
+        font-weight: bold;
+        color: #a9caaf;
+      }
+      // for boarding
+      .tab{
+        list-style: none;
+        font-weight: bold;
+        color: rgb(88, 87, 87);
+        label{
+          margin-left: 10px;
         }
-        // for boarding
-        .tab{
-          list-style: none;
-          font-weight: bold;
-          color: rgb(88, 87, 87);
-          label{
-            margin-left: 10px;
-          }
+        @media (max-width: 991px) {
+          display: flex;
+          justify-content: space-around;
+        }
+        @media (max-width: 768px) {
+          font-size: 20px;
         }
       }
-      .text2{
-        width: 1066px;
-        border: 5px #F0F0F0 solid;
-        padding: 15px;
-        h2{
+    }
+    .text2{
+      height: 470px;
+      min-width: 710px;
+      border: 5px #F0F0F0 solid;
+      padding: 20px;
+      overflow:scroll;
+      h2{
+      font-weight: bold;
+      color: #a9caaf;
+      }
+      ul{
+        li{
+        color: black;
+        font-size: 1.2rem;
+        line-height: 1;
+        padding:1rem 0;
+        }
+      }
+      span{
+        font-size: 1.2rem;
         font-weight: bold;
-        color: #29af61;
-        }
-        ul{
-          height: 310px;
-          li{
-          color: black;
-          font-size: 1.2rem;
-          line-height: 1;
-          padding:1rem 0;
-          }
-        }
-        span{
-          font-size: 1.2rem;
-          font-weight: bold;
-          margin-right: 1rem;
-          color: #29af61;
-        }
+        margin-right: 1rem;
+        color: #429968;
       }
       .btn{
         margin-top: 0.5rem;
-        border: 0.2rem solid #5eb674;
+        border: 0.2rem solid #a9caaf;
         color: #10221b;
         cursor: pointer;
         background: none;
         font-size: 1.2rem;
         padding: 0.5rem 1rem;
+        .btn:hover {
+          background: #6cc091;
+          color: #fff;
+        }
       }
-      .btn:hover {
-        background: #6cc091;
-        color: #fff;
+      @media (max-width: 991px) {
+        margin-top: 10px;
+        h2 {
+          font-size: 25px;
+        }
+      }
+      @media (max-width: 768px) {
+        min-width: 400px;
       }
     }
   }
+}

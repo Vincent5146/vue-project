@@ -1,31 +1,19 @@
 .banner {
-    height: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: url("https://upload.cc/i1/2021/12/22/hypCGa.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    overflow-x: hidden;
-    .banner-text {
-      line-height: 1.6;
-      transform: translateX(70%);
-      color: #112b44;
-    }
-    @media only screen and (max-width: 968px) {
-        .banner {
-            justify-content: center;
-            .banner-text{
-              transform: translateX(40%);
-            }
-        }
-    }
-    @media only screen and (max-width: 540px) {
-        .banner {
-          .banner-text {
-            display: none;
-          }
-        }
-    }
+  height: 500px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-image: url("https://upload.cc/i1/2021/12/22/pVEguN.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow-x: hidden;
+  .banner-text {
+    padding: 0 30px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    line-height: 1.6;
+    color: white;
+  }
 }
