@@ -6,10 +6,12 @@
   .image{
     flex:1 1 40rem;
     height: 600px;
+    border-radius: 10px;
     background: #ebe3e3;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-attachment:local;
+    background-size: 90%;
     @media (max-width: 991px) {
       height: 400px;
     }
@@ -28,7 +30,7 @@
       min-width: 186px;
       h3{
         font-weight: bold;
-        color: #a9caaf;
+        color: #7c9782;
       }
       // for boarding
       .tab{
@@ -51,6 +53,7 @@
       height: 470px;
       min-width: 710px;
       border: 5px #F0F0F0 solid;
+      border-radius: 10px;
       padding: 20px;
       overflow:scroll;
       h2{
@@ -79,8 +82,9 @@
         background: none;
         font-size: 1.2rem;
         padding: 0.5rem 1rem;
-        .btn:hover {
-          background: #6cc091;
+        &:hover {
+          border: 0.2rem solid #3e8369;
+          background: #3e8369;
           color: #fff;
         }
       }

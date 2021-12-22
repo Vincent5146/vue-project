@@ -8,7 +8,7 @@
           <div class="col-12">
             <div class="introduce">
               <div class="introduce-text">
-                <h1>12/31前輸入優惠碼 <span>綿綿</span></h1>
+                <h1>12/31前輸入優惠碼 <span class="text-strong">綿綿</span></h1>
                 <p>可享全館產品、服務9 折優惠!</p>
               </div>
             </div>
@@ -19,7 +19,7 @@
         <div class="col-12 mb-4">
           <div class="row d-flex justify-content-between align-items-end">
             <!-- 選單 -->
-            <h1 class="title">綿綿 <span>產品</span></h1>
+            <h1 class="title">綿綿產品</h1>
             <div class="service-container">
               <router-link to='products' class="serviceBox">
                 <img src="https://upload.cc/i1/2021/12/10/6d0Gxb.png" alt="">

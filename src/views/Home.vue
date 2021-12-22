@@ -66,9 +66,9 @@
                 <div class="col-md-8 d-flex align-items-center">
                   <div class="card-body">
                     <h5 class="card-title fw-bold">領取優惠碼</h5>
-                    <p class="card-text mt-3">12/31前結帳時輸入，優惠碼 <span class="text-strong">綿綿</span> 可享 8 折優惠，時間有限要買要快!</p>
+                    <p class="card-text mt-3">12/31前結帳時輸入，優惠碼 <span class="text-strong">綿綿</span> 可享 9 折優惠，時間有限要買要快!</p>
                     <div class="d-flex justify-content-end">
-                      <a href="#/user/products" class="btn btn-dark btn-hover rounded-0">查看更多</a>
+                      <a href="#/cart" class="btn btn-dark btn-hover rounded-0">立即使用</a>
                     </div>
                   </div>
                 </div>
@@ -81,7 +81,7 @@
                 <div class="col-md-8 d-flex align-items-center">
                   <div class="card-body">
                     <h5 class="card-title fw-bold">新品上市</h5>
-                    <p class="card-text mt-3">12/31前結帳時輸入，優惠碼 <span class="text-strong">綿綿</span> 可享 8 折優惠，時間有限要買要快!</p>
+                    <p class="card-text mt-3">綿綿也推出手工做的寵物零食以及各式寵物周邊囉!</p>
                     <div class="d-flex justify-content-end">
                       <a href="#/user/products" class="btn btn-dark btn-hover rounded-0">查看更多</a>
                     </div>
