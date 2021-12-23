@@ -102,14 +102,6 @@ export default {
       products: [],
       product: {},
       isLoading: false,
-      pages: {
-        dataLen: 0, // 全部資料長度
-        total_pages: 1, // 根據產品總筆數算出的總頁數
-        perpage: 12, // 預設每頁顯示幾筆資料
-        current_page: 1, // 當前頁數
-        has_pre: false,
-        has_next: true
-      },
       pageProducts: [],
       category: [],
       pagination: {},
@@ -130,8 +122,8 @@ export default {
     })
   },
   methods: {
-    getProducts (page = 1) {
-      const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/products/?page=${page}`
+    getProducts () {
+      const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/products/all`
       this.isLoading = true
       this.$http.get(url).then((response) => {
         this.products = response.data.products
