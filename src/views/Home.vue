@@ -10,7 +10,7 @@
         </div>
         <div class="card-group mt-5">
           <div class="col-md-4">
-            <div class="product product1 text-center">
+            <div class="product1 text-center">
               <router-link
                 to="/about"
                 class="product1-img img-fluid"
@@ -24,7 +24,7 @@
             </div>
           </div>
           <div class="col-md-4">
-            <div class="product product1 text-center">
+            <div class="product1 text-center">
               <router-link
                 to="/about"
                 class="product2-img img-fluid"
@@ -38,7 +38,7 @@
             </div>
           </div>
           <div class="col-md-4">
-            <div class="product product1 text-center">
+            <div class="product1 text-center">
               <router-link
                 to="/about"
                 class="product3-img img-fluid"
@@ -83,7 +83,7 @@
                     <h5 class="card-title fw-bold">新品上市</h5>
                     <p class="card-text mt-3">綿綿也推出手工做的寵物零食以及各式寵物周邊囉!</p>
                     <div class="d-flex justify-content-end">
-                      <a href="#/user/products" class="btn btn-dark btn-hover rounded-0">查看更多</a>
+                      <a href="#/products" class="btn btn-dark btn-hover rounded-0">查看更多</a>
                     </div>
                   </div>
                 </div>

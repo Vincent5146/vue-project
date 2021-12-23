@@ -36,23 +36,23 @@ const routes = [
   },
   {
     path: '/user',
-    component: () => import('../views/user/Userboard.vue'),
+    component: () => import('../views/user/Serviceboard.vue'),
     children: [
       {
         path: 'boarding',
-        component: () => import('../views/user/products/Boarding.vue')
+        component: () => import('../views/user/services/Boarding.vue')
       },
       {
         path: 'daycare',
-        component: () => import('../views/user/products/Daycare.vue')
+        component: () => import('../views/user/services/Daycare.vue')
       },
       {
         path: 'spa',
-        component: () => import('../views/user/products/Spa.vue')
+        component: () => import('../views/user/services/Spa.vue')
       },
       {
         path: 'swimming',
-        component: () => import('../views/user/products/Swimming.vue')
+        component: () => import('../views/user/services/Swimming.vue')
       }
     ]
   },

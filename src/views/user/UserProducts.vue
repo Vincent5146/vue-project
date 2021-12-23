@@ -1,60 +1,85 @@
 <template>
   <Navbar/>
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-12">
-            <div class="introduce">
-              <div class="introduce-text">
-                <h1>12/31前輸入優惠碼 <span class="text-strong">綿綿</span></h1>
-                <p>可享全館產品、服務9 折優惠!</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-  <div class="allBike mt-3">
-    <Loading v-model:active="isLoading"/>
-    <!-- 商品 -->
-    <div class="container px-0">
-      <div class="row row-cols-1 row-cols-md-5 g-3">
-        <div class="col" v-for="item in products" :key="item.id">
-          <div class="card border-0 box-shadow rounded-0 h-100">
-            <div style="height: 250px; background-size: cover; background-position: center"
-              :style="{ backgroundImage: `url(${item.imageUrl})` }"
-              class="text-end"
-              @click="getProduct(item.id)"
-            >
-            </div>
-            <div class="card-body text-center">
-              <h4 class="card-title fw-bold">{{ item.title }}</h4>
-              <div class="d-flex justify-content-around align-items-end">
-                <div class="fs-6 text-muted" v-if="!item.price">
-                  NT$ {{ $filters.currency(item.origin_price) }}
-                </div>
-                <del class="fs-6 text-muted" v-if="item.price">
-                  NT$ {{ $filters.currency(item.origin_price) }}
-                </del>
-                <div class="fs-5 text-black fw-bold" v-if="item.price">
-                  NT$ {{ $filters.currency(item.price) }}
-                </div>
-              </div>
-            </div>
-            <div class="productsFooter">
-              <button
-                type="button"
-                class="btn-products"
-                @click="getProduct(item.id)"
-              >
-                商品資訊
-              </button>
-              <span class="btn-products2" @click="addtoCart(item.id, 1)"><i class="fas fa-plus"></i></span>
-            </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <div class="introduce">
+          <div class="introduce-text">
+            <h1>12/31前輸入優惠碼 <span class="text-strong">綿綿</span></h1>
+            <p>可享全館產品、服務9 折優惠!</p>
           </div>
         </div>
       </div>
     </div>
-    <div class="d-flex justify-content-center mt-4">
-      <Pagination :pages="pagination" @emit-pages="getProducts"/>
+  </div>
+  <div class="container">
+    <div class="row mt-4">
+      <div class="col-12 col-lg-3 col-xl-2 nav_left" ref="navLeft">
+        <p class="nav_tar">
+          產品種類
+          <span class="material-icons">
+            <i class="fas fa-chevron-down"></i>
+          </span>
+        </p>
+        <ul :class="{ open: sideUl }">
+          <li @click="getProducts()" :class="{ active: productValue === '' }">
+            全部產品
+          </li>
+          <li
+            v-for="item in category"
+            :key="item.id"
+            @click="filterCategory(item)"
+            :class="{ active: item === productValue }"
+          >
+            {{ item }}
+          </li>
+        </ul>
+      </div>
+      <div class="col-12 col-lg-9 col-xl-10 ms-md-auto ps-md-4">
+        <ul class="products row p-0">
+          <li
+            class="col-6 col-sm-4 col-xl-3 mb-5 text-start list-none"
+            v-for="item in pageProducts"
+            :key="item.id"
+          >
+            <div class="product">
+              <div class="product_img">
+                <div style="height: 250px; background-size: cover; background-position: center"
+                  :style="{ backgroundImage: `url(${item.imageUrl})` }"
+                  class="image text-end"
+                  @click="getProduct(item.id)"
+                >
+                </div>
+              </div>
+              <div class="product_title">{{ item.title }}</div>
+              <div class="product_price">
+                <div class="product_price_1" v-if="!item.price">
+                  {{ $filters.currency(item.origin_price) }} 元
+                </div>
+                <del class="product_price_2" v-if="item.price">
+                  原價 {{ $filters.currency(item.origin_price) }} 元
+                </del>
+                <div class="product_price_2" v-if="item.price">
+                  特價 {{ $filters.currency(item.price) }} 元
+                </div>
+              </div>
+              <div class="productsFooter">
+                <button
+                  type="button"
+                  class="btn-products"
+                  @click="getProduct(item.id)"
+                >
+                  商品資訊
+                </button>
+                <span class="btn-products2" @click="addtoCart(item.id, 1)"><i class="fas fa-plus"></i></span>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="d-flex justify-content-center mt-4">
+          <Pagination :pages="pagination" @emit-pages="getProducts"/>
+        </div>
+      </div>
     </div>
   </div>
   <Footer/>
@@ -77,8 +102,32 @@ export default {
       products: [],
       product: {},
       isLoading: false,
-      pagination: {}
+      pages: {
+        dataLen: 0, // 全部資料長度
+        total_pages: 1, // 根據產品總筆數算出的總頁數
+        perpage: 12, // 預設每頁顯示幾筆資料
+        current_page: 1, // 當前頁數
+        has_pre: false,
+        has_next: true
+      },
+      pageProducts: [],
+      category: [],
+      pagination: {},
+      productValue: '',
+      sideUl: false
     }
+  },
+  mounted () {
+    const sideBtn = this.$refs.navLeft
+    sideBtn.addEventListener('click', () => {
+      if (window.innerWidth < 993) {
+        if (this.sideUl) {
+          this.sideUl = false
+        } else {
+          this.sideUl = true
+        }
+      }
+    })
   },
   methods: {
     getProducts (page = 1) {
@@ -87,11 +136,39 @@ export default {
       this.$http.get(url).then((response) => {
         this.products = response.data.products
         this.pagination = response.data.pagination
+        const categories = new Set()
+        this.products.forEach((item) => {
+          categories.add(item.category)
+        })
+        this.category = Array.from(categories)
+        this.getProductsList(this.products)
         this.isLoading = false
       })
     },
     getProduct (id) {
       this.$router.push(`/product/${id}`)
+    },
+    filterCategory (e) {
+      this.isLoading = true
+      this.pageProducts = this.products.filter((product) => {
+        if (product.category === e) {
+          this.productValue = e
+          return product
+        }
+        if (e === undefined) {
+          this.productValue = 1
+          return this.products
+        }
+        return false
+      })
+      this.getProductsList(this.pageProducts)
+      this.isLoading = false
+    },
+    getProductsList (productslist) {
+      this.pageProducts = []
+      productslist.forEach((item, index) => {
+        this.pageProducts.push(item)
+      })
     },
     addtoCart (id, qty) {
       const api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/cart`
@@ -118,42 +195,12 @@ export default {
       })
     }
   },
+  computed: {
+
+  },
   created () {
     this.getProducts()
   }
 }
 
 </script>
-
-<style lang="scss">
-.productsFooter{
-    display: flex;
-    flex-shrink: 0;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.5rem;
-    border-top: 1px solid #dee2e6;
-  .btn-products{
-    width: 70%;
-    color: #fff;
-    background-color: #282f2f;
-    border-color: #262c2c;
-    border-radius: 10px;
-    &:hover{
-      background-color: #669999;
-      color: white;
-      border-color: #669999;
-    }
-  }
-  .btn-products2{
-    width: 20%;
-    font-size: 20px;
-  }
-  @media (max-width: 991px) {
-    .btn-products{
-      font-size: 15px
-    }
-  }
-}
-
-</style>

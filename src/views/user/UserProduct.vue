@@ -9,14 +9,14 @@
         aria-label="breadcrumb"
       >
         <ol class="breadcrumb">
-          <li class="me-3" @click.prevent="goBack">
+          <li class="me-3" @click.prevent="goBack()">
             <a class="text-dark a-hover fw-bold"
               ><i class="fas fa-arrow-left"></i
             ></a>
           </li>
           <li
             class="breadcrumb-item"
-            @click="$router.push({ name: 'user-products' })"
+            @click="$router.push({ path: `/products` })"
           >
             <a class="text-dark a-hover fw-bold">產品</a>
           </li>
@@ -42,7 +42,7 @@
         >
           <div class="ps-0 ps-md-5">
             <div class="d-flex justify-content-between">
-              <h4 class="fw-bold fs-5">{{ product.category }}</h4>
+              <h4 class="text-strong fw-bold fs-5 mt-4">{{ product.category }}</h4>
               <div @click.prevent="addFollow(product.id)">
                 <span v-if="followList.includes(product.id)">
                   <i class="fas fa-heart text-strong fs-4"></i>
@@ -100,13 +100,14 @@
             <hr class="mt-4" />
             <h4 class="text-strong fw-bold fs-5 mt-4">購物須知</h4>
             <p class="lh-lg">
-              商品加入購物車後，請先來電預約時間，並告知寵物體型、個性，再進行付款，謝謝您的配合。
+
+              綿綿服務類商品加入購物車後，請先來電預約時間，並告知寵物體型、個性，再進行付款，謝謝您的配合。
             </p>
-            <!-- <hr class="mt-4" />
+            <hr class="mt-4" />
             <h4 class="text-strong fw-bold fs-5 mt-4">退換貨須知</h4>
             <p class="lh-lg">
-              本產品不適用7天鑑賞期，若商品有瑕疵請聯絡客服，我們將提供專人到府服務。
-            </p> -->
+              本館產品不適用7天鑑賞期，若商品有瑕疵請聯絡客服，將有客服人員為您服務。
+            </p>
           </div>
         </div>
       </div>
@@ -115,21 +116,25 @@
         <h3 class="text-center fw-bold mb-5">熱門產品</h3>
         <div class="row row-cols-1 row-cols-md-5 g-3">
           <div class="col" v-for="item in products" :key="item.id">
-            <div class="card border-0 box-shadow rounded-0 h-100" @click="$router.push({ path: `/product/${item.id}` })">
-              <div style="height: 250px; background-size: cover; background-position: center" :style="{ backgroundImage: `url(${item. imageUrl})` }">
+            <div class="product">
+              <div class="product_img">
+                <div style="height: 250px; background-size: cover; background-position: center"
+                  :style="{ backgroundImage: `url(${item.imageUrl})` }"
+                  class="text-end"
+                  @click="$router.push({ path: `/product/${item.id}` })"
+                >
+                </div>
               </div>
-              <div class="card-body text-center">
-                <h4 class="card-title fw-bold">{{ item.title }}</h4>
-                <div class="d-flex justify-content-around align-items-end">
-                  <div class="fs-6 text-muted" v-if="!item.price">
-                    NT$ {{ $filters.currency(item.origin_price) }}
-                  </div>
-                  <del class="fs-6 text-muted" v-if="item.price">
-                    NT$ {{ $filters.currency(item.origin_price) }}
-                  </del>
-                  <div class="fs-5 text-black fw-bold" v-if="item.price">
-                    NT$ {{ $filters.currency(item.price) }}
-                  </div>
+              <div class="product_title">{{ item.title }}</div>
+              <div class="product_price">
+                <div class="product_price_1" v-if="!item.price">
+                  {{ $filters.currency(item.origin_price) }} 元
+                </div>
+                <del class="product_price_2" v-if="item.price">
+                  原價 {{ $filters.currency(item.origin_price) }} 元
+                </del>
+                <div class="product_price_2" v-if="item.price">
+                  特價 {{ $filters.currency(item.price) }} 元
                 </div>
               </div>
               <div class="card-footer border-0 d-flex justify-content-between align-items-center bg-transparent">
@@ -138,7 +143,7 @@
                   <i class="fas fa-star text-warning"></i>
                   <i class="fas fa-star text-warning"></i>
                   <i class="fas fa-star text-warning"></i>
-                  <i class="fas fa-star text-warning"></i>
+                  <i class="fas fa-star text-warning" v-if="Math.floor(Math.random() * 2) == 1"></i>
                 </div>
                 <small>已售出 {{ Math.floor(Math.random() * 150) }}</small>
               </div>
@@ -241,16 +246,14 @@ export default {
       })
     },
     changePage () {
-      if (this.product.category === '寵物周邊') {
-        this.$router.push('/user/products')
+      if (this.product.category === '溫水 ‧ 游泳') {
+        this.$router.push('/user/swimming')
       } else if (this.product.category === '24H褓母 ‧ 住宿') {
         this.$router.push('/user/boarding')
       } else if (this.product.category === '社交 ‧ 安親') {
         this.$router.push('/user/daycare')
       } else if (this.product.category === '純淨‧ 沐浴') {
         this.$router.push('/user/spa')
-      } else if (this.product.category === '溫水 ‧ 游泳') {
-        this.$router.push('/user/swimming')
       }
     },
     getRandom (x) {

@@ -1,0 +1,102 @@
+.service{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap:1.5rem;
+  .image{
+    flex:1 1 40rem;
+    height: 600px;
+    border-radius: 10px;
+    background: #ebe3e3;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment:local;
+    background-size: 90%;
+    @media (max-width: 991px) {
+      height: 400px;
+    }
+  }
+  .content{
+    display: flex;
+    @media (max-width: 991px) {
+      flex-direction: column;
+      .text{
+        text-align: center;
+      }
+    }
+    .text{
+      font-size: 2rem;
+      margin-right: 40px;
+      min-width: 186px;
+      h3{
+        font-weight: bold;
+        color: #7c9782;
+      }
+      // for boarding
+      .tab{
+        list-style: none;
+        font-weight: bold;
+        color: rgb(88, 87, 87);
+        label{
+          margin-left: 10px;
+        }
+        @media (max-width: 991px) {
+          display: flex;
+          justify-content: space-around;
+        }
+        @media (max-width: 768px) {
+          font-size: 20px;
+        }
+      }
+    }
+    .text2{
+      height: 470px;
+      min-width: 710px;
+      border: 5px #F0F0F0 solid;
+      border-radius: 10px;
+      padding: 20px;
+      overflow:scroll;
+      h2{
+      font-weight: bold;
+      color: #a9caaf;
+      }
+      ul{
+        li{
+        color: black;
+        font-size: 1.2rem;
+        line-height: 1;
+        padding:1rem 0;
+        }
+      }
+      span{
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-right: 1rem;
+        color: #429968;
+      }
+      .btn{
+        margin-top: 0.5rem;
+        border: 0.2rem solid #a9caaf;
+        color: #10221b;
+        cursor: pointer;
+        background: none;
+        font-size: 1.2rem;
+        padding: 0.5rem 1rem;
+        &:hover {
+          border: 0.2rem solid #3e8369;
+          background: #3e8369;
+          color: #fff;
+        }
+      }
+      @media (max-width: 991px) {
+        margin-top: 10px;
+        h2 {
+          font-size: 25px;
+        }
+      }
+      @media (max-width: 768px) {
+        min-width: 360px;
+      }
+    }
+  }
+}

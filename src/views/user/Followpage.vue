@@ -1,5 +1,4 @@
 <template>
-123
   <Navbar/>
   <Banner/>
   <div class="FollowPage mt-5">
@@ -12,21 +11,25 @@
       </div>
       <div class="row row-cols-1 row-cols-md-5 g-3 mt-5" v-if="followProduct.length !== 0">
         <div class="col" v-for="item in followProduct" :key="item.id">
-          <div class="card border-0 box-shadow rounded-0 h-100" @click="getProduct(item.id)">
-            <div style="height: 250px; background-size: cover; background-position: center" :style="{ backgroundImage: `url(${item.imageUrl})` }" class="text-end">
+          <div class="product">
+            <div class="product_img">
+              <div style="height: 250px; background-size: cover; background-position: center"
+                :style="{ backgroundImage: `url(${item.imageUrl})` }"
+                class="text-end"
+                @click="getProduct(item.id)"
+              >
+              </div>
             </div>
-            <div class="card-body text-center">
-              <h4 class="card-title fw-bold">{{ item.title }}</h4>
-              <div class="d-flex justify-content-around align-items-end">
-                <div class="fs-6 text-black-50" v-if="!item.price">
-                  NT$ {{ $filters.currency(item.origin_price) }}
-                </div>
-                <del class="fs-6 text-black-50" v-if="item.price">
-                  NT$ {{ $filters.currency(item.origin_price) }}
-                </del>
-                <div class="fs-5 text-strong fw-bold" v-if="item.price">
-                  NT$ {{ $filters.currency(item.price) }}
-                </div>
+            <div class="product_title">{{ item.title }}</div>
+            <div class="product_price">
+              <div class="product_price_1" v-if="!item.price">
+                {{ $filters.currency(item.origin_price) }} 元
+              </div>
+              <del class="product_price_2" v-if="item.price">
+                原價 {{ $filters.currency(item.origin_price) }} 元
+              </del>
+              <div class="product_price_2" v-if="item.price">
+                特價 {{ $filters.currency(item.price) }} 元
               </div>
             </div>
             <div class="card-footer border-0 d-flex justify-content-between align-items-center bg-transparent">
