@@ -187,9 +187,6 @@ export default {
       })
     }
   },
-  computed: {
-
-  },
   created () {
     this.getProducts()
   }

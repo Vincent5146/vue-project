@@ -3,17 +3,17 @@
     <div class="container text-md-start py-4">
       <ul class="footer_nav">
         <li class="nav-item pt-1">
-            <a href="#/user/boarding" class="nav-link text-light a-hover fw-bold">產品區</a>
-          </li>
-          <li class="nav-item pt-1">
-            <a href="#/orders" class="nav-link text-light a-hover fw-bold">訂單查詢</a>
-          </li>
-          <li class="nav-item pt-1">
-            <a href="#/followPage" class="nav-link text-light a-hover fw-bold">我的收藏</a>
-          </li>
-          <li class="nav-item pt-1">
-            <a href="#/about" class="nav-link text-light a-hover fw-bold">關於綿綿</a>
-          </li>
+          <a href="#/user/boarding" class="nav-link text-light a-hover fw-bold">產品區</a>
+        </li>
+        <li class="nav-item pt-1">
+          <a href="#/orders" class="nav-link text-light a-hover fw-bold">訂單查詢</a>
+        </li>
+        <li class="nav-item pt-1">
+          <a href="#/followPage" class="nav-link text-light a-hover fw-bold">我的收藏</a>
+        </li>
+        <li class="nav-item pt-1">
+          <a href="#/about" class="nav-link text-light a-hover fw-bold">關於綿綿</a>
+        </li>
       </ul>
       <div class="footer_social">
         <ul class="list-inline text-center mb-0">
