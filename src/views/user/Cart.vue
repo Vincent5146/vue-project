@@ -28,9 +28,9 @@
               <td>
                 <div class="d-flex justify-content-center">
                   <div class="input-group" style="width:110px">
-                    <button class="btn btn-dark btn-sm btn-hover rounded-0 border-0" type="button" @click="updateCart(item.id, item.qty-1)">-</button>
+                    <button class="btn btn-dark btn-sm btn-hover rounded-0 border-0" style="width:29px" type="button" @click="updateCart(item.id, item.qty-1)">-</button>
                     <input type="text" class="form-control text-center" disabled v-model.number="item.qty">
-                    <button class="btn btn-dark btn-sm btn-hover rounded-0 border-0" type="button" @click="updateCart(item.id, item.qty+1)">+</button>
+                    <button class="btn btn-dark btn-sm btn-hover rounded-0 border-0" style="width:29px" type="button" @click="updateCart(item.id, item.qty+1)">+</button>
                   </div>
                 </div>
               </td>

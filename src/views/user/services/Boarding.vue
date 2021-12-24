@@ -21,7 +21,7 @@
         <ul class="mt-3">
           <li v-for="(content, index) in computedTabData.contents" :key="index">{{ content }}</li>
         </ul>
-        <div class="mt-5" align="right" @click="$router.push({ path: `/user/products` })">
+        <div class="mt-5" align="right" @click="$router.push({ path: `/products` })">
           <p class="btn">下單請按</p>
         </div>
       </div>

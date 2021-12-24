@@ -62,7 +62,7 @@
               </table>
               <router-link
                 class="btn btn-secondary w-100"
-                to="/user/products"
+                to="/products"
                 v-if="cart?.carts?.length === 0"
               >
                 購物去
@@ -74,7 +74,7 @@
           </div>
         </div>
         <button
-        class="navbar-toggler navbtn"
+        class="navbar-toggler justify-content-center text-center navbtn"
         type="button"
         data-bs-toggle="collapse"
         data-bs-target="#navbarNav"
