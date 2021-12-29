@@ -5,7 +5,8 @@
     <div class="container">
       <div class="row mt-4">
         <div class="col-12 mb-4">
-          <div class="row d-flex justify-content-between align-items-end">
+          <div class="row d-flex justify-content-between align-items-end"
+          style="margin: 0 5px;">
             <!-- 選單 -->
             <h1 class="title">綿綿服務</h1>
             <div class="service-container">

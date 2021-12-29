@@ -131,7 +131,7 @@ export default {
       })
     },
     goProducts () {
-      this.$router.push('/user/products')
+      this.$router.push('/products')
     }
   },
   created () {

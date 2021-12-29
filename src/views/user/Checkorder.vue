@@ -20,8 +20,6 @@
               <i class="fas fa-arrow-right fs-5 mx-2"></i>
               <h5 class="fw-bold mb-0 text-black-50 active">訂單處理中</h5>
               <i class="fas fa-arrow-right fs-5 mx-2"></i>
-              <h5 class="fw-bold mb-0 text-black-50">產品組裝中</h5>
-              <i class="fas fa-arrow-right fs-5 mx-2"></i>
               <h5 class="text-black-50 fw-bold mb-0">出貨中</h5>
               <i class="fas fa-arrow-right fs-5 mx-2"></i>
               <h5 class="text-black-50 fw-bold mb-0 ">完成出貨(3~7天送達)</h5>
