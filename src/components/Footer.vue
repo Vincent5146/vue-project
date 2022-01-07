@@ -3,7 +3,7 @@
     <div class="container text-md-start py-4">
       <ul class="footer_nav">
         <li class="nav-item pt-1">
-          <a href="#/user/boarding" class="nav-link text-light a-hover fw-bold">產品區</a>
+          <a href="#/user/boarding" class="nav-link text-light a-hover fw-bold">提供服務</a>
         </li>
         <li class="nav-item pt-1">
           <a href="#/orders" class="nav-link text-light a-hover fw-bold">訂單查詢</a>

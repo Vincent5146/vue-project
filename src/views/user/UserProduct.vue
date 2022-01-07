@@ -30,7 +30,7 @@
       </nav>
       <!-- 內容 -->
       <div class="row d-flex justify-content-center">
-        <div class="col-md-6 p-0 d-flex justify-content-center">
+        <div class="col-md-6 p-0 d-flex justify-content-center overflow-hidden">
           <div class="row">
             <div class="col p-0">
               <img :src="product.imageUrl" class="img-fluid" alt="商品照片" />
@@ -293,7 +293,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .productPage {
   margin-top: 100px;
 }
