@@ -2,7 +2,7 @@
   <div>
     <Loading :active="isLoading"></Loading>
     <div class="text-end mt-4">
-      <button class="btn btn-dark btn-hover rounded-0" @click="openCouponModal(true)">
+      <button type="button" class="btn btn-dark btn-hover rounded-0" @click="openCouponModal(true)">
         建立新的優惠券
       </button>
     </div>
@@ -19,7 +19,7 @@
           </tr>
         </thead>
         <tbody class="text-center">
-          <tr class="table-nowrap" v-for="(item, key) in coupons" :key="key">
+          <tr class="table-nowrap" v-for="(item) in coupons" :key="item.code">
             <td>{{ item.title }}</td>
             <td>{{ item.code }}</td>
             <td>{{ item.percent }}%</td>
@@ -30,20 +30,19 @@
             </td>
             <td>
               <div class="btn-group">
-                <button class="btn btn-outline-primary btn-sm"
-                      @click="openCouponModal(false, item)"
-                >編輯</button>
-                <button class="btn btn-outline-danger btn-sm"
-                      @click="openDelCouponModal(item)"
-                >刪除</button>
+                <button type="button" class="btn btn-outline-primary btn-sm" @click="openCouponModal(false, item)">
+                  編輯
+                </button>
+                <button type="button" class="btn btn-outline-danger btn-sm" @click="openDelCouponModal(item)">
+                  刪除
+                </button>
               </div>
             </td>
           </tr>
         </tbody>
       </table>
     </div>
-    <couponModal :coupon="tempCoupon" ref="couponModal"
-    @update-coupon="updateCoupon"/>
+    <couponModal :coupon="tempCoupon" ref="couponModal" @update-coupon="updateCoupon"/>
     <DelModal :item="tempCoupon" ref="delModal" @del-item="delCoupon"/>
   </div>
 </template>
@@ -51,6 +50,7 @@
 <script>
 import CouponModal from '@/components/CouponModal.vue'
 import DelModal from '@/components/DelModal.vue'
+
 export default {
   components: {
     CouponModal,

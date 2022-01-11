@@ -13,15 +13,14 @@
       </tr>
     </thead>
     <tbody class="text-center">
-      <template v-for="(item, key) in orders" :key="key">
-        <tr v-if="orders.length"
-            :class="{'text-secondary': !item.is_paid}">
+      <template v-for="item in orders" :key="item.id">
+        <tr v-if="orders.length" :class="{'text-secondary': !item.is_paid}">
           <td>{{ $filters.date(item.create_at) }}</td>
           <td>{{ item.id }}</td>
           <td><span v-text="item.user.email" v-if="item.user"></span></td>
           <td>
             <ul class="list-unstyled">
-              <li v-for="(product, i) in item.products" :key="i">
+              <li v-for="product in item.products" :key="product.id">
                 {{ product.product.title }} 數量：{{ product.qty }}
                 {{ product.product.unit }}
               </li>
@@ -30,9 +29,13 @@
           <td class="text-right">{{ item.total }}</td>
           <td>
             <div class="form-check form-switch">
-              <input class="form-check-input" type="checkbox" :id="`paidSwitch${item.id}`"
-                     v-model="item.is_paid"
-                     @change="updatePaid(item)">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                :id="`paidSwitch${item.id}`"
+                v-model="item.is_paid"
+                @change="updatePaid(item)"
+              >
               <label class="form-check-label" :for="`paidSwitch${item.id}`">
                 <span v-if="item.is_paid">已付款</span>
                 <span v-else>未付款</span>
@@ -41,11 +44,12 @@
           </td>
           <td>
             <div class="btn-group">
-              <button class="btn btn-outline-primary btn-sm"
-                      @click="openModal(false, item)">檢視</button>
-              <button class="btn btn-outline-danger btn-sm"
-                      @click="openDelOrderModal(item)"
-              >刪除</button>
+              <button type="button" class="btn btn-outline-primary btn-sm" @click="openModal(false, item)">
+                檢視
+              </button>
+              <button type="button" class="btn btn-outline-danger btn-sm" @click="openDelOrderModal(item)">
+                刪除
+              </button>
             </div>
           </td>
         </tr>
@@ -55,8 +59,11 @@
   <div class="d-flex justify-content-center">
     <Pagination :pages="pagination" @emit-pages="getOrders"></Pagination>
   </div>
-  <OrderModal :order="tempOrder"
-              ref="orderModal" @update-paid="updatePaid"></OrderModal>
+  <OrderModal
+    :order="tempOrder"
+    ref="orderModal"
+    @update-paid="updatePaid">
+  </OrderModal>
   <DelModal :item="tempOrder" ref="delModal" @del-item="delOrder"></DelModal>
 </template>
 
@@ -89,6 +96,7 @@ export default {
       this.$http.get(url, this.tempProduct).then((response) => {
         this.orders = response.data.orders
         this.pagination = response.data.pagination
+        console.log(this.orders)
         this.isLoading = false
       })
     },

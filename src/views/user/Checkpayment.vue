@@ -12,11 +12,13 @@
       </div>
       <div class="row d-flex justify-content-center">
         <div class="col-md-8">
-          <div class="d-flex align-items-center" v-if="order.is_paid">
-            <i class="fas fa-truck fs-3 me-3"></i>
-            <h2 class="fw-bold mb-0">感謝您的購買 !</h2>
+          <div v-if="order.is_paid">
+            <div class="d-flex align-items-center">
+              <i class="fas fa-truck fs-3 me-3"></i>
+              <h2 class="fw-bold mb-0">感謝您的購買 !</h2>
+            </div>
+            <h6 class="fw-bold mt-4 mb-5">親愛的顧客您好，您已付款成功，商品將於 20 日內送達 !</h6>
           </div>
-          <h6 class="fw-bold mt-4 mb-5" v-if="order.is_paid">親愛的顧客您好，您已付款成功，商品將於 20 日內送達 !</h6>
           <h2 class="fs-3 text-center fw-bold">商品明細</h2>
           <div class="table-responsive-md mt-4">
             <table class="table lh-lg">
@@ -78,8 +80,12 @@
             </table>
           </div>
           <div class="d-flex justify-content-center mt-3 mt-md-5">
-            <button type="button" class="btn btn-dark btn-hover rounded-0" v-if="!order.is_paid" @click="pay()">確認付款</button>
-            <button type="button" class="btn btn-dark btn-hover rounded-0" v-if="order.is_paid" @click="goProducts()">繼續逛逛</button>
+            <button type="button" class="btn btn-dark btn-hover rounded-0" v-if="!order.is_paid" @click="pay()">
+              確認付款
+            </button>
+            <button type="button" class="btn btn-dark btn-hover rounded-0" v-else @click="goProducts()">
+              繼續逛逛
+            </button>
           </div>
         </div>
       </div>
@@ -114,7 +120,6 @@ export default {
       this.$http.get(api).then((response) => {
         if (response.data.success) {
           this.order = response.data.order
-          console.log(response.data)
         }
       })
     },

@@ -85,6 +85,11 @@ const routes = [
   {
     path: '/followPage',
     component: () => import('../views/user/Followpage.vue')
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'not-found',
+    component: () => import('../views/Home.vue')
   }
 ]
 

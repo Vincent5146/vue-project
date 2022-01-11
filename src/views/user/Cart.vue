@@ -20,7 +20,9 @@
             <tr class="table-nowrap" v-for="item in carts" :key="item.id">
               <td>
                 <a href="#" @click.prevent="delCart(item.id)">
-                  <span class="material-icons logo_icon"><i class="fas fa-trash"></i></span>
+                  <span class="material-icons logo_icon">
+                    <i class="fas fa-trash"></i>
+                  </span>
                 </a>
               </td>
               <td>{{ item.product.title }}</td>
@@ -28,13 +30,31 @@
               <td>
                 <div class="d-flex justify-content-center">
                   <div class="input-group" style="width:110px">
-                    <button class="btn btn-dark btn-sm btn-hover rounded-0 border-0" style="width:29px" type="button" @click="updateCart(item.id, item.qty-1)">-</button>
+                    <button
+                      class="btn btn-dark btn-sm btn-hover rounded-0 border-0"
+                      style="width:29px"
+                      type="button"
+                      @click="updateCart(item.id, item.qty-1)"
+                    >
+                      -
+                    </button>
                     <input type="text" class="form-control text-center" disabled v-model.number="item.qty">
-                    <button class="btn btn-dark btn-sm btn-hover rounded-0 border-0" style="width:29px" type="button" @click="updateCart(item.id, item.qty+1)">+</button>
+                    <button
+                      class="btn btn-dark btn-sm btn-hover rounded-0 border-0"
+                      style="width:29px"
+                      type="button"
+                      @click="updateCart(item.id, item.qty+1)"
+                    >
+                      +
+                    </button>
                   </div>
                 </div>
               </td>
-              <td class="text-end">NT$ {{ $filters.currency(item.final_total) }} 元 <br> <small class="text-strong" v-if="item.final_total !== item.total">( 已套用優惠碼 )</small></td>
+              <td class="text-end">
+                NT$ {{ $filters.currency(item.final_total) }} 元
+                <br>
+                <small class="text-strong" v-if="item.final_total !== item.total">( 已套用優惠碼 )</small>
+              </td>
             </tr>
           </tbody>
           <tfoot class="text-center">
@@ -59,12 +79,18 @@
         </div>
       </div>
       <div class="d-flex justify-content-between mt-5" v-if="carts.length !== 0">
-        <button type="button" class="btn btn-outline-dark btn-hover rounded-0" @click="goProducts">回商品列表</button>
-        <button type="button" class="btn btn-dark btn-hover rounded-0" @click="goCheckout">下一步 填寫資料</button>
+        <button type="button" class="btn btn-outline-dark btn-hover rounded-0" @click="goProducts">
+          回商品列表
+        </button>
+        <button type="button" class="btn btn-dark btn-hover rounded-0" @click="goCheckout">
+          下一步 填寫資料
+        </button>
       </div>
       <div class="text-center pt-4" v-if="carts.length === 0">
         <h3 class="fw-bold">購物車還沒有任何商品，趕快挑選產品加入購物車 !</h3>
-        <button type="button" class="btn btn-dark btn-hover rounded-0 mt-5" @click="goProducts">查看產品 Go</button>
+        <button type="button" class="btn btn-dark btn-hover rounded-0 mt-5" @click="goProducts">
+          查看產品 Go
+        </button>
       </div>
     </div>
   </div>
@@ -164,7 +190,6 @@ export default {
       }
       this.isLoading = true
       this.$http.post(api, { data: coupon }).then((response) => {
-        console.log(response)
         if (response.data.success) {
           this.emitter.emit('message:push', { message: response.data.message, status: 'success' })
           this.getCart()
@@ -176,7 +201,7 @@ export default {
       })
     },
     goProducts () {
-      this.$router.push('/user/products')
+      this.$router.push('/products')
     },
     goCheckout () {
       this.$router.push('/checkout')

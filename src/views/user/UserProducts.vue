@@ -1,5 +1,6 @@
 <template>
   <Navbar/>
+  <Loading v-model:active="isLoading" />
   <div class="container-fluid">
     <div class="row">
       <div class="col-12">
@@ -64,14 +65,12 @@
                 </div>
               </div>
               <div class="productsFooter">
-                <button
-                  type="button"
-                  class="btn-products"
-                  @click="getProduct(item.id)"
-                >
+                <button type="button" class="btn-products" @click="getProduct(item.id)">
                   商品資訊
                 </button>
-                <span class="btn-products2" @click="addtoCart(item.id, 1)"><i class="fas fa-plus"></i></span>
+                <span class="btn-products2" @click="addtoCart(item.id, 1)">
+                  <i class="fas fa-plus"></i>
+                </span>
               </div>
             </div>
           </li>
@@ -98,7 +97,6 @@ export default {
   },
   data () {
     return {
-      loadingStatus: { loadingItem: '' },
       products: [],
       product: {},
       isLoading: false,

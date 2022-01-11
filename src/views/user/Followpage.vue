@@ -7,7 +7,7 @@
       <h1 class="fs-2 text-center fw-bold" v-if="followProduct.length !== 0">我的收藏</h1>
       <div class="d-flex flex-column align-items-center" v-if="followProduct.length === 0">
         <p class="fs-2 fw-bold">目前沒有收藏的產品 !</p>
-        <a href="#/user/products" class="btn btn-dark btn-hover rounded-0 mt-5">查看產品 Go</a>
+        <router-link to="/products" class="btn btn-dark btn-hover rounded-0 mt-5">查看產品 Go</router-link>
       </div>
       <div class="row row-cols-1 row-cols-md-5 g-3 mt-5" v-if="followProduct.length !== 0">
         <div class="col" v-for="item in followProduct" :key="item.id">

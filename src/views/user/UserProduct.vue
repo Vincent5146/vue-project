@@ -9,19 +9,16 @@
         aria-label="breadcrumb"
       >
         <ol class="breadcrumb">
-          <li class="me-3" @click.prevent="goBack()">
-            <a class="text-dark a-hover fw-bold"
-              ><i class="fas fa-arrow-left"></i
-            ></a>
+          <li class="me-3" @click="goBack()">
+            <a class="text-dark a-hover fw-bold" @click.prevent>
+              <i class="fas fa-arrow-left"></i>
+            </a>
           </li>
-          <li
-            class="breadcrumb-item"
-            @click="$router.push({ path: `/products` })"
-          >
-            <a class="text-dark a-hover fw-bold">產品</a>
+          <li class="breadcrumb-item">
+            <router-link to="/products" class="text-dark a-hover fw-bold">產品</router-link>
           </li>
-          <li class="breadcrumb-item" @click.prevent="changePage">
-            <a class="text-dark a-hover fw-bold">{{ product.category }}</a>
+          <li class="breadcrumb-item" @click="changePage">
+            <a class="text-dark a-hover fw-bold" @click.prevent>{{ product.category }}</a>
           </li>
           <li class="breadcrumb-item fw-bold active" aria-current="page">
             {{ product.title }}
@@ -43,7 +40,7 @@
           <div class="ps-0 ps-md-5">
             <div class="d-flex justify-content-between">
               <h4 class="text-strong fw-bold fs-5 mt-4">{{ product.category }}</h4>
-              <div @click.prevent="addFollow(product.id)">
+              <div @click="addFollow(product.id)">
                 <span v-if="followList.includes(product.id)">
                   <i class="fas fa-heart text-strong fs-4"></i>
                 </span>
@@ -77,30 +74,16 @@
               </h3>
             </div>
             <div class="d-flex align-items-end pt-4">
-              <select class="fs-5 px-2 py-1" v-model.number="quantity">
-                <option value="1" selected>1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
+              <select class="fs-5 px-2 py-1" v-model="model1">
+                <option v-for="item in numberList" :value="item.value" :key="item.value">{{ item.label }}</option>
               </select>
-              <button
-                type="button"
-                class="btn btn btn-dark btn-hover rounded-0 ms-4"
-                @click="addtoCart(product.id, quantity)"
-              >
+              <button type="button" class="btn btn btn-dark btn-hover rounded-0 ms-4" @click="addtoCart(product.id, quantity)">
                 加入購物車
               </button>
             </div>
             <hr class="mt-4" />
             <h4 class="text-strong fw-bold fs-5 mt-4">購物須知</h4>
             <p class="lh-lg">
-
               綿綿服務類商品加入購物車後，請先來電預約時間，並告知寵物體型、個性，再進行付款，謝謝您的配合。
             </p>
             <hr class="mt-4" />
@@ -182,7 +165,29 @@ export default {
         unit: ''
       },
       products: [],
-      quantity: 1,
+      numberList: [
+        {
+          value: '1',
+          label: '1'
+        },
+        {
+          value: '2',
+          label: '2'
+        },
+        {
+          value: '3',
+          label: '3'
+        },
+        {
+          value: '4',
+          label: '4'
+        },
+        {
+          value: '5',
+          label: '5'
+        }
+      ],
+      model1: '',
       random: 0,
       isLoading: false,
       followList: JSON.parse(localStorage.getItem('followData')) || []

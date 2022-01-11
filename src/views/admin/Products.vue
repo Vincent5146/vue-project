@@ -1,7 +1,7 @@
 <template>
   <Loading :active="isLoading"></Loading>
     <div class="text-end mt-4">
-      <button class="btn btn-dark btn-hover rounded-0" type="button" @click="openModal(true)">
+      <button type="button" class="btn btn-dark btn-hover rounded-0" @click="openModal(true)">
         增加一個產品
       </button>
     </div>
@@ -21,7 +21,7 @@
       <tr v-for="item in products" :key="item.id">
         <td>{{ item.category}}</td>
         <td>{{ item.title }}</td>
-        <td><img class="img-fluid" :src="item.imageUrl" alt="" /></td>
+        <td><img class="img-fluid" :src="item.imageUrl" alt="產品圖" /></td>
         <td class="text-right">
           {{ $filters.currency(item.origin_price) }}
         </td>
@@ -34,9 +34,12 @@
         </td>
         <td>
           <div class="btn-group">
-            <button class="btn btn-outline-primary btn-sm" @click="openModal(false, item)">編輯</button>
-            <button class="btn btn-outline-danger btn-sm"
-            @click="openDelProductModal(item)">刪除</button>
+            <button type="button" class="btn btn-outline-primary btn-sm" @click="openModal(false, item)">
+              編輯
+            </button>
+            <button type="button" class="btn btn-outline-danger btn-sm" @click="openDelProductModal(item)">
+              刪除
+            </button>
           </div>
         </td>
       </tr>
@@ -45,9 +48,11 @@
   <div class="d-flex justify-content-center">
     <Pagination :pages="pagination" @emit-pages="getProducts"></Pagination>
   </div>
-  <ProductModal ref="productModal"
-  :product="tempProduct"
-  @update-product="updateProduct"></ProductModal>
+  <ProductModal
+    ref="productModal"
+    :product="tempProduct"
+    @update-product="updateProduct">
+  </ProductModal>
   <DelModal :item="tempProduct" ref="delModal" @del-item="delProduct"/>
 </template>
 

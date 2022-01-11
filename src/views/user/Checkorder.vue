@@ -9,7 +9,9 @@
         <div class="col-md-8">
           <div class="input-group mt-5 mb-1">
             <input type="text" class="form-control" placeholder="輸入訂單編號" v-model="orderId">
-            <button class="btn btn-dark btn-hover rounded-0" type="button" @click="getOrder">送出</button>
+            <button class="btn btn-dark btn-hover rounded-0" type="button" @click="getOrder">
+              送出
+            </button>
           </div>
           <span class="text-success" v-if="statusGet">*取得此訂單</span>
           <span class="text-danger" v-if="statusNotGet">*查無此訂單</span>
@@ -54,7 +56,10 @@
                   </tr>
                   <tr class="table-nowrap">
                     <td width="100" class="fw-bold text-end">付款狀態 :</td>
-                    <td><span v-if="!order.is_paid">尚未付款</span><span v-else class="text-strong">付款完成</span></td>
+                    <td>
+                      <span v-if="!order.is_paid">尚未付款</span>
+                      <span v-else class="text-strong">付款完成</span>
+                    </td>
                   </tr>
                 </tbody>
               </table>

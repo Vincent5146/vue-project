@@ -17,34 +17,42 @@
             <Form class="col-11" v-slot="{ errors }" @submit="createOrder">
               <div class="mb-3">
                 <label for="email" class="form-label">Email <small>(必填)</small></label>
-                <Field id="email" name="Email" type="email" class="form-control"
-                        :class="{ 'is-invalid': errors['Email'] }"
-                        placeholder="請輸入 Email" rules="email|required"
-                        v-model="form.user.email"></Field>
+                <Field
+                  id="email" name="Email" type="email" class="form-control"
+                  :class="{ 'is-invalid': errors['Email'] }"
+                  placeholder="請輸入 Email" rules="email|required"
+                  v-model="form.user.email">
+                </Field>
                 <ErrorMessage name="Email" class="invalid-feedback"></ErrorMessage>
               </div>
               <div class="mb-3">
                 <label for="name" class="form-label">收件人姓名 <small>(必填)</small></label>
-                <Field id="name" name="姓名" type="text" class="form-control"
-                        :class="{ 'is-invalid': errors['姓名'] }"
-                        placeholder="請輸入姓名" rules="required"
-                        v-model="form.user.name"></Field>
+                <Field
+                  id="name" name="姓名" type="text" class="form-control"
+                  :class="{ 'is-invalid': errors['姓名'] }"
+                  placeholder="請輸入姓名" rules="required"
+                  v-model="form.user.name">
+                </Field>
                 <ErrorMessage name="姓名" class="invalid-feedback"></ErrorMessage>
               </div>
               <div class="mb-3">
                 <label for="tel" class="form-label">收件人電話 <small>(必填)</small></label>
-                <Field id="tel" name="電話" type="tel" class="form-control"
-                        :class="{ 'is-invalid': errors['電話'] }"
-                        placeholder="請輸入電話" rules="required"
-                        v-model="form.user.tel"></Field>
+                <Field
+                  id="tel" name="電話" type="tel" class="form-control"
+                  :class="{ 'is-invalid': errors['電話'] }"
+                  placeholder="請輸入電話" rules="required"
+                  v-model="form.user.tel">
+                </Field>
                 <ErrorMessage name="電話" class="invalid-feedback"></ErrorMessage>
               </div>
               <div class="mb-3">
                 <label for="address" class="form-label">收件人地址 <small>(必填)</small></label>
-                <Field id="address" name="地址" type="text" class="form-control"
-                        :class="{ 'is-invalid': errors['地址'] }"
-                        placeholder="請輸入地址" rules="required"
-                        v-model="form.user.address"></Field>
+                <Field
+                  id="address" name="地址" type="text" class="form-control"
+                  :class="{ 'is-invalid': errors['地址'] }"
+                  placeholder="請輸入地址" rules="required"
+                  v-model="form.user.address">
+                </Field>
                 <ErrorMessage name="地址" class="invalid-feedback"></ErrorMessage>
               </div>
               <div class="mb-3">
@@ -52,8 +60,12 @@
                 <textarea name="" id="message" class="form-control" cols="30" rows="10" v-model="form.message"></textarea>
               </div>
               <div class="d-flex justify-content-between">
-                <button type="button" class="btn btn-outline-dark btn-hover rounded-0" @click.prevent="goCart">回購物清單</button>
-                <button type="submit" class="btn btn-dark btn-hover rounded-0">下一步 付款去</button>
+                <button type="button" class="btn btn-outline-dark btn-hover rounded-0" @click.prevent="goCart">
+                  回購物清單
+                </button>
+                <button type="submit" class="btn btn-dark btn-hover rounded-0">
+                  下一步 付款去
+                </button>
               </div>
             </Form>
           </div>
@@ -73,7 +85,15 @@
                 <tr class="table-nowrap" v-for="item in carts" :key="item.id">
                   <td>{{ item.product.title }}</td>
                   <td>{{ item.qty }}</td>
-                  <td class="text-end"><span :class="{'text-decoration-line-through': item.final_total !== item.total}">NT$ {{ $filters.currency(item.total) }} 元</span><br><span class="text-strong" v-if="item.final_total !== item.total">NT$ {{ $filters.currency(item.final_total) }} 元</span></td>
+                  <td class="text-end">
+                    <span :class="{'text-decoration-line-through': item.final_total !== item.total}">
+                      NT$ {{ $filters.currency(item.total) }} 元
+                    </span>
+                    <br>
+                    <span class="text-strong" v-if="item.final_total !== item.total">
+                      NT$ {{ $filters.currency(item.final_total) }} 元
+                    </span>
+                  </td>
                 </tr>
               </tbody>
               <tfoot class="text-center">

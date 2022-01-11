@@ -6,17 +6,29 @@
       <Form v-slot="{ errors }" @submit="signIn">
         <h1 class="h2 mb-4 text-center fw-bold">登入至後台</h1>
         <label for="email" class="visually-hidden">電子信箱</label>
-        <Field type="email" id="email" name="Email" :class="{ 'is-invalid': errors['Email'] }" class="form-control" placeholder="電子信箱" v-model="user.username" rules="email|required"></Field>
+        <Field
+          type="email" id="email" name="Email"
+          :class="{ 'is-invalid': errors['Email'] }"
+          class="form-control" placeholder="電子信箱"
+          v-model="user.username" rules="email|required">
+        </Field>
         <ErrorMessage name="Email" class="invalid-feedback"></ErrorMessage>
         <label for="password" class="visually-hidden">密碼</label>
-        <Field type="password" id="password" :class="{ 'is-invalid': errors['密碼'] }" name="密碼" class="form-control" placeholder="密碼" v-model="user.password" rules="required"></Field>
+        <Field
+          type="password" id="password"
+          :class="{ 'is-invalid': errors['密碼'] }" name="密碼"
+          class="form-control" placeholder="密碼"
+          v-model="user.password" rules="required">
+        </Field>
         <ErrorMessage name="密碼" class="invalid-feedback"></ErrorMessage>
         <div class="checkbox mb-3 ms-1">
           <label>
             <input type="checkbox" value="remember-me"> 記住我
           </label>
         </div>
-        <button class="w-100 btn btn-lg btn-dark btn-hover mb-3 rounded-0" type="submit">登入</button>
+        <button class="w-100 btn btn-lg btn-dark btn-hover mb-3 rounded-0" type="submit">
+          登入
+        </button>
       </Form>
     </main>
   </div>

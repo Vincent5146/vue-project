@@ -55,11 +55,20 @@
           <div class="col-md-6 d-flex flex-column justify-content-center align-items-center">
             <p class="mb-4 fs-5"><span class="fw-bold">實體店面 :</span> 台北市大安區新生南路九段0號</p>
             <p class="mb-4 fs-5"><span class="fw-bold">營業時間 :</span> 周一至六早10點 ~ 晚9點，周日公休</p>
-            <p class="mb-4 fs-5"><span class="fw-bold">聯絡電話 :</span> 02-24123456</p>
+            <p class="mb-4 fs-5">
+              <span class="fw-bold">聯絡電話 :</span>
+              <a style="margin-left: 5px;" href="tel: + 02-24123456" @click.prevent>02-24123456</a>
+            </p>
             <div class="mb-4">
-              <a href="#" @click.prevent=""><i class="fab fa-facebook-square me-4 fs-4 text-dark a-hover"></i></a>
-              <a href="#" @click.prevent=""><i class="fab fa-facebook-messenger me-4 fs-4 text-dark a-hover"></i></a>
-              <a href="#" @click.prevent=""><i class="fab fa-instagram-square fs-4 text-dark a-hover"></i></a>
+              <a href="#" @click.prevent>
+                <i class="fab fa-facebook-square me-4 fs-4 text-dark a-hover"></i>
+              </a>
+              <a href="#" @click.prevent>
+                <i class="fab fa-facebook-messenger me-4 fs-4 text-dark a-hover"></i>
+              </a>
+              <a href="#" @click.prevent>
+                <i class="fab fa-instagram-square fs-4 text-dark a-hover"></i>
+              </a>
             </div>
           </div>
           <div class="col-md-6">
@@ -75,17 +84,30 @@
               <Form class="row g-3 needs-validation" v-slot="{ errors }" @submit="submitFrom">
                 <div class="col-md-12">
                   <label for="name" class="form-label">姓名 <small>(必填)</small></label>
-                  <Field type="text" class="form-control"  name="姓名" id="name" :class="{ 'is-invalid': errors['姓名'] }" placeholder="請輸入姓名" rules="required"></Field>
+                  <Field
+                  type="text" class="form-control"  name="姓名" id="name"
+                    :class="{ 'is-invalid': errors['姓名'] }"
+                    placeholder="請輸入姓名" rules="required">
+                  </Field>
                   <ErrorMessage name="姓名" class="invalid-feedback"></ErrorMessage>
                 </div>
                 <div class="col-md-12">
                   <label for="email" class="form-label">電子郵件 <small>(必填)</small></label>
-                  <Field type="email" class="form-control" id="email" name="Email" :class="{ 'is-invalid': errors['Email'] }" placeholder="請輸入電子郵件" rules="email|required"></Field>
+                  <Field
+                    type="email" class="form-control" id="email" name="Email"
+                    :class="{ 'is-invalid': errors['Email'] }"
+                    placeholder="請輸入電子郵件" rules="email|required">
+                  </Field>
                   <ErrorMessage name="Email" class="invalid-feedback"></ErrorMessage>
                 </div>
                 <div class="col-md-12">
                   <label for="phone" class="form-label">電話 <small>(必填)</small></label>
-                  <Field type="number" class="form-control" :class="{ 'is-invalid': errors['電話'] }" name="電話" id="phone" placeholder="請輸入電話" rules="required"></Field>
+                  <Field
+                    type="number" class="form-control"
+                    :class="{ 'is-invalid': errors['電話'] }"
+                    name="電話" id="phone"
+                    placeholder="請輸入電話" rules="required">
+                  </Field>
                   <ErrorMessage name="電話" class="invalid-feedback"></ErrorMessage>
                 </div>
                 <div class="col-md-12">

@@ -1,12 +1,10 @@
 <template>
   <div class="dashboard">
-    <header
-      class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow"
-    >
-      <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fw-bold" href="#/admin/products">
+    <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+      <router-link to="/admin/products" class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fw-bold">
         <i class="fas fa-desktop pe-2"></i>
         後台管理
-      </a>
+      </router-link>
       <button
         class="navbar-toggler position-absolute d-md-none collapsed"
         type="button"
@@ -35,33 +33,33 @@
                 管理員
               </li>
               <li class="nav ps-5 pt-2">
-                <a class="nav-link text-light fw-bold a-hover" href="#/admin/products">
+                <router-link to="/admin/products" class="nav-link text-light fw-bold a-hover">
                   <i class="fas fa-gift pe-2"></i>
                   產品列表
-                </a>
+                </router-link>
               </li>
               <li class="nav ps-5 pt-2">
-                <a class="nav-link text-light fw-bold a-hover" href="#/admin/orders">
+                <router-link to="/admin/orders" class="nav-link text-light fw-bold a-hover">
                   <i class="fas fa-list-alt pe-2"></i>
                   訂單列表
-                </a>
+                </router-link>
               </li>
               <li class="nav ps-5 pt-2">
-                <a class="nav-link text-light fw-bold a-hover" href="#/admin/coupons">
+                <router-link to="/admin/coupons" class="nav-link text-light fw-bold a-hover">
                   <i class="fas fa-balance-scale-left pe-2"></i>
                   優惠碼
-                </a>
+                </router-link>
               </li>
               <li class="nav ps-5 pt-2">
-                <a class="nav-link text-light fw-bold a-hover" href="#/">
+                <router-link to="/" class="nav-link text-light fw-bold a-hover">
                   <i class="fas fa-home pe-2"></i>
                   回首頁
-                </a>
+                </router-link>
               </li>
             </ul>
             <ul class="navbar-nav px-4 mt-2 mb-3 d-md-none d-md-block">
               <li class="nav-item text-nowrap">
-                <a class="nav-link text-light fw-bold a-hover fs-4" href="#" @click="signout">登出</a>
+                <a class="nav-link text-light fw-bold a-hover fs-4" href="#" @click.prevent="signout">登出</a>
               </li>
             </ul>
           </div>
