@@ -1,6 +1,6 @@
 .navbar {
     box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
-    .logo_icon {
+    .logo-icon {
       display: flex;
       align-items: center;
       font-size: 35px;
@@ -14,7 +14,7 @@
       display: flex;
       align-items: center;
       margin-right: 10px;
-      .login_icon{
+      .login-icon{
         font-size: 25px;
         color: #2f3836;
         transition: all 0.3s;
@@ -24,10 +24,10 @@
       }
     }
 }
-.menu_icon {
+.menu-icon {
   color: #a9caaf;
   font-size: 30px;
-  vertical-align: bottom;
+  vertical-align:bottom;
 }
 .nav-item {
   margin-right: 5px;
@@ -81,7 +81,7 @@
 .router-link-exact-active {
   color: #6d3215;
 }
-.price_dlr {
+.price-dlr {
   font-size: 18px;
   vertical-align: inherit;
 }

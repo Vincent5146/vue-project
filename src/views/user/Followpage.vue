@@ -2,7 +2,7 @@
   <Navbar/>
   <Banner/>
   <div class="FollowPage mt-5">
-    <Loading v-model:active="isLoading"/>
+    <Loading :active="isLoading"/>
     <div class="container">
       <h1 class="fs-2 text-center fw-bold" v-if="followProduct.length !== 0">我的收藏</h1>
       <div class="d-flex flex-column align-items-center" v-if="followProduct.length === 0">

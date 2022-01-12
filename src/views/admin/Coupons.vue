@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Loading :active="isLoading"></Loading>
+    <Loading :active="isLoading"/>
     <div class="text-end mt-4">
       <button type="button" class="btn btn-dark btn-hover rounded-0" @click="openCouponModal(true)">
         建立新的優惠券

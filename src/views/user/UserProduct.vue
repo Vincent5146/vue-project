@@ -1,7 +1,7 @@
 <template>
   <Navbar />
   <div class="productPage">
-    <Loading v-model:active="isLoading" />
+    <Loading :active="isLoading" />
     <div class="container">
       <!-- 分類 -->
       <nav
@@ -34,9 +34,7 @@
             </div>
           </div>
         </div>
-        <div
-          class="col-md-5 d-flex justify-content-center align-items-center mt-5 mt-md-0"
-        >
+        <div class="col-md-5 d-flex justify-content-center align-items-center mt-5 mt-md-0">
           <div class="ps-0 ps-md-5">
             <div class="d-flex justify-content-between">
               <h4 class="text-strong fw-bold fs-5 mt-4">{{ product.category }}</h4>
@@ -101,22 +99,23 @@
           <div class="col" v-for="item in products" :key="item.id">
             <div class="product">
               <div class="product_img">
-                <div style="height: 250px; background-size: cover; background-position: center"
+                <div
+                  style="height: 250px; background-size: cover; background-position: center"
                   :style="{ backgroundImage: `url(${item.imageUrl})` }"
                   class="text-end"
                   @click="$router.push({ path: `/product/${item.id}` })"
                 >
                 </div>
               </div>
-              <div class="product_title">{{ item.title }}</div>
+              <div class="product-title">{{ item.title }}</div>
               <div class="product_price">
-                <div class="product_price_1" v-if="!item.price">
+                <div class="product-price-1" v-if="!item.price">
                   {{ $filters.currency(item.origin_price) }} 元
                 </div>
-                <del class="product_price_2" v-if="item.price">
+                <del class="product-price-2" v-if="item.price">
                   原價 {{ $filters.currency(item.origin_price) }} 元
                 </del>
-                <div class="product_price_2" v-if="item.price">
+                <div class="product-price-2" v-if="item.price">
                   特價 {{ $filters.currency(item.price) }} 元
                 </div>
               </div>

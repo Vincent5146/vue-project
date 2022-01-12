@@ -1,58 +1,58 @@
 .about {
+  display: flex;
+  flex-wrap: wrap;
+  &-box {
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
-    &_box {
+    &:last-child {
+      margin: -30px 0 50px;
+      @media only screen and (max-width: 1024px) {
+        margin: 0 0 50px;
+      }
+    }
+  }
+  &-txt {
+    padding: 40px 60px 30px;
+    width: 46%;
+    @media only screen and (max-width: 1024px) {
       width: 100%;
-      display: flex;
-      flex-wrap: wrap;
-      &:last-child {
-        margin: -30px 0 50px;
-        @media only screen and (max-width: 1024px) {
-          margin: 0 0 50px;
-        }
-      }
+      order: 1;
+      padding: 40px 60px 0px;
     }
-    &_txt {
-      padding: 40px 60px 30px;
-      width: 46%;
-      @media only screen and (max-width: 1024px) {
-        width: 100%;
-        order: 1;
-        padding: 40px 60px 0px;
-      }
-      @media only screen and (max-width: 600px) {
-        padding: 20px 0px 0px;
-      }
+    @media only screen and (max-width: 600px) {
+      padding: 20px 0px 0px;
     }
-    &_txt_2 {
-      padding: 80px 60px 30px;
-      @media only screen and (max-width: 1024px) {
-        padding: 60px 60px 0px;
-      }
-      @media only screen and (max-width: 600px) {
-        padding: 50px 0px 0px;
-      }
+  }
+  &-txt-2 {
+    padding: 80px 60px 30px;
+    @media only screen and (max-width: 1024px) {
+      padding: 60px 60px 0px;
     }
-    &_img {
-      width: 50%;
-      @media only screen and (max-width: 1024px) {
-        width: 100%;
-        order: 2;
-      }
+    @media only screen and (max-width: 600px) {
+      padding: 50px 0px 0px;
     }
-    &_h2 {
-      font-size: 50px;
-      margin-bottom: 30px;
-      @media only screen and (max-width: 1024px) {
-        font-size: 34px;
-        margin-bottom: 20px;
-      }
+  }
+  &-img {
+    width: 50%;
+    @media only screen and (max-width: 1024px) {
+      width: 100%;
+      order: 2;
     }
-    &_text {
-      line-height: 1.8;
-      & p {
-        font-size: 20px;
-        margin-bottom: 25px;
-      }
+  }
+  &-h2 {
+    font-size: 50px;
+    margin-bottom: 30px;
+    @media only screen and (max-width: 1024px) {
+      font-size: 34px;
+      margin-bottom: 20px;
     }
+  }
+  &-text {
+    line-height: 1.8;
+    & p {
+      font-size: 20px;
+      margin-bottom: 25px;
+    }
+  }
 }

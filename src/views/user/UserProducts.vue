@@ -1,6 +1,6 @@
 <template>
   <Navbar/>
-  <Loading v-model:active="isLoading" />
+  <Loading :active="isLoading" />
   <div class="container-fluid">
     <div class="row">
       <div class="col-12">
@@ -15,8 +15,8 @@
   </div>
   <div class="container">
     <div class="row mt-4">
-      <div class="col-12 col-lg-3 col-xl-2 nav_left" ref="navLeft">
-        <p class="nav_tar">
+      <div class="col-12 col-lg-3 col-xl-2 nav-left" ref="navLeft">
+        <p class="nav-tar">
           產品種類
           <span class="material-icons">
             <i class="fas fa-chevron-down"></i>
@@ -52,15 +52,15 @@
                 >
                 </div>
               </div>
-              <div class="product_title">{{ item.title }}</div>
+              <div class="product-title">{{ item.title }}</div>
               <div class="product_price">
-                <div class="product_price_1" v-if="!item.price">
+                <div class="product-price-1" v-if="!item.price">
                   {{ $filters.currency(item.origin_price) }} 元
                 </div>
-                <del class="product_price_2" v-if="item.price">
+                <del class="product-price-2" v-if="item.price">
                   原價 {{ $filters.currency(item.origin_price) }} 元
                 </del>
-                <div class="product_price_2" v-if="item.price">
+                <div class="product-price-2" v-if="item.price">
                   特價 {{ $filters.currency(item.price) }} 元
                 </div>
               </div>

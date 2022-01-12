@@ -1,6 +1,8 @@
 <template>
   <div class="gotop d-none">
-    <a href="#" @click.prevent="top"><i class="fas fa-paw"></i></a>
+    <a href="#" @click.prevent="top">
+      <i class="fas fa-paw"></i>
+    </a>
   </div>
 </template>
 

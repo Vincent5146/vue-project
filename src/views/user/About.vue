@@ -2,14 +2,13 @@
   <Navbar/>
   <Banner/>
   <div class="about mt-5">
-    <Loading v-model:active="isLoading"/>
     <div class="container">
       <section class="mt-lg-5">
         <div class="about">
-          <div class="about_box animated">
-            <div class="about_txt">
-              <h2 class="about_h2 text-center">關於綿綿</h2>
-              <div class="about_text">
+          <div class="about-box animated">
+            <div class="about-txt">
+              <h2 class="about-h2 text-center">關於綿綿</h2>
+              <div class="about-text">
                 <p>
                 <span class="fw-bold">綿綿</span> 我們希望將心綿幼兒教育精神- 親近自然、尊重、自由與愛，落實在台灣的寵物照護。
                 讓貓咪狗狗享受歐洲等級的優質環境，讓飼主安心出門無負擔。
@@ -19,7 +18,7 @@
                 </p>
               </div>
             </div>
-            <div class="about_img">
+            <div class="about-img">
               <img
                 src="https://upload.cc/i1/2021/12/10/XSkRGC.jpg"
                 alt="關於綿綿"
@@ -27,17 +26,17 @@
               />
             </div>
           </div>
-          <div class="about_box animated">
-            <div class="about_img">
+          <div class="about-box animated">
+            <div class="about-img">
               <img
                 src="https://upload.cc/i1/2021/12/10/R7UYI9.jpg"
                 alt="綿綿特色"
                 width="100%"
               />
             </div>
-            <div class="about_txt about_txt_2">
-              <h2 class="about_h2 text-center">綿綿 特色</h2>
-              <div class="about_text ">
+            <div class="about-txt about-txt-2">
+              <h2 class="about-h2 text-center">綿綿 特色</h2>
+              <div class="about-text ">
                 <p>
                   我們深信每一次的服務都會讓主人放心。透過褓母細心照顧，無論是甚麼樣的毛孩，來過綿綿後都能變得煥然一新的樣子。
                 </p>
@@ -81,7 +80,7 @@
           <div class="row d-flex justify-content-center">
             <div class="col-md-7">
               <h2 class="text-center fw-bold mb-4">提供寶貴意見</h2>
-              <Form class="row g-3 needs-validation" v-slot="{ errors }" @submit="submitFrom">
+              <Form class="row g-3 needs-validation" v-slot="{ errors }" @submit.prevent="submitFrom">
                 <div class="col-md-12">
                   <label for="name" class="form-label">姓名 <small>(必填)</small></label>
                   <Field
@@ -143,11 +142,6 @@ export default {
     Navbar,
     Banner,
     Footer
-  },
-  data () {
-    return {
-      isLoading: false
-    }
   }
 }
 </script>

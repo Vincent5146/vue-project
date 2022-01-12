@@ -6,8 +6,11 @@
           <h5 class="modal-title" id="exampleModalLabel">
             <span>新增產品</span>
           </h5>
-          <button type="button" class="btn-close"
-                  data-bs-dismiss="modal" aria-label="Close"></button>
+          <button
+            type="button" class="btn-close"
+            data-bs-dismiss="modal" aria-label="Close"
+          >
+          </button>
         </div>
         <div class="modal-body">
           <div class="row">
@@ -36,7 +39,6 @@
                 />
               </div>
               <img class="img-fluid" :src="tempProduct.imageUrl" alt="" />
-              <!-- 延伸技巧，多圖 -->
               <div class="mt-5" v-if="tempProduct.images">
                 <div v-for="(image, key) in tempProduct.images" class="mb-3 input-group" :key="key">
                   <input

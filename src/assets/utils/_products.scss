@@ -2,7 +2,7 @@
   list-style: none;
 }
 .nav {
-  &_left {
+  &-left {
     position: relative;
     @media only screen and (max-width: 992px) {
       margin-bottom: 30px;
@@ -49,7 +49,7 @@
       }
     }
   }
-  &_tar {
+  &-tar {
     background: #7c9782;
     display: flex;
     align-items: center;
@@ -86,19 +86,19 @@
       transform: scale(0.95);
     }
   }
-  &_title {
+  &-title {
     font-size: 25px;
     font-weight: bold;
     @media only screen and (max-width: 600px) {
       font-size: 18px;
     }
   }
-  &_price_1 {
+  &-price-1 {
     font-size: 2rem;
     margin-bottom: 8px;
     margin-top: 34px;
   }
-  &_price_2 {
+  &-price-2 {
     font-size: 1.3rem;
     margin-bottom: 8px;
   }
@@ -139,7 +139,7 @@
     }
   }
 }
-del.product_price_2 {
+del.product-price-2 {
   font-size: 15px;
   display: block;
   margin: 8px 0 0;

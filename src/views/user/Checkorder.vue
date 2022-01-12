@@ -2,7 +2,7 @@
   <Navbar/>
   <Banner/>
   <div class="CheckOrder mt-5">
-    <Loading v-model:active="isLoading"/>
+    <Loading :active="isLoading"/>
     <div class="container">
       <h1 class="fs-2 text-center fw-bold">訂單查詢</h1>
       <div class="row d-flex justify-content-center">

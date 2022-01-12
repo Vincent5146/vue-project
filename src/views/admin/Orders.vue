@@ -1,5 +1,5 @@
 <template>
-  <Loading :active="isLoading"></Loading>
+  <Loading :active="isLoading"/>
   <table class="table mt-4">
     <thead class="table-dark">
       <tr class="table-nowrap">
@@ -69,7 +69,7 @@
 
 <script>
 import DelModal from '@/components/DelModal.vue'
-import OrderModal from '@/components/orderModal.vue'
+import OrderModal from '@/components/OrderModal.vue'
 import Pagination from '@/components/Pagination.vue'
 
 export default {

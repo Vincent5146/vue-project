@@ -1,6 +1,7 @@
 <template>
   <Navbar/>
   <div class="cart">
+    <Loading :active="isLoading"/>
     <div class="container">
       <div class="d-flex justify-content-center">
         <h1 class="fs-2 fw-bold">購物車清單</h1>

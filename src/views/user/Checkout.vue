@@ -1,7 +1,7 @@
 <template>
   <Navbar/>
   <div class="checkout">
-    <Loading v-model:active="isLoading"/>
+    <Loading :active="isLoading"/>
     <div class="container">
       <div class="d-flex justify-content-center align-items-center mb-5">
         <h5 class="fw-bold mb-0 active">填寫資料</h5>

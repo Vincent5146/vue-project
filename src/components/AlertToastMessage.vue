@@ -7,10 +7,7 @@
       :key="i"
     >
       <i class="fas fa-check-circle me-1" v-if="item.status === 'success'"></i>
-      <i
-        class="fas fa-exclamation-triangle me-1"
-        v-if="item.status === 'danger'"
-      ></i>
+      <i class="fas fa-exclamation-triangle me-1" v-if="item.status === 'danger'"></i>
       {{ item.message }}
       <button
         type="button"

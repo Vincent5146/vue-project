@@ -2,7 +2,6 @@
   <Navbar/>
   <Banner/>
   <div class="home mt-5">
-    <Loading v-model:active="isLoading"/>
     <div class="container">
       <section class="mt-5">
         <div class="d-flex justify-content-center">
@@ -11,10 +10,7 @@
         <div class="card-group mt-5">
           <div class="col-md-4">
             <div class="product1 text-center">
-              <router-link
-                to="/about"
-                class="product1-img img-fluid"
-              ></router-link>
+              <router-link to="/about" class="product1-img img-fluid"></router-link>
               <div class="card-body animated">
                 <h3 class="card-title fw-bold">教育理念</h3>
                 <p class="card-text text-left">
@@ -25,10 +21,7 @@
           </div>
           <div class="col-md-4">
             <div class="product1 text-center">
-              <router-link
-                to="/about"
-                class="product2-img img-fluid"
-              ></router-link>
+              <router-link to="/about" class="product2-img img-fluid"></router-link>
               <div class="card-body animated">
                 <h3 class="card-title fw-bold">24H 褓母照顧</h3>
                 <p class="card-text text-left">
@@ -39,10 +32,7 @@
           </div>
           <div class="col-md-4">
             <div class="product1 text-center">
-              <router-link
-                to="/about"
-                class="product3-img img-fluid"
-              ></router-link>
+              <router-link to="/about" class="product3-img img-fluid"></router-link>
               <div class="card-body animated">
                 <h3 class="card-title fw-bold">嚴格防疫 清潔 消毒</h3>
                 <p class="card-text text-left">
@@ -99,15 +89,13 @@
       <section class="section_2 ">
         <div class="container">
           <div class="section_title">
-            <h2>
-              精選好文
-            </h2>
+            <h2>精選好文</h2>
           </div>
           <div class="blog">
             <div class="blog_item">
               <div class="blog_pic">
                 <a target="_blank" href="https://pets.ettoday.net/news/2142169">
-                  <img src="https://upload.cc/i1/2021/12/10/No9aH3.jpg" class="card-img-top" alt="寵物窩">
+                  <img src="../assets/images/home-blog1.jpg" class="card-img-top" alt="寵物窩">
                 </a>
               </div>
               <div class="blog_txt">
@@ -120,7 +108,7 @@
             <div class="blog_item">
               <div class="blog_pic">
                 <a target="_blank" href="https://www.abibpet.com/blog/%E3%80%90%E4%B8%BB%E4%BA%BA%E4%B8%8D%E5%8F%AF%E4%B8%8D%E7%9F%A5%EF%BC%8F%E7%8B%97%E7%8B%97%E8%88%94%E8%88%94%E8%88%94-%E6%83%B3%E8%A6%81%E5%91%8A%E8%A8%B4%E4%BD%A0%E4%BB%80%E9%BA%BC%E4%BA%8B%E5%97%8E%E3%80%91">
-                  <img src="https://upload.cc/i1/2021/12/10/2z1dBc.jpg" class="card-img-top" alt="舔舔舔">
+                  <img src="../assets/images/home-blog2.jpg" class="card-img-top" alt="舔舔舔">
                 </a>
               </div>
               <div class="blog_txt">
@@ -133,7 +121,7 @@
             <div class="blog_item">
               <div class="blog_pic">
                 <a target="_blank" href="https://www.businessweekly.com.tw/style/blog/8524">
-                  <img src="https://upload.cc/i1/2021/12/10/q5VXxG.jpg" class="card-img-top" alt="訓練">
+                  <img src="../assets/images/home-blog3.jpg" class="card-img-top" alt="訓練">
                 </a>
               </div>
               <div class="blog_txt">
@@ -162,11 +150,6 @@ export default {
     Footer,
     Navbar,
     Banner
-  },
-  data () {
-    return {
-      isLoading: false
-    }
   },
   mounted () {
     // 類似監聽 scroll 滾動位置
