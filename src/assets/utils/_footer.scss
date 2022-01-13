@@ -9,7 +9,7 @@ footer {
     }
   }
   .footer {
-    &_copyright {
+    &-copyright {
       display: flex;
       justify-content: center;
       margin-top: 10px;
@@ -18,7 +18,7 @@ footer {
         font-size: 13px;
       }
     }
-    &_nav {
+    &-nav {
       display: flex;
       justify-content: center;
       margin-top: 18px;
@@ -34,7 +34,7 @@ footer {
           font-size: 13px;
         }
       }
-      &_link {
+      &-link {
         @media only screen and (max-width: 600px) {
           font-size: 15px;
         }

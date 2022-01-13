@@ -1,7 +1,7 @@
 <template>
   <footer class="bg-dark mt-5">
     <div class="container text-md-start py-4">
-      <ul class="footer_nav">
+      <ul class="footer-nav">
         <li class="nav-item pt-1">
           <a href="#/user/boarding" class="nav-link text-light a-hover fw-bold">提供服務</a>
         </li>
@@ -43,7 +43,7 @@
             </li>
           </ul>
       </div>
-      <div class="footer_copyright">
+      <div class="footer-copyright">
         <p>© Copyright 2021 軟綿綿</p>
         <p>個人練習作品，無商業用途</p>
       </div>
