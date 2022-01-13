@@ -30,7 +30,7 @@
         <div class="col-md-6 p-0 d-flex justify-content-center overflow-hidden">
           <div class="row">
             <div class="col p-0">
-              <img :src="product.imageUrl" class="img-fluid" alt="商品照片" />
+              <img :src="product.imageUrl" class="image img-fluid" alt="商品照片" />
             </div>
           </div>
         </div>
@@ -300,5 +300,14 @@ export default {
 <style lang="scss" scoped>
 .productPage {
   margin-top: 100px;
+}
+.image {
+  height: 500px;
+  @media only screen and(max-width:992px) {
+    height: 400px;
+  }
+  @media only screen and(max-width:600px) {
+    height: 300px;
+  }
 }
 </style>
