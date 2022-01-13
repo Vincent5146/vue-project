@@ -18,6 +18,9 @@ import emitter from './methods/emitter'
 import { currency, date } from './methods/filters'
 import $httpMessageState from './methods/pushMessageState'
 
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+
 import '@fortawesome/fontawesome-free/css/all.css'
 import '@fortawesome/fontawesome-free/js/all.js'
 
@@ -30,6 +33,11 @@ configure({
   validateOnInput: true
 })
 setLocale('zh_TW')
+
+AOS.init({
+  duration: 400,
+  offset: 150
+})
 
 const app = createApp(App)
 app.component('Form', Form)

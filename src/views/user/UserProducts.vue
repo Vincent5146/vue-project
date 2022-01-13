@@ -75,7 +75,7 @@
             </div>
           </li>
         </ul>
-        <div class="d-flex justify-content-center mt-4">
+        <div v-if="this.pageProducts.length > 8" class="d-flex justify-content-center mt-4">
           <Pagination :pages="pagination" @emit-pages="getProducts"/>
         </div>
       </div>
@@ -97,6 +97,7 @@ export default {
   },
   data () {
     return {
+      Allproducts: [],
       products: [],
       product: {},
       isLoading: false,
@@ -120,17 +121,26 @@ export default {
     })
   },
   methods: {
-    getProducts () {
+    getAllProducts () {
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/products/all`
+      this.isLoading = true
+      this.$http.get(url).then((response) => {
+        this.Allproducts = response.data.products
+        const categories = new Set()
+        this.Allproducts.forEach((item) => {
+          categories.add(item.category)
+        })
+        this.category = Array.from(categories)
+        this.isLoading = false
+      })
+    },
+
+    getProducts (page = 1) {
+      const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/products/?page=${page}`
       this.isLoading = true
       this.$http.get(url).then((response) => {
         this.products = response.data.products
         this.pagination = response.data.pagination
-        const categories = new Set()
-        this.products.forEach((item) => {
-          categories.add(item.category)
-        })
-        this.category = Array.from(categories)
         this.getProductsList(this.products)
         this.isLoading = false
       })
@@ -140,7 +150,7 @@ export default {
     },
     filterCategory (e) {
       this.isLoading = true
-      this.pageProducts = this.products.filter((product) => {
+      this.pageProducts = this.Allproducts.filter((product) => {
         if (product.category === e) {
           this.productValue = e
           return product
@@ -156,7 +166,7 @@ export default {
     },
     getProductsList (productslist) {
       this.pageProducts = []
-      productslist.forEach((item, index) => {
+      productslist.forEach(item => {
         this.pageProducts.push(item)
       })
     },
@@ -187,6 +197,7 @@ export default {
   },
   created () {
     this.getProducts()
+    this.getAllProducts()
   }
 }
 

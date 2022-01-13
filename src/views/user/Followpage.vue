@@ -1,6 +1,10 @@
 <template>
   <Navbar/>
-  <Banner/>
+  <div class="banner">
+    <div class="banner-txtbox">
+      <h2>綿綿寵物旅館</h2>
+    </div>
+  </div>
   <div class="FollowPage mt-5">
     <Loading :active="isLoading"/>
     <div class="container">
@@ -52,14 +56,12 @@
 
 <script>
 import Navbar from '@/components/Navbar.vue'
-import Banner from '@/components/Banner.vue'
 import Footer from '@/components/Footer.vue'
 
 export default {
   name: 'FollowPage',
   components: {
     Navbar,
-    Banner,
     Footer
   },
   data () {
@@ -97,13 +99,13 @@ export default {
 </script>
 
 <style lang="scss">
-  .col {
-    @media only screen and (max-width: 992px) {
-      width: 30%;
-    }
-    @media only screen and (max-width: 600px) {
-      flex: 0 0 auto;
-      width: 100%;
-    }
+.col {
+  @media only screen and (max-width: 992px) {
+    width: 30%;
   }
+  @media only screen and (max-width: 600px) {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+}
 </style>

@@ -1,6 +1,10 @@
 <template>
   <Navbar/>
-  <Banner/>
+  <div class="banner">
+    <div class="banner-txtbox">
+      <h2>綿綿寵物旅館</h2>
+    </div>
+  </div>
   <div class="CheckOrder mt-5">
     <Loading :active="isLoading"/>
     <div class="container">
@@ -99,14 +103,12 @@
 
 <script>
 import Navbar from '@/components/Navbar.vue'
-import Banner from '@/components/Banner.vue'
 import Footer from '@/components/Footer.vue'
 
 export default {
   name: 'CheckOrder',
   components: {
     Navbar,
-    Banner,
     Footer
   },
   data () {
@@ -141,3 +143,9 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.checkoutPay{
+  margin-top: 100px;
+}
+</style>

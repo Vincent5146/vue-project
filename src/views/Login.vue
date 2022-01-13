@@ -1,6 +1,10 @@
 <template>
   <Navbar/>
-  <Banner/>
+  <div class="banner">
+    <div class="banner-txtbox">
+      <h2>綿綿寵物旅館</h2>
+    </div>
+  </div>
   <div class="container mt-5">
     <main class="form-signin">
       <Form v-slot="{ errors }" @submit="signIn">
@@ -37,14 +41,12 @@
 
 <script>
 import Navbar from '@/components/Navbar.vue'
-import Banner from '@/components/Banner.vue'
 import Footer from '@/components/Footer.vue'
 
 export default {
   name: 'Login',
   components: {
     Navbar,
-    Banner,
     Footer
   },
   data () {

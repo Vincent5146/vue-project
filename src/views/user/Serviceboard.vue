@@ -1,6 +1,10 @@
 <template>
   <Navbar/>
-  <Banner/>
+  <div class="banner">
+    <div class="banner-txtbox">
+      <h2>綿綿寵物旅館</h2>
+    </div>
+  </div>
   <div class="products">
     <div class="container">
       <div class="row mt-4">
@@ -39,14 +43,12 @@
 
 <script>
 import Navbar from '@/components/Navbar.vue'
-import Banner from '@/components/Banner.vue'
 import Footer from '@/components/Footer.vue'
 
 export default {
   name: 'Products',
   components: {
     Navbar,
-    Banner,
     Footer
   }
 }
