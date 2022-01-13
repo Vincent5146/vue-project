@@ -26,7 +26,7 @@
         </div>
       </div>
     </div>
-    <div class="image mt-5" :style="{ backgroundImage: `url(${computedTabData.pic})` }">
+    <div class="image4 mt-5" :style="{ backgroundImage: `url(${computedTabData.pic})` }">
     </div>
   </div>
 </template>

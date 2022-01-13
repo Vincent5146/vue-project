@@ -38,7 +38,7 @@
         </div>
       </div>
     </div>
-    <div class="image mt-3" style='background-image: url(https://upload.cc/i1/2021/11/22/VJ418T.jpg)'>
+    <div class="image1 mt-3">
     </div>
   </div>
 </template>

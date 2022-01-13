@@ -2,7 +2,16 @@
   display: flex;
   align-items: center;
   gap:1.5rem;
-  .image{
+  .image1{
+    background-image: url(~@/assets/images/swimming.jpeg);
+  }
+  .image2{
+    background-image: url(~@/assets/images/spa.jpeg);
+  }
+  .image3{
+    background-image: url(~@/assets/images/daycare.jpeg);
+  }
+  .image1, .image2, .image3, .image4{
     flex:1 1 70rem;
     height: 400px;
     width: 40%;
@@ -52,10 +61,6 @@
             margin-right: 5px;
           }
         }
-        // @media (max-width: 991px) {
-        //   display: flex;
-        //   justify-content: space-around;
-        // }
         @media (max-width: 768px) {
           font-size: 20px;
         }

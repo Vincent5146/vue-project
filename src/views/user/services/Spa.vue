@@ -18,7 +18,7 @@
         </div>
       </div>
     </div>
-    <div class="image mt-5" style='background-image: url(https://upload.cc/i1/2021/11/22/ZI4NHg.jpg)'>
+    <div class="image2 mt-5">
     </div>
   </div>
 </template>
