@@ -23,16 +23,32 @@
           </span>
         </p>
         <ul :class="{ open: sideUl }">
-          <li @click="getProducts()" :class="{ active: productValue === '' }">
+          <li @click="getProducts()" :class="{ active: productValue === '全部' }">
             全部產品
           </li>
           <li
-            v-for="item in category"
-            :key="item.id"
-            @click="filterCategory(item)"
-            :class="{ active: item === productValue }"
+            type="button" @click="filterCategory('綿綿服務')"
+            :class="{ active: '綿綿服務' === productValue }"
           >
-            {{ item }}
+            綿綿服務
+          </li>
+          <li
+            type="button" @click="filterCategory('寵物玩具')"
+            :class="{ active: '寵物玩具' === productValue }"
+          >
+            寵物玩具
+          </li>
+          <li
+            type="button" @click="filterCategory('寵物食品')"
+            :class="{ active: '寵物食品' === productValue }"
+          >
+            寵物食品
+          </li>
+          <li
+            type="button" @click="filterCategory('寵物衣服')"
+            :class="{ active: '寵物衣服' === productValue }"
+          >
+            寵物衣服
           </li>
         </ul>
       </div>
@@ -40,7 +56,7 @@
         <ul class="products row p-0">
           <li
             class="col-6 col-sm-4 col-xl-3 mb-5 text-start list-none"
-            v-for="item in pageProducts"
+            v-for="item in getProductsList"
             :key="item.id"
           >
             <div class="product">
@@ -75,8 +91,8 @@
             </div>
           </li>
         </ul>
-        <div v-if="this.pageProducts.length > 8" class="d-flex justify-content-center mt-4">
-          <Pagination :pages="pagination" @emit-pages="getProducts"/>
+        <div class="d-flex justify-content-center mt-4">
+          <Pagination :pages="pagination" @emit-pages="getProducts" v-if="pageIsShown"/>
         </div>
       </div>
     </div>
@@ -97,15 +113,13 @@ export default {
   },
   data () {
     return {
-      Allproducts: [],
       products: [],
       product: {},
       isLoading: false,
-      pageProducts: [],
-      category: [],
       pagination: {},
-      productValue: '',
-      sideUl: false
+      productValue: '全部',
+      sideUl: false,
+      pageIsShown: false
     }
   },
   mounted () {
@@ -120,55 +134,41 @@ export default {
       }
     })
   },
+  computed: {
+    getProductsList () {
+      return this.products.filter((item) => {
+        return item.category.match(this.productValue)
+      })
+    }
+  },
   methods: {
     getAllProducts () {
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/products/all`
       this.isLoading = true
       this.$http.get(url).then((response) => {
-        this.Allproducts = response.data.products
-        const categories = new Set()
-        this.Allproducts.forEach((item) => {
-          categories.add(item.category)
-        })
-        this.category = Array.from(categories)
+        this.products = response.data.products
+        this.pageIsShown = false
         this.isLoading = false
       })
     },
-
     getProducts (page = 1) {
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/products/?page=${page}`
       this.isLoading = true
       this.$http.get(url).then((response) => {
         this.products = response.data.products
         this.pagination = response.data.pagination
-        this.getProductsList(this.products)
+        this.pageIsShown = true
+        this.productValue = ''
         this.isLoading = false
       })
     },
     getProduct (id) {
       this.$router.push(`/product/${id}`)
+      document.documentElement.scrollTop = 0
     },
-    filterCategory (e) {
-      this.isLoading = true
-      this.pageProducts = this.Allproducts.filter((product) => {
-        if (product.category === e) {
-          this.productValue = e
-          return product
-        }
-        if (e === undefined) {
-          this.productValue = 1
-          return this.products
-        }
-        return false
-      })
-      this.getProductsList(this.pageProducts)
-      this.isLoading = false
-    },
-    getProductsList (productslist) {
-      this.pageProducts = []
-      productslist.forEach(item => {
-        this.pageProducts.push(item)
-      })
+    filterCategory (item) {
+      this.getAllProducts()
+      this.productValue = item
     },
     addtoCart (id, qty) {
       const api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/cart`
@@ -197,7 +197,6 @@ export default {
   },
   created () {
     this.getProducts()
-    this.getAllProducts()
   }
 }
 
