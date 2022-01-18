@@ -96,7 +96,6 @@ export default {
       this.$http.get(url, this.tempProduct).then((response) => {
         this.orders = response.data.orders
         this.pagination = response.data.pagination
-        console.log(this.orders)
         this.isLoading = false
       })
     },

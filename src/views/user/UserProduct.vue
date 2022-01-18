@@ -72,7 +72,7 @@
               </h3>
             </div>
             <div class="d-flex align-items-end pt-4">
-              <select class="fs-5 px-2 py-1" v-model="model1">
+              <select class="fs-5 px-2 py-1" v-model.number="qty">
                 <option v-for="item in numberList" :value="item.value" :key="item.value">{{ item.label }}</option>
               </select>
               <button type="button" class="btn btn btn-dark btn-hover rounded-0 ms-4" @click="addtoCart(product.id, quantity)">
@@ -186,7 +186,7 @@ export default {
           label: '5'
         }
       ],
-      model1: '',
+      qty: 1,
       random: 0,
       isLoading: false,
       followList: JSON.parse(localStorage.getItem('followData')) || []
@@ -198,7 +198,7 @@ export default {
     }
   },
   methods: {
-    getProduct (id, text) {
+    getProduct (id) {
       const api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/product/${id}`
       this.isLoading = true
       this.$http.get(api).then((response) => {
@@ -225,11 +225,11 @@ export default {
         }
       })
     },
-    addtoCart (id, qty) {
+    addtoCart (id, qty = 1) {
       const api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/cart`
       const cart = {
         product_id: id,
-        qty
+        qty: this.qty
       }
       this.isLoading = true
       this.$http.post(api, { data: cart }).then((response) => {

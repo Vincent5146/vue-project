@@ -2,8 +2,8 @@
   <div class="service">
     <div class="content">
       <div class="text">
-          <h3>DAYCARE</h3>
-          <h3>社交 ‧ 安親</h3>
+        <h3>DAYCARE</h3>
+        <h3>社交 ‧ 安親</h3>
       </div>
       <div class="text2">
         <h2>狗狗是群聚動物 ( pack animal )，整天孤單在家的狗狗是很寂寞的</h2>
