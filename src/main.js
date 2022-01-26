@@ -27,7 +27,6 @@ import '@fortawesome/fontawesome-free/js/all.js'
 defineRule('required', required)
 defineRule('email', email)
 defineRule('min', min)
-
 configure({
   generateMessage: localize({ zh_TW: zhTW }),
   validateOnInput: true

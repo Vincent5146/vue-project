@@ -101,6 +101,7 @@ export default {
     updateProduct (item) {
       this.tempProduct = item
       let api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/product`
+      this.isLoading = true
       let httpMethod = 'post'
       if (!this.isNew) {
         api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/product/${item.id}`
@@ -108,6 +109,7 @@ export default {
       }
       const productComponent = this.$refs.productModal
       this.$http[httpMethod](api, { data: this.tempProduct }).then((response) => {
+        this.isLoading = false
         productComponent.hideModal()
         if (response.data.success) {
           this.getProducts()
@@ -124,7 +126,9 @@ export default {
     },
     delProduct () {
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/product/${this.tempProduct.id}`
+      this.isLoading = true
       this.$http.delete(url).then((response) => {
+        this.isLoading = false
         this.emitter.emit('message:push', { message: response.data.message, status: 'danger' })
         const delComponent = this.$refs.delModal
         delComponent.hideModal()
