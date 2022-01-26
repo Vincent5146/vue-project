@@ -4,7 +4,7 @@
       display: flex;
       align-items: center;
       font-size: 35px;
-      color: #2f3836;
+      color: $dark;
       transition: all 0.3s;
         &:hover {
           color: #a9caaf;
@@ -16,7 +16,7 @@
       margin-right: 10px;
       .login-icon{
         font-size: 25px;
-        color: #2f3836;
+        color: $dark;
         transition: all 0.3s;
           &:hover {
             color: #a9caaf;
@@ -27,7 +27,6 @@
 .menu-icon {
   color: #a9caaf;
   font-size: 30px;
-  vertical-align:bottom;
 }
 .nav-item {
   margin-right: 5px;
@@ -90,21 +89,15 @@
 }
 .cart {
   position: relative;
-  &_total_price {
-    margin: 0.5rem 0;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-  }
-  &_icon {
+  &-icon {
     font-size: 22px;
-    color: #2f3836;
+    color: $dark;
     transition: all 0.3s;
     &:hover {
       color: #a9caaf;
     }
   }
-  &_num {
+  &-num {
     position: absolute;
     top: 0;
     right: 6px;

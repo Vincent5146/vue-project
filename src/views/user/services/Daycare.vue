@@ -17,7 +17,7 @@
         </div>
       </div>
     </div>
-    <div class="image3 mt-5">
+    <div class="image-daycare mt-5">
     </div>
   </div>
 </template>

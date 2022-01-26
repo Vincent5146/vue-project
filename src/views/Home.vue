@@ -14,8 +14,8 @@
         </div>
         <div class="card-group mt-5">
           <div class="col-md-4">
-            <div class="product1 text-center">
-              <router-link to="/about" class="product1-img img-fluid"></router-link>
+            <div class="summary text-center">
+              <router-link to="/about" class="education-img img-fluid"></router-link>
               <div class="card-body">
                 <h3 class="card-title fw-bold">教育理念</h3>
                 <p class="card-text text-left">
@@ -25,8 +25,8 @@
             </div>
           </div>
           <div class="col-md-4">
-            <div class="product1 text-center">
-              <router-link to="/about" class="product2-img img-fluid"></router-link>
+            <div class="summary text-center">
+              <router-link to="/about" class="daycare-img img-fluid"></router-link>
               <div class="card-body">
                 <h3 class="card-title fw-bold">24H 褓母照顧</h3>
                 <p class="card-text text-left">
@@ -36,8 +36,8 @@
             </div>
           </div>
           <div class="col-md-4">
-            <div class="product1 text-center">
-              <router-link to="/about" class="product3-img img-fluid"></router-link>
+            <div class="summary text-center">
+              <router-link to="/about" class="environment-img img-fluid"></router-link>
               <div class="card-body">
                 <h3 class="card-title fw-bold">嚴格防疫 清潔 消毒</h3>
                 <p class="card-text text-left">
@@ -61,7 +61,7 @@
           </h2>
         </div>
         <div class="features" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
-          <div class="features-img1"></div>
+          <div class="features-img-coaching"></div>
           <div class="features-txt">
             <div class="features-icon"></div>
             <h3>TTouch合作輔導</h3>
@@ -76,7 +76,7 @@
           </div>
         </div>
         <div class="features" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
-          <div class="features-img2"></div>
+          <div class="features-img-before"></div>
           <div class="features-txt">
             <div class="features-icon"></div>
             <h3>安親前須知</h3>

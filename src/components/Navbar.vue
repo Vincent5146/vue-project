@@ -20,8 +20,8 @@
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
-              <span class="material-icons cart_icon"><i class="fas fa-shopping-cart"></i></span>
-              <div class="cart_num" v-if="cart?.carts?.length !== 0">
+              <span class="material-icons cart-icon"><i class="fas fa-shopping-cart"></i></span>
+              <div class="cart-num" v-if="cart?.carts?.length !== 0">
                 {{ cart?.carts?.length }}
               </div>
             </a>
@@ -67,7 +67,7 @@
               >
                 購物去
               </router-link>
-              <router-link class="btn btn-secondary w-100" to="/cart" v-else>
+              <router-link class="btn btn-secondary btn-hover w-100" to="/cart" v-else>
                 查看購物車
               </router-link>
             </div>

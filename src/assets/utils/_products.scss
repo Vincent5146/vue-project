@@ -1,6 +1,50 @@
 .products {
   list-style: none;
 }
+.introduce{
+  margin-top: 70px;
+  height: 400px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-image: url(~@/assets/images/job562-nunoon-10.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow-x: hidden;
+  @media (max-width: 1024px) {
+    height: 300px;
+  }
+  .introduce-text{
+    margin-top: -40px;
+    text-align: center;
+    h1{
+      color: black;
+      font-size: 4rem;
+    }
+    p{
+      padding-top: 1rem;
+      font-size: 2rem;
+      color:#333;
+    }
+    @media (max-width: 1024px) {
+      h1{
+        font-size: 2.5rem;
+      }
+      p{
+        font-size: 1.5rem;
+      }
+    }
+    @media (max-width: 768px) {
+      h1{
+        font-size: 2rem;
+      }
+      p{
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
 .nav {
   &-left {
     position: relative;
@@ -126,11 +170,6 @@
       font-size: 20px;
       text-align: center;
       border-radius: 40%;
-      &:hover{
-        background-color: #669999;
-        color: white;
-        border-color: #669999;
-      }
     }
     @media (max-width: 991px) {
       .btn-products{

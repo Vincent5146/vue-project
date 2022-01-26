@@ -18,21 +18,21 @@
       line-height: 1.7;
       font-size: 55px;
       @media only screen and(max-width:992px) {
-        font-size: 36px;
+        font-size: 44px;
         text-shadow: 1px 1px 5px rgb(0, 0, 0);
       }
       @media only screen and(max-width:600px) {
-        font-size: 24px;
-        left: 2.5%;
+        font-size: 33px;
+        left: 25%;
       }
     }
     @media only screen and(max-width:600px) {
-      left: 2.5%;
+      left: 35%;
     }
   }
 }
 
-.product1 {
+.summary {
   padding: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   line-height: 2;
@@ -42,9 +42,9 @@
   p {
     padding: 0 25px;
   }
-  .product1-img,
-  .product2-img,
-  .product3-img {
+  .education-img,
+  .daycare-img,
+  .environment-img {
     display: block;
     margin: 0 auto;
     width: 300px;
@@ -53,13 +53,13 @@
     background-position: center center;
     background-repeat: no-repeat;
   }
-  .product1-img {
+  .education-img {
     background-image: url(~@/assets/images/home1.jpg);
   }
-  .product2-img {
+  .daycare-img {
     background-image: url(~@/assets/images/home2.jpg);
   }
-  .product3-img {
+  .environment-img {
     background-image: url(~@/assets/images/home3.jpg);
   }
 }
@@ -118,7 +118,7 @@
   &:nth-of-type(3) {
     flex-direction: row-reverse;
   }
-  &-img1 {
+  &-img-coaching {
     width: 50%;
     line-height: 0;
     position: relative;
@@ -132,7 +132,7 @@
       text-align: center;
     }
   }
-  &-img2 {
+  &-img-before {
     width: 50%;
     line-height: 0;
     position: relative;

@@ -21,8 +21,8 @@
                   id="email" name="Email" type="email" class="form-control"
                   :class="{ 'is-invalid': errors['Email'] }"
                   placeholder="請輸入 Email" rules="email|required"
-                  v-model="form.user.email">
-                </Field>
+                  v-model="form.user.email"
+                />
                 <ErrorMessage name="Email" class="invalid-feedback" />
               </div>
               <div class="mb-3">
@@ -31,8 +31,8 @@
                   id="name" name="姓名" type="text" class="form-control"
                   :class="{ 'is-invalid': errors['姓名'] }"
                   placeholder="請輸入姓名" rules="required"
-                  v-model="form.user.name">
-                </Field>
+                  v-model="form.user.name"
+                />
                 <ErrorMessage name="姓名" class="invalid-feedback" />
               </div>
               <div class="mb-3">
@@ -41,8 +41,8 @@
                   id="tel" name="電話" type="tel" class="form-control"
                   :class="{ 'is-invalid': errors['電話'] }"
                   placeholder="請輸入電話" rules="required"
-                  v-model="form.user.tel">
-                </Field>
+                  v-model="form.user.tel"
+                />
                 <ErrorMessage name="電話" class="invalid-feedback" />
               </div>
               <div class="mb-3">
@@ -51,8 +51,8 @@
                   id="address" name="地址" type="text" class="form-control"
                   :class="{ 'is-invalid': errors['地址'] }"
                   placeholder="請輸入地址" rules="required"
-                  v-model="form.user.address">
-                </Field>
+                  v-model="form.user.address"
+                />
                 <ErrorMessage name="地址" class="invalid-feedback" />
               </div>
               <div class="mb-3">

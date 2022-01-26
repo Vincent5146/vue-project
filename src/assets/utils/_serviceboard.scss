@@ -1,47 +1,3 @@
-.introduce{
-  margin-top: 70px;
-  height: 400px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-image: url(~@/assets/images/job562-nunoon-10.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  overflow-x: hidden;
-  @media (max-width: 1024px) {
-    height: 300px;
-  }
-  .introduce-text{
-    margin-top: -40px;
-    text-align: center;
-    h1{
-      color: black;
-      font-size: 4rem;
-    }
-    p{
-      padding-top: 1rem;
-      font-size: 2rem;
-      color:#333;
-    }
-    @media (max-width: 1024px) {
-      h1{
-        font-size: 2.5rem;
-      }
-      p{
-        font-size: 1.5rem;
-      }
-    }
-    @media (max-width: 768px) {
-      h1{
-        font-size: 2rem;
-      }
-      p{
-        font-size: 0.9rem;
-      }
-    }
-  }
-}
 .title{
   display: flex;
   align-items: center;
@@ -49,11 +5,7 @@
   padding:1.2rem 0;
   border-bottom: #939699;
   border-bottom-style: dotted;
-  color:black;
-  span{
-    color:green;
-    padding-left: .7rem;
-  }
+  color: $dark;
 }
 .service-container{
   display:flex;
@@ -69,10 +21,10 @@
     h3{
       font-size: 1.4rem;
       margin:1rem 0;
-      color:#333;
+      color:$dark;
     }
     &:hover h3{
-      color:green;
+      color:#939699;
     }
   }
 }

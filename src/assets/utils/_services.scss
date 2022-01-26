@@ -2,16 +2,16 @@
   display: flex;
   align-items: center;
   gap:1.5rem;
-  .image1{
+  .image-swimming{
     background-image: url(~@/assets/images/swimming.jpeg);
   }
-  .image2{
+  .image-spa{
     background-image: url(~@/assets/images/spa.jpeg);
   }
-  .image3{
+  .image-daycare{
     background-image: url(~@/assets/images/daycare.jpeg);
   }
-  .image1, .image2, .image3, .image4{
+  .image-swimming, .image-spa, .image-daycare, .image-boarding{
     flex:1 1 70rem;
     height: 400px;
     width: 40%;

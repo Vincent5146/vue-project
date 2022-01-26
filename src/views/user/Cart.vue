@@ -21,7 +21,7 @@
             <tr class="table-nowrap" v-for="item in carts" :key="item.id">
               <td>
                 <a href="#" @click.prevent="delCart(item.id)">
-                  <span class="material-icons logo_icon">
+                  <span class="material-icons">
                     <i class="fas fa-trash"></i>
                   </span>
                 </a>
@@ -71,8 +71,8 @@
         </table>
       </div>
       <!-- 套用優惠碼 -->
-      <div class="input-group mb-3 input-group-sm" v-if="carts.length !== 0">
-        <input type="text" class="form-control" v-model="coupon_code" placeholder="請輸入優惠碼">
+      <div class="input-group mb-3 input-group-sm" style="justify-content: flex-end;" v-if="carts.length !== 0">
+        <input type="text" class="coupon" v-model="coupon_code" placeholder="請輸入優惠碼">
         <div class="input-group-append">
           <button class="btn btn-dark btn-hover rounded-0 border-0" type="button" @click="addCouponCode()">
             套用優惠碼
@@ -234,12 +234,19 @@ export default {
   margin-top: 100px;
   min-height: calc(100vh - 250px);
 }
-.logo_icon {
+.material-icons {
   font-size: 20px;
   color: #45615b;
   transition: all 0.3s;
     &:hover {
       color: #d3130c;
     }
+}
+.coupon {
+  border: 1px solid #ccc;
+  padding: 0 10px;
+  @media only screen and (max-width: 414px) {
+        width: 150px;
+      }
 }
 </style>

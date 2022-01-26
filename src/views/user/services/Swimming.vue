@@ -34,11 +34,11 @@
           </li>
         </ul>
         <div class="mt-5" align="right" @click="$router.push({ path: `/product/-Mr5UvOu3PQ0GjKmK5Ih` })">
-          <p class="btn">下單請按</p>
+          <p class="btn btn-hover">下單請按</p>
         </div>
       </div>
     </div>
-    <div class="image1 mt-3">
+    <div class="image-swimming mt-3">
     </div>
   </div>
 </template>
