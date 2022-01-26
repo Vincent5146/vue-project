@@ -9,7 +9,7 @@
     <div class="container">
       <section class="mt-lg-5">
         <div class="about">
-          <div class="about-box animated">
+          <div class="about-box" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
             <div class="about-txt">
               <h2 class="about-h2 text-center">關於綿綿</h2>
               <div class="about-text">
@@ -30,7 +30,7 @@
               />
             </div>
           </div>
-          <div class="about-box animated">
+          <div class="about-box" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
             <div class="about-img">
               <img
                 src="https://upload.cc/i1/2021/12/10/R7UYI9.jpg"
@@ -84,14 +84,14 @@
           <div class="row d-flex justify-content-center">
             <div class="col-md-7">
               <h2 class="text-center fw-bold mb-4">提供寶貴意見</h2>
-              <Form class="row g-3 needs-validation" v-slot="{ errors }" @submit.prevent="submitFrom">
+              <Form class="row g-3 needs-validation" v-slot="{ errors }" @submit="submitFrom">
                 <div class="col-md-12">
                   <label for="name" class="form-label">姓名 <small>(必填)</small></label>
                   <Field
                   type="text" class="form-control"  name="姓名" id="name"
                     :class="{ 'is-invalid': errors['姓名'] }"
-                    placeholder="請輸入姓名" rules="required">
-                  </Field>
+                    placeholder="請輸入姓名" rules="required" v-model="form.name"
+                  />
                   <ErrorMessage name="姓名" class="invalid-feedback" />
                 </div>
                 <div class="col-md-12">
@@ -99,8 +99,8 @@
                   <Field
                     type="email" class="form-control" id="email" name="Email"
                     :class="{ 'is-invalid': errors['Email'] }"
-                    placeholder="請輸入電子郵件" rules="email|required">
-                  </Field>
+                    placeholder="請輸入電子郵件" rules="email|required" v-model="form.email"
+                  />
                   <ErrorMessage name="Email" class="invalid-feedback" />
                 </div>
                 <div class="col-md-12">
@@ -109,13 +109,13 @@
                     type="number" class="form-control"
                     :class="{ 'is-invalid': errors['電話'] }"
                     name="電話" id="phone"
-                    placeholder="請輸入電話" rules="required">
-                  </Field>
+                    placeholder="請輸入電話" rules="required" v-model="form.phone"
+                  />
                   <ErrorMessage name="電話" class="invalid-feedback" />
                 </div>
                 <div class="col-md-12">
                   <div class="form-floating">
-                    <textarea class="form-control" placeholder="Leave a comment here" id="textarea" style="height: 150px" required></textarea>
+                    <textarea class="form-control" placeholder="Leave a comment here" id="textarea" style="height: 150px" v-model="form.msg"></textarea>
                     <label for="textarea">請輸入內容</label>
                   </div>
                   <div class="valid-feedback">
@@ -144,6 +144,28 @@ export default {
   components: {
     Navbar,
     Footer
+  },
+  data () {
+    return {
+      form: {
+        name: '',
+        email: '',
+        phone: '',
+        msg: ''
+      }
+    }
+  },
+  methods: {
+    submitFrom (values, { resetForm }) {
+      if (values) {
+        this.emitter.emit('message:push', {
+          message: '送出成功',
+          status: 'success'
+        })
+        resetForm()
+      }
+      this.form.msg = ''
+    }
   }
 }
 </script>
