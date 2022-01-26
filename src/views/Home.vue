@@ -89,7 +89,7 @@
               </p>
             </div>
             <div class="mybtn">
-              <a class="mybtn-link" href="tel: + 02-24123456" @click.prevent>
+              <a class="mybtn-link" href="tel:+02-24123456" @click.prevent>
                 <span>
                   來電洽詢
                 </span>

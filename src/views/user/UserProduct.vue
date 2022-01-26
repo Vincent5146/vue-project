@@ -10,7 +10,7 @@
       >
         <ol class="breadcrumb">
           <li class="me-3" @click="goBack()">
-            <a class="text-dark a-hover fw-bold" @click.prevent>
+            <a class="text-dark a-hover fw-bold" href="#" @click.prevent>
               <i class="fas fa-arrow-left"></i>
             </a>
           </li>
@@ -18,7 +18,7 @@
             <router-link to="/products" class="text-dark a-hover fw-bold">產品</router-link>
           </li>
           <li class="breadcrumb-item" @click="changePage">
-            <a class="text-dark a-hover fw-bold" @click.prevent>{{ product.category }}</a>
+            <a class="text-dark a-hover fw-bold" href="#" @click.prevent>{{ product.category }}</a>
           </li>
           <li class="breadcrumb-item fw-bold active" aria-current="page">
             {{ product.title }}

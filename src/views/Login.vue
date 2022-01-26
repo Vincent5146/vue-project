@@ -74,23 +74,23 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.container{
+.container {
   min-height: calc(100vh - 550px);
   .form-signin {
-  width: 100%;
-  max-width: 340px;
-  padding: 15px;
-  margin: auto;
+    width: 100%;
+    max-width: 340px;
+    padding: 15px;
+    margin: auto;
     .checkbox {
-    font-weight: 400;
+      font-weight: 400;
     }
     .form-control {
-    position: relative;
-    box-sizing: border-box;
-    height: auto;
-    padding: 10px;
-    font-size: 16px;
-   }
+      position: relative;
+      box-sizing: border-box;
+      height: auto;
+      padding: 10px;
+      font-size: 16px;
+    }
   }
 }
 

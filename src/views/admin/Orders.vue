@@ -61,7 +61,7 @@
   </div>
   <OrderModal
     :order="tempOrder"
-    ref="orderModal"
+    ref="OrderModal"
     @update-paid="updatePaid">
   </OrderModal>
   <DelModal :item="tempOrder" ref="delModal" @del-item="delOrder"></DelModal>
@@ -99,7 +99,7 @@ export default {
         this.isLoading = false
       })
     },
-    openModal (isNew, item) {
+    openModal (item) {
       this.tempOrder = { ...item }
       this.isNew = false
       const orderComponent = this.$refs.orderModal
@@ -126,6 +126,7 @@ export default {
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/order/${this.tempOrder.id}`
       this.isLoading = true
       this.$http.delete(url).then((response) => {
+        this.isLoading = false
         this.emitter.emit('message:push', { message: response.data.message, status: 'danger' })
         const delComponent = this.$refs.delModal
         delComponent.hideModal()

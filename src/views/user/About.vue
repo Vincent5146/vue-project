@@ -60,7 +60,7 @@
             <p class="mb-4 fs-5"><span class="fw-bold">營業時間 :</span> 周一至六早10點 ~ 晚9點，周日公休</p>
             <p class="mb-4 fs-5">
               <span class="fw-bold">聯絡電話 :</span>
-              <a style="margin-left: 5px;" href="tel: + 02-24123456" @click.prevent>02-24123456</a>
+              <a style="margin-left: 5px;" href="tel:+02-24123456" @click.prevent>02-24123456</a>
             </p>
             <div class="mb-4">
               <a href="#" @click.prevent>
@@ -92,7 +92,7 @@
                     :class="{ 'is-invalid': errors['姓名'] }"
                     placeholder="請輸入姓名" rules="required">
                   </Field>
-                  <ErrorMessage name="姓名" class="invalid-feedback"></ErrorMessage>
+                  <ErrorMessage name="姓名" class="invalid-feedback" />
                 </div>
                 <div class="col-md-12">
                   <label for="email" class="form-label">電子郵件 <small>(必填)</small></label>
@@ -101,7 +101,7 @@
                     :class="{ 'is-invalid': errors['Email'] }"
                     placeholder="請輸入電子郵件" rules="email|required">
                   </Field>
-                  <ErrorMessage name="Email" class="invalid-feedback"></ErrorMessage>
+                  <ErrorMessage name="Email" class="invalid-feedback" />
                 </div>
                 <div class="col-md-12">
                   <label for="phone" class="form-label">電話 <small>(必填)</small></label>
@@ -111,7 +111,7 @@
                     name="電話" id="phone"
                     placeholder="請輸入電話" rules="required">
                   </Field>
-                  <ErrorMessage name="電話" class="invalid-feedback"></ErrorMessage>
+                  <ErrorMessage name="電話" class="invalid-feedback" />
                 </div>
                 <div class="col-md-12">
                   <div class="form-floating">

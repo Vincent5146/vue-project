@@ -23,7 +23,7 @@
           </span>
         </p>
         <ul :class="{ open: sideUl }">
-          <li @click="getProducts()" :class="{ active: productValue === '全部' }">
+          <li @click="getProducts" :class="{ active: productValue === '全部' }">
             全部產品
           </li>
           <li
@@ -136,9 +136,7 @@ export default {
   },
   computed: {
     getProductsList () {
-      return this.products.filter((item) => {
-        return item.category.match(this.productValue)
-      })
+      return this.products.filter((item) => item.category.match(this.productValue))
     }
   },
   methods: {
