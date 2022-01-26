@@ -15,7 +15,7 @@
   </div>
   <div class="container">
     <div class="row mt-4">
-      <div class="col-12 col-lg-3 col-xl-2 nav-left" ref="navLeft">
+      <div class="col-12 col-lg-3 col-xl-2 nav-left" ref="navLeft" @click="controlSideUl">
         <p class="nav-tar">
           產品種類
           <span class="material-icons">
@@ -84,7 +84,7 @@
                 <button type="button" class="btn-products" @click="getProduct(item.id)">
                   商品資訊
                 </button>
-                <span class="btn-products2" @click="addtoCart(item.id, 1)">
+                <span class="btn-products2 btn-hover" @click="addtoCart(item.id, 1)">
                   <i class="fas fa-plus"></i>
                 </span>
               </div>
@@ -121,18 +121,6 @@ export default {
       sideUl: false,
       pageIsShown: false
     }
-  },
-  mounted () {
-    const sideBtn = this.$refs.navLeft
-    sideBtn.addEventListener('click', () => {
-      if (window.innerWidth < 993) {
-        if (this.sideUl) {
-          this.sideUl = false
-        } else {
-          this.sideUl = true
-        }
-      }
-    })
   },
   computed: {
     getProductsList () {
@@ -200,6 +188,13 @@ export default {
         console.warn(error, 'error')
         this.isLoading = false
       })
+    },
+    controlSideUl () {
+      if (this.sideUl) {
+        this.sideUl = false
+      } else {
+        this.sideUl = true
+      }
     }
   },
   created () {
