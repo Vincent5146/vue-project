@@ -128,6 +128,9 @@ export default {
           this.final_total = response.data.data.final_total
           this.isLoading = false
         }
+      }).catch(error => {
+        console.warn(error, 'error')
+        this.isLoading = false
       })
     },
     addtoCart (id, qty) {
@@ -147,6 +150,9 @@ export default {
           this.emitter.emit('message:push', { message: response.data.message, status: 'danger' })
           this.isLoading = false
         }
+      }).catch(error => {
+        console.warn(error, 'error')
+        this.isLoading = false
       })
     },
     updateCart (id, qty) {
@@ -166,6 +172,9 @@ export default {
             this.emitter.emit('message:push', { message: response.data.message, status: 'danger' })
             this.isLoading = false
           }
+        }).catch(error => {
+          console.warn(error, 'error')
+          this.isLoading = false
         })
       }
     },
@@ -182,6 +191,9 @@ export default {
           this.emitter.emit('message:push', { message: response.data.message, status: 'danger' })
           this.isLoading = false
         }
+      }).catch(error => {
+        console.warn(error, 'error')
+        this.isLoading = false
       })
     },
     addCouponCode () {
@@ -199,6 +211,9 @@ export default {
           this.emitter.emit('message:push', { message: response.data.message, status: 'danger' })
           this.isLoading = false
         }
+      }).catch(error => {
+        console.warn(error, 'error')
+        this.isLoading = false
       })
     },
     goProducts () {

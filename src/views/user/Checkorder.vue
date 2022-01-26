@@ -138,6 +138,9 @@ export default {
           this.statusGet = false
           this.isLoading = false
         }
+      }).catch(error => {
+        console.warn(error, 'error')
+        this.isLoading = false
       })
     }
   }

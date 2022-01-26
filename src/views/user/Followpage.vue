@@ -82,6 +82,9 @@ export default {
           this.getFollow()
           this.isLoading = false
         }
+      }).catch(error => {
+        console.warn(error, 'error')
+        this.isLoading = false
       })
       document.documentElement.scrollTop = 0
     },

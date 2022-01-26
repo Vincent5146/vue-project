@@ -206,6 +206,9 @@ export default {
           this.product = response.data.product
           this.isLoading = false
         }
+      }).catch(error => {
+        console.warn(error, 'error')
+        this.isLoading = false
       })
       document.documentElement.scrollTop = 0
     },
@@ -223,6 +226,9 @@ export default {
           this.products = Array.from(tempProducts)
           this.isLoading = false
         }
+      }).catch(error => {
+        console.warn(error, 'error')
+        this.isLoading = false
       })
     },
     addtoCart (id, qty = 1) {
@@ -247,6 +253,9 @@ export default {
           })
           this.isLoading = false
         }
+      }).catch(error => {
+        console.warn(error, 'error')
+        this.isLoading = false
       })
     },
     changePage () {

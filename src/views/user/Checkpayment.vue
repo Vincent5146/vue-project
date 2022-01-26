@@ -121,6 +121,9 @@ export default {
         if (response.data.success) {
           this.order = response.data.order
         }
+      }).catch(error => {
+        console.warn(error, 'error')
+        this.isLoading = false
       })
     },
     pay () {
@@ -133,6 +136,9 @@ export default {
           this.isLoading = false
           document.documentElement.scrollTop = 0
         }
+      }).catch(error => {
+        console.warn(error, 'error')
+        this.isLoading = false
       })
     },
     goProducts () {

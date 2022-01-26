@@ -149,6 +149,9 @@ export default {
         this.products = response.data.products
         this.pageIsShown = false
         this.isLoading = false
+      }).catch(error => {
+        console.warn(error, 'error')
+        this.isLoading = false
       })
     },
     getProducts (page = 1) {
@@ -159,6 +162,9 @@ export default {
         this.pagination = response.data.pagination
         this.pageIsShown = true
         this.productValue = ''
+        this.isLoading = false
+      }).catch(error => {
+        console.warn(error, 'error')
         this.isLoading = false
       })
     },
@@ -192,6 +198,9 @@ export default {
           })
           this.isLoading = false
         }
+      }).catch(error => {
+        console.warn(error, 'error')
+        this.isLoading = false
       })
     }
   },
