@@ -98,23 +98,17 @@ export default {
       })
     },
     updateCoupon (tempCoupon) {
-      if (this.isNew) {
-        const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/coupon`
-        this.$http.post(url, { data: tempCoupon }).then((response) => {
-          this.emitter.emit('message:push', { message: response.data.message, status: 'success' })
-          this.getCoupons()
-          this.$refs.couponModal.hideModal()
-          this.isLoading = false
-        })
-      } else {
-        const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/coupon/${this.tempCoupon.id}`
-        this.$http.put(url, { data: this.tempCoupon }).then((response) => {
-          this.emitter.emit('message:push', { message: response.data.message, status: 'success' })
-          this.getCoupons()
-          this.$refs.couponModal.hideModal()
-          this.isLoading = false
-        })
+      let url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/coupon`
+      let httpMethod = 'post'
+      if (!this.isNew) {
+        url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/coupon/${this.tempCoupon.id}`
+        httpMethod = 'put'
       }
+      this.$http[httpMethod](url, { data: tempCoupon }).then((response) => {
+        this.emitter.emit('message:push', { message: response.data.message, status: 'success' })
+        this.getCoupons()
+        this.$refs.couponModal.hideModal()
+      })
     },
     delCoupon () {
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/coupon/${this.tempCoupon.id}`
