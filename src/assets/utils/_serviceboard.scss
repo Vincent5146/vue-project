@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   font-size: 2rem;
-  padding:1.2rem 0;
+  padding: 2rem 0 1.2rem;
   border-bottom: #939699;
   border-bottom-style: dotted;
   color: $dark;
@@ -12,7 +12,7 @@
   justify-content: space-evenly;
   padding: 20px 0;
 
-  .serviceBox{
+  .service-box{
     text-align: center;
     width: 25%;
     img{

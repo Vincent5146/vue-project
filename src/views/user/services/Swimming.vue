@@ -6,7 +6,6 @@
         <h3>溫水 ‧ 游泳</h3>
       </div>
       <div class="text2">
-        <h2>狗狗游泳的好處</h2>
         <ul class="mt-3">
           <li>
             <span>促進新陳代謝</span>
@@ -38,7 +37,7 @@
         </div>
       </div>
     </div>
-    <div class="image-swimming mt-3">
+    <div class="image-swimming mt-5">
     </div>
   </div>
 </template>

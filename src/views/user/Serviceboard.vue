@@ -13,29 +13,27 @@
             <!-- 選單 -->
             <h1 class="title">綿綿服務</h1>
             <div class="service-container">
-              <router-link to='boarding' class="serviceBox">
+              <router-link to='boarding' class="service-box">
                 <img src="../../assets/images/住宿.png" alt="住宿">
                 <h3>24H褓母 ‧ 住宿</h3>
               </router-link>
-              <router-link to="daycare" class="serviceBox">
+              <router-link to="daycare" class="service-box">
                 <img src="../../assets/images/安親.png" alt="安親">
                 <h3>社交 ‧ 安親</h3>
               </router-link>
-              <router-link to='spa' class="serviceBox">
+              <router-link to='spa' class="service-box">
                 <img src="../../assets/images/沐浴.png" alt="沐浴">
                 <h3>純淨‧ 沐浴</h3>
               </router-link>
-              <router-link to='swimming' class="serviceBox">
+              <router-link to='swimming' class="service-box">
                 <img src="../../assets/images/游泳.png" alt="游泳">
                 <h3>溫水 ‧ 游泳</h3>
               </router-link>
             </div>
-            <div class="row">
           </div>
         </div>
         <RouterView/>
       </div>
-    </div>
     </div>
   </div>
   <Footer/>
