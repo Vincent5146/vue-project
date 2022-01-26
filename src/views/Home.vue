@@ -8,7 +8,7 @@
 
   <div class="home mt-5">
     <div class="container">
-      <section class="mt-5" data-aos="fade-up" data-aos-duration="1300" data-aos-delay="200">
+      <section class="section-1" data-aos="fade-up" data-aos-duration="1300" data-aos-delay="200">
         <div class="d-flex justify-content-center">
           <h1 class="fs-3 fw-bold">「綿綿寵物旅館」簡單來說：</h1>
         </div>
@@ -54,9 +54,9 @@
         </div>
       </section>
 
-      <section class="section container mt-5">
-        <div class="section-title-spirit">
-          <h2 data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="100">
+      <section class="section-2" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="300">
+        <div class="section-title">
+          <h2>
             <span>綿綿也能</span>幫助您解決困擾
           </h2>
         </div>
@@ -99,7 +99,7 @@
         </div>
       </section>
 
-      <section class="section-2 mt-5" data-aos="fade-up" data-aos-duration="1300" data-aos-delay="200">
+      <section class="section-3" data-aos="fade-up" data-aos-duration="1300" data-aos-delay="200">
         <div class="container">
           <div class="section-title">
             <h2>好文推薦</h2>

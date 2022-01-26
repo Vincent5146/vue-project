@@ -7,7 +7,7 @@
   </div>
   <div class="about mt-5">
     <div class="container">
-      <section class="mt-lg-5">
+      <section class="mt-5" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="300">
         <div class="about">
           <div class="about-box" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
             <div class="about-txt">

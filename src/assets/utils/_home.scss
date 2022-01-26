@@ -32,6 +32,32 @@
   }
 }
 
+.section {
+  &-1, &-2, &-3 {
+    margin-top: 5rem;
+  }
+  &-title {
+    margin: 0 auto 40px;
+    text-align: center;
+    @media only screen and (max-width: 600px) {
+      margin: 0 auto 30px;
+    }
+    & h2 {
+      font-size: 2.25rem;
+      font-weight: 600;
+      & span {
+        @media only screen and (max-width: 768px) {
+          display: block;
+          text-align: left;
+        }
+      }
+      @media only screen and (max-width: 576px) {
+        font-size: 26px;
+      }
+    }
+  }
+}
+
 .summary {
   padding: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -61,54 +87,6 @@
   }
   .environment-img {
     background-image: url(~@/assets/images/home3.jpg);
-  }
-}
-
-
-
-.section {
-  &-2 {
-    margin-top:50px;
-  }
-  &-title {
-    margin: 0 auto 40px;
-    text-align: center;
-    @media only screen and (max-width: 600px) {
-      margin: 0 auto 30px;
-    }
-    & h2 {
-      font-size: 2.25rem;
-      font-weight: 600;
-      & span {
-        @media only screen and (max-width: 768px) {
-          display: block;
-          text-align: left;
-        }
-      }
-      @media only screen and (max-width: 576px) {
-        font-size: 26px;
-      }
-    }
-  }
-  &-title-spirit {
-    margin: 0 auto 40px;
-    text-align: center;
-    @media only screen and (max-width: 600px) {
-      margin: 0 auto 30px;
-    }
-    & h2 {
-      font-size: 2.25rem;
-      font-weight: 600;
-      & span {
-        @media only screen and (max-width: 768px) {
-          display: block;
-          text-align: left;
-        }
-      }
-      @media only screen and (max-width: 576px) {
-        font-size: 26px;
-      }
-    }
   }
 }
 
@@ -186,6 +164,7 @@
     }
   }
 }
+
 .mybtn {
   display: flex;
   justify-content: center;
@@ -263,7 +242,7 @@
     }
     &:after {
       content: '';
-      background-color: #a9caaf;
+      background-color: #d2e0e0;
       width: 0%;
       height: 0%;
       position: absolute;
@@ -281,18 +260,16 @@
       transition: all 0.5s ease 0s;
     }
   }
-  &-txt {
-    &-title {
-      font-size: 2.25rem;
-      font-weight: 600;
-      margin-bottom: 15px;
-      @media only screen and (max-width: 992px) {
-        font-size: 24px;
-      }
-      @media only screen and (max-width: 600px) {
-        font-size: 22px;
-        margin-bottom: 10px;
-      }
+  &-txt-title {
+    font-size: 2.25rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    @media only screen and (max-width: 992px) {
+      font-size: 24px;
+    }
+    @media only screen and (max-width: 600px) {
+      font-size: 22px;
+      margin-bottom: 10px;
     }
   }
 }
