@@ -9,12 +9,7 @@
       <i class="fas fa-check-circle me-1" v-if="item.status === 'success'"></i>
       <i class="fas fa-exclamation-triangle me-1" v-if="item.status === 'danger'"></i>
       {{ item.message }}
-      <button
-        type="button"
-        class="btn-sm btn-close"
-        @click="removeMessage(i)"
-        aria-label="Close"
-      ></button>
+      <button type="button" class="btn-sm btn-close" @click="removeMessage(i)" aria-label="Close"></button>
     </div>
   </div>
 </template>
