@@ -2,6 +2,7 @@
   <div class="banner">
     <div class="banner-txtbox">
       <h2>綿綿寵物旅館</h2>
+      <router-link to="/user/boarding" class="btn btn-dark btn-hover rounded-0">了解更多</router-link>
     </div>
   </div>
 
@@ -45,11 +46,6 @@
               </div>
             </div>
           </div>
-        </div>
-        <div class="d-flex justify-content-center mt-5 animated">
-          <button type="button" class="btn btn-dark btn-lg btn-hover rounded-0">
-            <router-link to="/about" class="text-light">了解更多</router-link>
-          </button>
         </div>
       </section>
 

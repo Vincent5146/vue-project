@@ -2,6 +2,7 @@
   <div class="banner">
     <div class="banner-txtbox">
       <h2>綿綿寵物旅館</h2>
+      <router-link to="/user/boarding" class="btn btn-dark btn-hover rounded-0">了解更多</router-link>
     </div>
   </div>
   <div class="about mt-5">

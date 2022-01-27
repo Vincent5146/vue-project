@@ -7,28 +7,25 @@
   background-position: 50% 15%;
   background-repeat: no-repeat;
   background-size: cover;
-  opacity: 0.9;
+  opacity: 0.8;
   &-txtbox {
-    position: absolute;
-    left: 40%;
-    top: 50%;
-    transform: translateY(-50%);
     color: #fff;
+    position: relative;
+    top: 200px;
+    left: 60%;
     & h2 {
-      text-align: center;
-      line-height: 1.7;
+      letter-spacing: 3px;
       font-size: 55px;
+      text-shadow: 1px 1px 5px rgb(0, 0, 0);
       @media only screen and(max-width:992px) {
         font-size: 44px;
-        text-shadow: 1px 1px 5px rgb(0, 0, 0);
       }
       @media only screen and(max-width:600px) {
         font-size: 33px;
-        left: 25%;
       }
     }
-    @media only screen and(max-width:600px) {
-      left: 35%;
+    @media (max-width: 600px) {
+      left: 40px;
     }
   }
 }
