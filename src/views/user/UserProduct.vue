@@ -1,5 +1,4 @@
 <template>
-  <Navbar />
   <div class="productPage">
     <Loading :active="isLoading" />
     <div class="container">
@@ -135,19 +134,12 @@
       </div>
     </div>
   </div>
-  <Footer />
 </template>
 
 <script>
-import Navbar from '@/components/Navbar.vue'
-import Footer from '@/components/Footer.vue'
 
 export default {
   name: 'ProductPage',
-  components: {
-    Navbar,
-    Footer
-  },
   data () {
     return {
       product: {

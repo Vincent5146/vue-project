@@ -1,5 +1,4 @@
 <template>
-  <Navbar/>
   <div class="banner">
     <div class="banner-txtbox">
       <h2>綿綿寵物旅館</h2>
@@ -54,13 +53,13 @@
         </div>
       </section>
 
-      <section class="section-2" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="300">
+      <section class="section-2" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200">
         <div class="section-title">
           <h2>
             <span>綿綿也能</span>幫助您解決困擾
           </h2>
         </div>
-        <div class="features" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
+        <div class="features" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="500">
           <div class="features-img-coaching"></div>
           <div class="features-txt">
             <div class="features-icon"></div>
@@ -75,7 +74,7 @@
             </div>
           </div>
         </div>
-        <div class="features" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+        <div class="features" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="500">
           <div class="features-img-before"></div>
           <div class="features-txt">
             <div class="features-icon"></div>
@@ -108,7 +107,7 @@
             <div class="blog-item">
               <div class="blog-pic">
                 <a target="_blank" href="https://pets.ettoday.net/news/2142169">
-                  <img src="../assets/images/home-blog1.jpg" class="card-img-top" alt="寵物窩">
+                  <img src="../../assets/images/home-blog1.jpg" class="card-img-top" alt="寵物窩">
                 </a>
               </div>
               <div class="blog-txt">
@@ -121,7 +120,7 @@
             <div class="blog-item">
               <div class="blog-pic">
                 <a target="_blank" href="https://www.abibpet.com/blog/%E3%80%90%E4%B8%BB%E4%BA%BA%E4%B8%8D%E5%8F%AF%E4%B8%8D%E7%9F%A5%EF%BC%8F%E7%8B%97%E7%8B%97%E8%88%94%E8%88%94%E8%88%94-%E6%83%B3%E8%A6%81%E5%91%8A%E8%A8%B4%E4%BD%A0%E4%BB%80%E9%BA%BC%E4%BA%8B%E5%97%8E%E3%80%91">
-                  <img src="../assets/images/home-blog2.jpg" class="card-img-top" alt="舔舔舔">
+                  <img src="../../assets/images/home-blog2.jpg" class="card-img-top" alt="舔舔舔">
                 </a>
               </div>
               <div class="blog-txt">
@@ -134,7 +133,7 @@
             <div class="blog-item">
               <div class="blog-pic">
                 <a target="_blank" href="https://www.businessweekly.com.tw/style/blog/8524">
-                  <img src="../assets/images/home-blog3.jpg" class="card-img-top" alt="訓練">
+                  <img src="../../assets/images/home-blog3.jpg" class="card-img-top" alt="訓練">
                 </a>
               </div>
               <div class="blog-txt">
@@ -149,34 +148,4 @@
       </section>
     </div>
   </div>
-  <Footer/>
 </template>
-
-<script>
-import $ from 'jquery'
-import Footer from '@/components/Footer.vue'
-import Navbar from '@/components/Navbar.vue'
-
-export default {
-  components: {
-    Footer,
-    Navbar
-  },
-  mounted () {
-    // 類似監聽 scroll 滾動位置
-    $(window).scroll(function () {
-      // 讀取 scroll 滾動位置
-      const scrollPos = $(window).scrollTop()
-      // 讀取 window 高度
-      const windowHeight = $(window).height()
-      // css 動畫
-      $('.animated').each(function () {
-        const thisPos = $(this).offset().top
-        if ((windowHeight + scrollPos) >= (thisPos + 300)) {
-          $(this).addClass('fadeIn')
-        }
-      })
-    })
-  }
-}
-</script>

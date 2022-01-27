@@ -1,5 +1,4 @@
 <template>
-  <Navbar/>
   <div class="banner">
     <div class="banner-txtbox">
       <h2>綿綿寵物旅館</h2>
@@ -51,19 +50,12 @@
       </div>
     </div>
   </div>
-  <Footer/>
 </template>
 
 <script>
-import Navbar from '@/components/Navbar.vue'
-import Footer from '@/components/Footer.vue'
 
 export default {
   name: 'FollowPage',
-  components: {
-    Navbar,
-    Footer
-  },
   data () {
     return {
       isLoading: false,

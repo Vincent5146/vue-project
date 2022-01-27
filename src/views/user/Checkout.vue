@@ -1,5 +1,4 @@
 <template>
-  <Navbar/>
   <div class="checkout">
     <Loading :active="isLoading"/>
     <div class="container">
@@ -112,19 +111,12 @@
       </div>
     </div>
   </div>
-  <Footer/>
 </template>
 
 <script>
-import Navbar from '@/components/Navbar.vue'
-import Footer from '@/components/Footer.vue'
 
 export default {
   name: 'Checkout',
-  components: {
-    Navbar,
-    Footer
-  },
   data () {
     return {
       isLoading: false,

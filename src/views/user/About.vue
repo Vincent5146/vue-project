@@ -1,5 +1,4 @@
 <template>
-  <Navbar/>
   <div class="banner">
     <div class="banner-txtbox">
       <h2>綿綿寵物旅館</h2>
@@ -7,7 +6,7 @@
   </div>
   <div class="about mt-5">
     <div class="container">
-      <section class="mt-5" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="300">
+      <section class="mt-5" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="500">
         <div class="about">
           <div class="about-box" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
             <div class="about-txt">
@@ -115,7 +114,8 @@
                 </div>
                 <div class="col-md-12">
                   <div class="form-floating">
-                    <textarea class="form-control" placeholder="Leave a comment here" id="textarea" style="height: 150px" v-model="form.msg"></textarea>
+                    <textarea class="form-control" placeholder="Leave a comment here" name="內容" id="textarea" style="height: 150px" v-model="form.msg"
+                    :class="{ 'is-invalid': errors['內容'] }" rules="required"></textarea>
                     <label for="textarea">請輸入內容</label>
                   </div>
                   <div class="valid-feedback">
@@ -132,19 +132,12 @@
       </section>
     </div>
   </div>
-  <Footer/>
 </template>
 
 <script>
-import Navbar from '@/components/Navbar.vue'
-import Footer from '@/components/Footer.vue'
 
 export default {
   name: 'About',
-  components: {
-    Navbar,
-    Footer
-  },
   data () {
     return {
       form: {
@@ -169,15 +162,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-  .animated{
-    opacity: 0;
-    transition: all 2s;
-    transform: translateX(-300px);
-  }
-  .fadeIn{
-    opacity: 1;
-    transform: translateY(0px);
-  }
-</style>

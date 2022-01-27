@@ -1,5 +1,4 @@
 <template>
-  <Navbar/>
   <Loading :active="isLoading" />
   <div class="container-fluid">
     <div class="row">
@@ -97,18 +96,13 @@
       </div>
     </div>
   </div>
-  <Footer/>
 </template>
 
 <script>
-import Navbar from '@/components/Navbar.vue'
-import Footer from '@/components/Footer.vue'
 import Pagination from '@/components/Pagination.vue'
 
 export default {
   components: {
-    Navbar,
-    Footer,
     Pagination
   },
   data () {
