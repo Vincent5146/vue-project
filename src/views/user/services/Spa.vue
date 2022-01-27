@@ -14,11 +14,11 @@
           <li>獨家大浴缸，不定期推出有機椰子油、甜杏仁油泡澡服務，讓狗狗享受皮膚毛髮極致滋潤</li>
         </ul>
         <div class="mt-5" align="right" @click="$router.push({ path: `/product/-Mr5V3SDxzaQsVlR-KhY` })">
-          <p class="btn">下單請按</p>
+          <button class="btn" type="button">下單請按</button>
         </div>
       </div>
     </div>
-    <div class="image-spa mt-5">
+    <div class="image-spa mt-3">
     </div>
   </div>
 </template>

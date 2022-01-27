@@ -14,17 +14,17 @@
           type="email" id="email" name="Email"
           :class="{ 'is-invalid': errors['Email'] }"
           class="form-control" placeholder="電子信箱"
-          v-model="user.username" rules="email|required">
-        </Field>
-        <ErrorMessage name="Email" class="invalid-feedback"></ErrorMessage>
+          v-model="user.username" rules="email|required"
+        />
+        <ErrorMessage name="Email" class="invalid-feedback" />
         <label for="password" class="visually-hidden">密碼</label>
         <Field
           type="password" id="password"
           :class="{ 'is-invalid': errors['密碼'] }" name="密碼"
           class="form-control" placeholder="密碼"
-          v-model="user.password" rules="required">
-        </Field>
-        <ErrorMessage name="密碼" class="invalid-feedback"></ErrorMessage>
+          v-model="user.password" rules="required"
+        />
+        <ErrorMessage name="密碼" class="invalid-feedback" />
         <div class="checkbox mb-3 ms-1">
           <label>
             <input type="checkbox" value="remember-me"> 記住我

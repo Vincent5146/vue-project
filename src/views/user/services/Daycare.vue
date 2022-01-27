@@ -13,11 +13,11 @@
           <li>綿綿也以「嚴格檢查疫苗」聞名，每隻寵物都有疫苗和體內、外驅蟲預防藥的保護，不帶病菌回家</li>
         </ul>
         <div class="mt-5" align="right" @click="$router.push({ path: `/product/-Mr5Ue2ncB8q19dhsC6t` })">
-          <p class="btn">下單請按</p>
+          <button class="btn" type="button">下單請按</button>
         </div>
       </div>
     </div>
-    <div class="image-daycare mt-5">
+    <div class="image-daycare mt-3">
     </div>
   </div>
 </template>

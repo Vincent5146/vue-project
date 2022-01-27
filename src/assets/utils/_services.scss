@@ -52,7 +52,7 @@
       .tab{
         list-style: none;
         font-weight: bold;
-        color: rgb(88, 87, 87);
+        color: $dark;
         display: flex;
         justify-content: space-around;
         li{
@@ -95,19 +95,19 @@
         font-size: 1.2rem;
         font-weight: bold;
         margin-right: 1rem;
-        color: #429968;
+        color: #7c9782;
       }
       .btn{
         margin-top: 0.5rem;
-        border: 0.2rem solid #a9caaf;
+        border: 0.2rem solid #7c9782;
         color: #10221b;
         cursor: pointer;
         background: none;
         font-size: 1.2rem;
         padding: 0.5rem 1rem;
         &:hover {
-          border: 0.2rem solid #3e8369;
-          background: #3e8369;
+          border: 0.2rem solid #7c9782;
+          background: #7c9782;
           color: #fff;
         }
       }
