@@ -6,9 +6,9 @@
   </div>
   <div class="about mt-5">
     <div class="container">
-      <section class="mt-5" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="500">
+      <section class="mt-5">
         <div class="about">
-          <div class="about-box" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
+          <div class="about-box">
             <div class="about-txt">
               <h2 class="about-h2 text-center">關於綿綿</h2>
               <div class="about-text">
@@ -23,16 +23,16 @@
             </div>
             <div class="about-img">
               <img
-                src="https://upload.cc/i1/2021/12/10/XSkRGC.jpg"
+                src="../../assets/images/about1.jpg"
                 alt="關於綿綿"
                 width="100%"
               />
             </div>
           </div>
-          <div class="about-box" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+          <div class="about-box">
             <div class="about-img">
               <img
-                src="https://upload.cc/i1/2021/12/10/R7UYI9.jpg"
+                src="../../assets/images/about2.jpg"
                 alt="綿綿特色"
                 width="100%"
               />

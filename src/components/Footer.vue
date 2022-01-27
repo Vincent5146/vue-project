@@ -44,7 +44,7 @@
           </ul>
       </div>
       <div class="footer-copyright">
-        <p>© Copyright 2021 軟綿綿</p>
+        <p>© Copyright 2021 綿綿</p>
         <p>個人練習作品，無商業用途</p>
       </div>
     </div>

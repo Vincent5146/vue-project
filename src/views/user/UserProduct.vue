@@ -81,7 +81,7 @@
             <hr class="mt-4" />
             <h4 class="text-strong fw-bold fs-5 mt-4">購物須知</h4>
             <p class="lh-lg">
-              綿綿服務類商品加入購物車後，請先來電預約時間，並告知寵物體型、個性，再進行付款，謝謝您的配合。
+              綿綿服務類商品加入購物車後，請先<a href="tel:+02-24123456" @click.prevent>來電預約</a>時間，並告知寵物體型、個性，再進行付款，謝謝您的配合。
             </p>
             <hr class="mt-4" />
             <h4 class="text-strong fw-bold fs-5 mt-4">退換貨須知</h4>
