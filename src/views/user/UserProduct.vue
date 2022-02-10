@@ -8,16 +8,16 @@
         aria-label="breadcrumb"
       >
         <ol class="breadcrumb">
-          <li class="me-3" @click="goBack()">
-            <a class="text-dark a-hover fw-bold" href="#" @click.prevent>
+          <li class="me-3">
+            <a class="text-dark a-hover fw-bold" href="#" @click="goBack()">
               <i class="fas fa-arrow-left"></i>
             </a>
           </li>
           <li class="breadcrumb-item">
             <router-link to="/products" class="text-dark a-hover fw-bold">產品</router-link>
           </li>
-          <li class="breadcrumb-item" @click="changePage">
-            <a class="text-dark a-hover fw-bold" href="#" @click.prevent>{{ product.category }}</a>
+          <li class="breadcrumb-item">
+            <a class="text-dark a-hover fw-bold" href="#" @click="changePage">{{ product.category }}</a>
           </li>
           <li class="breadcrumb-item fw-bold active" aria-current="page">
             {{ product.title }}
@@ -25,12 +25,10 @@
         </ol>
       </nav>
       <!-- 內容 -->
-      <div class="row d-flex justify-content-center">
-        <div class="col-md-6 p-0 d-flex justify-content-center overflow-hidden">
-          <div class="row">
-            <div class="col p-0">
-              <img :src="product.imageUrl" class="image img-fluid" alt="商品照片" />
-            </div>
+      <div class="row">
+        <div class="col-md-6 p-0 d-flex justify-content-center">
+          <div class="col p-1">
+            <img :src="product.imageUrl" class="image img-fluid" alt="商品照片" />
           </div>
         </div>
         <div class="col-md-5 d-flex justify-content-center align-items-center mt-5 mt-md-0">
@@ -72,7 +70,7 @@
             </div>
             <div class="d-flex align-items-end pt-4">
               <select class="fs-5 px-2 py-1" v-model.number="qty">
-                <option v-for="item in numberList" :value="item.value" :key="item.value">{{ item.label }}</option>
+                <option v-for="item in 5" :value="item" :key="item + 'qty'">{{ item }}</option>
               </select>
               <button type="button" class="btn btn btn-dark btn-hover rounded-0 ms-4" @click="addtoCart(product.id, quantity)">
                 加入購物車
@@ -139,7 +137,6 @@
 <script>
 
 export default {
-  name: 'ProductPage',
   data () {
     return {
       product: {
@@ -156,28 +153,6 @@ export default {
         unit: ''
       },
       products: [],
-      numberList: [
-        {
-          value: '1',
-          label: '1'
-        },
-        {
-          value: '2',
-          label: '2'
-        },
-        {
-          value: '3',
-          label: '3'
-        },
-        {
-          value: '4',
-          label: '4'
-        },
-        {
-          value: '5',
-          label: '5'
-        }
-      ],
       qty: 1,
       random: 0,
       isLoading: false,

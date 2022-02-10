@@ -60,7 +60,7 @@
             <p class="mb-4 fs-5"><span class="fw-bold">營業時間 :</span> 周一至六早10點 ~ 晚9點，周日公休</p>
             <p class="mb-4 fs-5">
               <span class="fw-bold">聯絡電話 :</span>
-              <a style="margin-left: 5px;" href="tel:+02-24123456" @click.prevent>02-24123456</a>
+              <a style="margin-left: 5px;" href="tel:+02-24123456">02-24123456</a>
             </p>
             <div class="mb-4">
               <a href="#" @click.prevent>

@@ -3,16 +3,16 @@
     <div class="container text-md-start py-4">
       <ul class="footer-nav">
         <li class="nav-item pt-1">
-          <a href="#/user/boarding" class="nav-link text-light a-hover fw-bold">提供服務</a>
+          <router-link to='/user/boarding' class="nav-link text-light a-hover fw-bold">提供服務</router-link>
         </li>
         <li class="nav-item pt-1">
-          <a href="#/orders" class="nav-link text-light a-hover fw-bold">訂單查詢</a>
+        <router-link to='/orders' class="nav-link text-light a-hover fw-bold">訂單查詢</router-link>
         </li>
         <li class="nav-item pt-1">
-          <a href="#/followPage" class="nav-link text-light a-hover fw-bold">我的收藏</a>
+          <router-link to='/followPage' class="nav-link text-light a-hover fw-bold">我的收藏</router-link>
         </li>
         <li class="nav-item pt-1">
-          <a href="#/about" class="nav-link text-light a-hover fw-bold">關於綿綿</a>
+          <router-link to='/about' class="nav-link text-light a-hover fw-bold">關於綿綿</router-link>
         </li>
       </ul>
       <div class="footer_social">

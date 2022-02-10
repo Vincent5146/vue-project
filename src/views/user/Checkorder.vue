@@ -89,7 +89,7 @@
                     <td colspan="2" class="text-end">總價 :</td>
                     <td class="text-end">NT$ {{ $filters.currency(order.total) }} 元</td>
                   </tr>
-                  </tfoot>
+                </tfoot>
               </table>
             </div>
           </div>

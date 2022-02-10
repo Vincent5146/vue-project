@@ -32,8 +32,8 @@
             每週游泳，溫和低衝擊的運動，幫助狗狗保持勻稱健康的體態
           </li>
         </ul>
-        <div class="mt-5" align="right" @click="$router.push({ path: `/product/-Mr5UvOu3PQ0GjKmK5Ih` })">
-          <button class="btn" type="button">下單請按</button>
+        <div class="mt-5" align="right">
+          <button class="btn" type="button" @click="$router.push({ path: `/product/-Mr5UvOu3PQ0GjKmK5Ih` })">下單請按</button>
         </div>
       </div>
     </div>

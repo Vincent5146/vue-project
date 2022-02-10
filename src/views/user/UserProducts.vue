@@ -26,25 +26,25 @@
             全部產品
           </li>
           <li
-            type="button" @click="filterCategory('綿綿服務')"
+            @click="filterCategory('綿綿服務')"
             :class="{ active: '綿綿服務' === productValue }"
           >
             綿綿服務
           </li>
           <li
-            type="button" @click="filterCategory('寵物玩具')"
+            @click="filterCategory('寵物玩具')"
             :class="{ active: '寵物玩具' === productValue }"
           >
             寵物玩具
           </li>
           <li
-            type="button" @click="filterCategory('寵物食品')"
+            @click="filterCategory('寵物食品')"
             :class="{ active: '寵物食品' === productValue }"
           >
             寵物食品
           </li>
           <li
-            type="button" @click="filterCategory('寵物衣服')"
+            @click="filterCategory('寵物衣服')"
             :class="{ active: '寵物衣服' === productValue }"
           >
             寵物衣服
@@ -68,7 +68,7 @@
                 </div>
               </div>
               <div class="product-title">{{ item.title }}</div>
-              <div class="product_price">
+              <div class="product-price">
                 <div class="product-price-1" v-if="!item.price">
                   {{ $filters.currency(item.origin_price) }} 元
                 </div>
